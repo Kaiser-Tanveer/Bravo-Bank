@@ -74,6 +74,6 @@ const SideMenu = () => {
         </div>
     );
 };
-// chekcing commit 
+// chekcing commit
 
 export default SideMenu;
