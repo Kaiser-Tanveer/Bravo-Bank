@@ -14,7 +14,7 @@ const BannarSlider = () => {
     cssEase: "linear"
   };
   return (
-    <div className="lg:w-[95%] ml-4 left-0 w-[95%] ">
+    <div className="lg:w-[95%] lg:ml-4 left-0 w-[95%] ">
 
       <Slider {...settings}>
         <div>
