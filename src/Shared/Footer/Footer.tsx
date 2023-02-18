@@ -3,7 +3,7 @@ import logo from '../../Assets/logo/favicon.png';
 
 const Footer = () => {
     return (
-        <footer className="p-6 dark:bg-gray-100 dark:text-gray-800 border border-t-2 border-b-0 border-primary">
+        <footer className="p-6 dark:bg-gray-100 dark:text-gray-800 border border-t-2 border-b-0 border-x-0 border-primary">
             <div className="container grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
                 <div className="flex flex-col space-y-4">
                     <h2 className="font-medium">Getting started</h2>
