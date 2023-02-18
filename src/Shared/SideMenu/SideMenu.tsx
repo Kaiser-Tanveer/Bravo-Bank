@@ -29,7 +29,7 @@ const SideMenu = () => {
                         </div>
 
                         <div className="flex-1">
-                            <ul className="pt-2 pb-4 space-y-1 text-sm">
+                            <ul className="pt-2 pb-4 space-y-1 text-sm relative">
 
                                 <li className="rounded-sm font-semibold text-primary hover:scale-110 py-2 hover:bg-primary hover:text-white hover:pl-4 w-full duration-700">
                                     <NavLink to='/' className="flex items-center p-2 space-x-3 rounded-md">
@@ -42,7 +42,7 @@ const SideMenu = () => {
                                     <NavLink to='/' className="flex items-center justify-between p-2 space-x-3 rounded-md">
                                         <div className='flex items-center'>
                                             <FaCreditCard className='mr-2' />
-                                            <span>Cards</span>
+                                            <span>Accounts</span>
                                         </div>
                                         <HiChevronDown
                                             onClick={() => setOpen(!open)}
@@ -50,12 +50,19 @@ const SideMenu = () => {
                                     </NavLink>
                                     {
                                         open &&
-                                        <ul className='ease-linear duration-700 bg-gray-100 w-full text-primary text-right pr-10'>
-                                            <li className="rounded-sm font-semibold text-primary hover:scale-110 py-2 hover:bg-primary hover:text-white hover:pl-4 w-full duration-700">
-                                                <NavLink to='/' className="p-2 space-x-3 rounded-md">Submenu1</NavLink>
+                                        <ul className='ease-linear duration-700 absolute rounded-lg shadow-sm shadow-primary p-2 bg-gray-100 w-full text-primary border-t-0 pl-4'>
+                                            <li className="rounded-r-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700">
+                                                <NavLink to='/' className="p-2 space-x-3 hover:ml-2 duration-300 rounded-md">Student Account</NavLink>
                                             </li>
-                                            <li>Submenu2</li>
-                                            <li>Submenu3</li>
+                                            <li className="rounded-r-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
+                                                <NavLink to='/' className="p-2 space-x-3 hover:ml-2 duration-300 rounded-md">Savings Account</NavLink>
+                                            </li>
+                                            <li className="rounded-r-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
+                                                <NavLink to='/' className="p-2 space-x-3 hover:ml-2 duration-300 rounded-md">Current Account</NavLink>
+                                            </li>
+                                            <li className="rounded-r-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
+                                                <NavLink to='/' className="p-2 space-x-3 hover:ml-2 duration-300 rounded-md">Fixed Deposit Account</NavLink>
+                                            </li>
                                         </ul>
                                     }
                                 </li>
