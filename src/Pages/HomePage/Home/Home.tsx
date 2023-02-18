@@ -1,12 +1,12 @@
 import React from 'react';
-import BannarSlider from '../../../Shared/BannarSlider/BannarSlider';
+import BannerSlider from '../BannerSlider/BannerSlider';
 const Home = () => {
-   
-    return (
-        <div>
-          <BannarSlider />
-        </div>
-    );
+
+  return (
+    <div>
+      <BannerSlider />
+    </div>
+  );
 };
 
 export default Home;

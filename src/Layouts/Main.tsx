@@ -2,8 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import Navbar from '../Shared/Navbar/Navbar';
 import Footer from '../Shared/Footer/Footer';
-import SideMenu from '../Shared/SidebMenu/SideMenu';
-import BannarSlider from '../Shared/BannarSlider/BannarSlider';
+import SideMenu from '../Shared/SideMenu/SideMenu';
 
 const Main = () => {
     return (
