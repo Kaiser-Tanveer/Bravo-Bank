@@ -4,7 +4,7 @@ import { HiMenu, HiOutlineHome, HiLogin } from 'react-icons/hi';
 
 const Navbar = () => {
 
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
 
     return (
         <header className="p-4 dark:bg-primary dark:text-gray-100">
@@ -27,11 +27,13 @@ const Navbar = () => {
                     </label>
                     {
                         open &&
-                        <div className='bg-black bg-opacity-70 w-[100vw] h-[100vh] absolute right-0 top-[62px]'>
-                            <ul tabIndex={0} className="dropdown-content menu rounded-box absolute bg-secondary  p-3 rounded-lg text-primary w-52 -right-4 border border-l-primary h-[100vh]">
+                        <div className='bg-black bg-opacity-70 w-[100vw] h-[100vh] absolute right-0 top-[62px] duration-700 ease-in'>
+
+                            <ul tabIndex={0} className="dropdown-content menu rounded-box absolute bg-secondary  p-3 rounded-lg text-primary w-52 -right-4 border border-l-primary h-[100vh] ease-in-out">
                                 <li className='text-primary text-xl py-4 hover:bg-primary hover:text-white hover:pl-4 duration-700 rounded-xl'><Link to='/' className='flex items-center'><HiOutlineHome className='text-xl mr-1' /><span>Home</span></Link></li>
                                 <li className='text-primary mt-2 text-xl py-4 hover:bg-primary hover:text-white hover:pl-4 duration-700 rounded-xl'><Link to='/' className='flex items-center'><HiLogin className='text-xl mr-1' /> <span>Login</span></Link></li>
                             </ul>
+
                         </div>
                     }
                 </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../../Assets/logo/favicon.png';
 
 const Footer = () => {
     return (
@@ -51,7 +52,10 @@ const Footer = () => {
                 </div>
             </div>
             <div className="flex items-center justify-center px-6 pt-12 text-sm">
-                <span className="dark:text-gray-700">© Copyright 1986. All Rights Reserved.</span>
+                <div>
+                    <img src={logo} alt="logo-img" className='w-24 mx-auto rounded-3xl border border-gray-300 shadow-lg hover:scale-125 duration-500' />
+                    <span className="dark:text-gray-700">© Copyright 1986. All Rights Reserved.</span>
+                </div>
             </div>
         </footer>
     );
