@@ -19,7 +19,7 @@ const SideMenu = () => {
                 </button>
             </div> */}
             <div className={` lg:block   ${open ? "block" : " left-0 bottom-0 top-0 hidden"}`}>
-                <div className="flex min-h-screen flex-col p-3 w-60 text-primary shadow-primary shadow-inner">
+                <div className="flex min-h-screen flex-col p-3 w-60 text-primary">
                     <div className="space-y-3">
                         <div className="flex items-center justify-between">
                             <button onClick={() => setOpen(!open)} className="p-2 lg:hidden">
@@ -50,16 +50,16 @@ const SideMenu = () => {
                                     {
                                         open &&
                                         <ul className='group ease-linear duration-700 absolute rounded-lg shadow-sm shadow-primary p-2 bg-gray-100 w-full text-primary border-t-0 pl-4'>
-                                            <li className="group-hover:blur-sm hover:!blur-0 group-hover:scale-90 hover:!scale-125 hover:shadow-lg hover:shadow-gray-700 rounded-r-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700">
+                                            <li className="group-hover:blur-sm hover:!blur-0 group-hover:scale-90 hover:!scale-125 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700">
                                                 <NavLink to='/' className="p-2 space-x-3 hover:ml-2 duration-300 rounded-md">Student Account</NavLink>
                                             </li>
-                                            <li className="group-hover:blur-sm hover:!blur-0 group-hover:scale-90 hover:!scale-125 hover:shadow-lg hover:shadow-gray-700 rounded-r-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
+                                            <li className="group-hover:blur-sm hover:!blur-0 group-hover:scale-90 hover:!scale-125 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
                                                 <NavLink to='/' className="p-2 space-x-3 hover:ml-2 duration-300 rounded-md">Savings Account</NavLink>
                                             </li>
-                                            <li className="group-hover:blur-sm hover:!blur-0 group-hover:scale-90 hover:!scale-125 hover:shadow-lg hover:shadow-gray-700 rounded-r-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
+                                            <li className="group-hover:blur-sm hover:!blur-0 group-hover:scale-90 hover:!scale-125 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
                                                 <NavLink to='/' className="p-2 space-x-3 hover:ml-2 duration-300 rounded-md">Current Account</NavLink>
                                             </li>
-                                            <li className="group-hover:blur-sm hover:!blur-0 group-hover:scale-90 hover:!scale-125 hover:shadow-lg hover:shadow-gray-700 rounded-r-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
+                                            <li className="group-hover:blur-sm hover:!blur-0 group-hover:scale-90 hover:!scale-125 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
                                                 <NavLink to='/' className="p-2 space-x-3 hover:ml-2 duration-300 rounded-md">Fixed Deposit Account</NavLink>
                                             </li>
                                         </ul>
