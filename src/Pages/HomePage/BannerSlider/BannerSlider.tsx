@@ -1,10 +1,10 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import imga from '../../Assets/Banners/bg.png'
+import bannerImg from '../../../Assets/Banners/bg.png';
 import Slider from 'react-slick';
-import './BannarSlider.css'
+import './BannerSlider.css'
 
-const BannarSlider = () => {
+const BannerSlider = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -18,10 +18,10 @@ const BannarSlider = () => {
 
       <Slider {...settings}>
         <div>
-          <img src={imga} alt="" />
+          <img src={bannerImg} alt="" />
         </div>
         <div>
-          <img src={imga} alt="" />
+          <img src={bannerImg} alt="" />
         </div>
 
 
@@ -31,4 +31,4 @@ const BannarSlider = () => {
 
 }
 
-export default BannarSlider;
+export default BannerSlider;
