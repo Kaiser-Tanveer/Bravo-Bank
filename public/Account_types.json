@@ -1,0 +1,89 @@
+[
+  {
+    "acc-id": "01",
+    "accountType": "student",
+    "name": "Student Account",
+    "img": "https://i.ibb.co/Z1hj0qK/Student-Acc.webp",
+    "facilities": [
+      {
+        "title": "low fees",
+        "details": "Students often have limited budgets, so they appreciate a bank that offers low or no fees. This can include no monthly maintenance fees, no minimum balance requirements, and low transaction fees."
+      },
+      {
+        "title": "Free Debit Card",
+        "details": "Students need easy access to ATMs to withdraw cash or make deposits. Having access to a large network of ATMs can be especially important for students who are studying away from home so we providing Debot cards for free to the students"
+      },
+      {
+        "title": "Convenience",
+        "details": "Students expect a bank account that is easy to access and manage. This includes features such as online and mobile banking, which allow students to check their balances, make transfers, and pay bills from anywhere at any time."
+      }
+    ],
+    "Description": "The bank system allows students to open an account that is specifically designed for their needs. This account provides special features such as lower minimum balances, free checkbooks, and other benefits that cater to students financial needs."
+  },
+  {
+    "acc-id": "02",
+    "accountType": "savings",
+    "name": "Savings Account",
+    "img": "https://i.ibb.co/jRgDFr0/Savings-Acc.webp",
+    "facilities": [
+      {
+        "title": "Flexible Withdrawal Options",
+        "details": "Some customers may be hesitant to open a savings account if they are concerned about not having access to their funds when they need them. To address this concern, We offer flexible withdrawal options, such as the ability to withdraw money without penalty or restrictions on the number of withdrawals per month. This can provide customers with peace of mind and make your savings account a more attractive option for those who want to save money while still having access to it when they need it."
+      },
+      {
+        "title": "No Monthly Fees",
+        "details": "We offer on your savings account is the option to avoid monthly fees. Many banks charge customers a monthly fee for their savings account, but you could differentiate yourself by offering a fee-free account. This can be particularly appealing to customers who are looking to save money and don't want to pay extra fees."
+      },
+      {
+        "title": "Automatic Savings Plans",
+        "details": "We offer an automatic savings plan facility on your savings account. This would allow customers to set up automatic transfers from their checking account into their savings account on a regular basis. For example, they could choose to transfer a certain percentage of their paycheck each month or set up a weekly transfer. This can be a great way to encourage customers to save more money and make it easier for them to reach their savings goals."
+      }
+    ],
+
+    "Description": "The savings account feature of the system allows customers to save money with ease. Customers can open and manage multiple savings accounts, set savings goals, and track their progress."
+  },
+  {
+    "acc-id": "03",
+    "accountType": "current",
+    "name": "Current Account",
+    "img": "https://i.ibb.co/6vxHjj3/Current-Acc.jpg",
+    "facilities": [
+      {
+        "title": "Fast Transaction",
+        "details": "Basically current account holders need to do transaction in regular bases so it need to be fast. So we prioritize these and make these transaction fast"
+      },
+      {
+        "title": "Overdraft Protection",
+        "details": "We offer on current account is overdraft protection. This means that if a customer spends more money than they have in their account, the bank will cover the difference and charge the customer interest on the overdrawn amount. Overdraft protection can be a useful feature for customers who occasionally need to make purchases that exceed their account balance."
+      },
+      {
+        "title": "Debit card rewards",
+        "details": "We offer on your current account is debit card rewards. This means that customers earn rewards or cashback when they use their debit card to make purchases. This can be an attractive feature for customers who want to earn rewards while using their checking account for everyday transactions."
+      }
+    ],
+
+    "Description": "The current account feature of the system allows businesses to manage their finances efficiently. Customers can conduct transactions, such as receiving payments and making payments, through their current accounts."
+  },
+  {
+    "acc-id": "04",
+    "accountType": "fixed",
+    "name": "Fixed Deposit Account",
+    "img": "https://i.ibb.co/J7xdr9z/Fixed-Deposite.jpg",
+    "facilities": [
+      {
+        "title": "High Interest Rates",
+        "details": "We offer on your fixed deposit account is a high rate of interest. Fixed deposits typically offer higher interest rates than savings accounts or checking accounts, so you could differentiate yourself by offering an even higher rate of interest than other banks. This can be a great way to incentivize customers to save more money and keep it in their fixed deposit account for a longer period of time."
+      },
+      {
+        "title": "Auto-Renewal Facility",
+        "details": "We offer an auto-renewal facility on your fixed deposit account. This means that when the fixed deposit matures, it automatically renews for another term unless the customer chooses to withdraw their funds. This can be a convenient feature for customers who want to continue earning interest on their savings without having to manually renew their investment each time. Additionally, this can help ensure that customers don't miss out on earning interest if they forget to renew their investment."
+      },
+      {
+        "title": "Partial Withdrawal Facility",
+        "details": "We offer on your fixed deposit account is a partial withdrawal facility. This means that customers can withdraw a portion of their funds from the fixed deposit account without having to break the entire deposit. This can be a useful feature for customers who need to access some of their funds before the maturity date of the deposit."
+      }
+    ],
+
+    "Description": "The current account feature of the system allows businesses to manage their finances efficiently. Customers can conduct transactions, such as receiving payments and making payments, through their current accounts."
+  }
+]
