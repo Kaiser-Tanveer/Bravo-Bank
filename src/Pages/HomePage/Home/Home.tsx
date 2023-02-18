@@ -1,9 +1,10 @@
 import React from 'react';
-
+import BannarSlider from '../../../Shared/BannarSlider/BannarSlider';
 const Home = () => {
+   
     return (
         <div>
-            <h1>This is Home.....</h1>
+          <BannarSlider />
         </div>
     );
 };
