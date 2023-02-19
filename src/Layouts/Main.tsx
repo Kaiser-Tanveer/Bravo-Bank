@@ -8,16 +8,13 @@ const Main = () => {
     return (
         <>
             <Navbar />
-            <div className=''>
-                <div className='flex  gap-3 p-0 m-0'>
-                    <div className='z-20 w-[5%] lg:w-[20%] '>
-                        <SideMenu />
-                    </div>
-                    <div className='lg:w-[80%] w-[95%] '>
-                        <Outlet />
-                    </div>
+            <div className='grid lg:grid-cols-12 pt-20'>
+                <div className='lg:col-span-2 hidden lg:block'>
+                    <SideMenu />
                 </div>
-
+                <div className='col-span-12 lg:col-span-10'>
+                    <Outlet />
+                </div>
             </div>
             <Footer />
         </>
