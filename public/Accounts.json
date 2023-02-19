@@ -1,21 +1,17 @@
 [
     {
-        "acc-id": "01",
         "accountType": "student",
         "name": "Student Account"
     },
     {
-        "acc-id": "02",
         "accountType": "savings",
         "name": "Savings Account"
     },
     {
-        "acc-id": "03",
         "accountType": "current",
         "name": "Current Account"
     },
     {
-        "acc-id": "04",
         "accountType": "fixed",
         "name": "Fixed Deposit Account"
     }
