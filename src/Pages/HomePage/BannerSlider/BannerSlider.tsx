@@ -16,16 +16,17 @@ const BannerSlider = () => {
   return (
     <div className="lg:w-[95%] lg:ml-4 left-0 w-[95%] ">
 
-      <Slider {...settings}>
+      {/* <Slider {...settings}>
         <div>
           <img src={bannerImg} alt="" />
         </div>
         <div>
           <img src={bannerImg} alt="" />
         </div>
-
-
-      </Slider>
+      </Slider> */}
+      <div>
+        <img src={bannerImg} alt="" className="" />
+      </div>
     </div>
   );
 
