@@ -25,9 +25,9 @@ const Navbar = () => {
                     </label>
                     {
                         open &&
-                        <div className='bg-black bg-opacity-70 w-[100vw] h-[100vh] z-50 absolute right-0 top-[47px] duration-700'>
+                        <div className='bg-black bg-opacity-70 w-[100vw] h-[100vh] z-50 absolute right-0 top-[39px] duration-700'>
 
-                            <ul tabIndex={0} className="dropdown-content menu rounded-box absolute bg-secondary  p-3 rounded-lg text-primary w-52 -right-4 border border-l-primary h-[100vh] translate-x-4 duration-700">
+                            <ul tabIndex={0} className="dropdown-content menu rounded-box absolute bg-secondary  p-3 rounded-lg text-primary w-60 -right-4 border border-l-primary h-[100vh] translate-x-4 duration-700">
                                 <li className='text-primary text-xl py-4 hover:bg-primary hover:text-white hover:pl-4 duration-700 rounded-xl'><NavLink to='/' className='flex items-center'><HiOutlineHome className='text-xl mr-1' /><span>Home</span></NavLink></li>
                                 <li className='text-primary text-xl py-4 hover:bg-primary hover:text-white hover:pl-4 duration-700 rounded-xl mt-2'><NavLink to='/' className='flex items-center'><FaCreditCard className='text-xl mr-1' /><span>Cards</span></NavLink></li>
                                 <li className='text-primary mt-2 text-xl py-4 hover:bg-primary hover:text-white hover:pl-4 duration-700 rounded-xl'><NavLink to='/' className='flex items-center'><HiLogin className='text-xl mr-1' /> <span>Login</span></NavLink></li>

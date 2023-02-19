@@ -1,0 +1,18 @@
+[
+    {
+        "accountType": "student",
+        "name": "Student Account"
+    },
+    {
+        "accountType": "savings",
+        "name": "Savings Account"
+    },
+    {
+        "accountType": "current",
+        "name": "Current Account"
+    },
+    {
+        "accountType": "fixed",
+        "name": "Fixed Deposit Account"
+    }
+]
