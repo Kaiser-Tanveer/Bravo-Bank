@@ -8,7 +8,7 @@ const Main = () => {
     return (
         <>
             <Navbar />
-            <div className='grid lg:grid-cols-12 pt-20'>
+            <div className='grid lg:grid-cols-12 pt-7 lg:pt-20'>
                 <div className='lg:col-span-2 hidden lg:block border-r-8 bg-gray-200 border-primary shadow-md shadow-primary'>
                     <SideMenu />
                 </div>
