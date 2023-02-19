@@ -1,6 +1,5 @@
 [
   {
-    "acc-id": "01",
     "accountType": "student",
     "name": "Student Account",
     "img": "https://i.ibb.co/Z1hj0qK/Student-Acc.webp",
@@ -21,7 +20,6 @@
     "Description": "The bank system allows students to open an account that is specifically designed for their needs. This account provides special features such as lower minimum balances, free checkbooks, and other benefits that cater to students financial needs."
   },
   {
-    "acc-id": "02",
     "accountType": "savings",
     "name": "Savings Account",
     "img": "https://i.ibb.co/jRgDFr0/Savings-Acc.webp",
@@ -39,11 +37,9 @@
         "details": "We offer an automatic savings plan facility on your savings account. This would allow customers to set up automatic transfers from their checking account into their savings account on a regular basis. For example, they could choose to transfer a certain percentage of their paycheck each month or set up a weekly transfer. This can be a great way to encourage customers to save more money and make it easier for them to reach their savings goals."
       }
     ],
-
     "Description": "The savings account feature of the system allows customers to save money with ease. Customers can open and manage multiple savings accounts, set savings goals, and track their progress."
   },
   {
-    "acc-id": "03",
     "accountType": "current",
     "name": "Current Account",
     "img": "https://i.ibb.co/6vxHjj3/Current-Acc.jpg",
@@ -61,11 +57,9 @@
         "details": "We offer on your current account is debit card rewards. This means that customers earn rewards or cashback when they use their debit card to make purchases. This can be an attractive feature for customers who want to earn rewards while using their checking account for everyday transactions."
       }
     ],
-
     "Description": "The current account feature of the system allows businesses to manage their finances efficiently. Customers can conduct transactions, such as receiving payments and making payments, through their current accounts."
   },
   {
-    "acc-id": "04",
     "accountType": "fixed",
     "name": "Fixed Deposit Account",
     "img": "https://i.ibb.co/J7xdr9z/Fixed-Deposite.jpg",
@@ -83,7 +77,6 @@
         "details": "We offer on your fixed deposit account is a partial withdrawal facility. This means that customers can withdraw a portion of their funds from the fixed deposit account without having to break the entire deposit. This can be a useful feature for customers who need to access some of their funds before the maturity date of the deposit."
       }
     ],
-
     "Description": "The current account feature of the system allows businesses to manage their finances efficiently. Customers can conduct transactions, such as receiving payments and making payments, through their current accounts."
   }
 ]
