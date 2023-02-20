@@ -1,29 +1,11 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import bannerImg from '../../../Assets/Banners/bank.png';
-import Slider from 'react-slick';
 import { Typewriter } from "react-simple-typewriter";
 
 const BannerSlider = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 5000,
-    cssEase: "linear"
-  };
   return (
     <div className="">
-
-      {/* <Slider {...settings}>
-        <div>
-          <img src={bannerImg} alt="" />
-        </div>
-        <div>
-          <img src={bannerImg} alt="" />
-        </div>
-      </Slider> */}
       <div className="container grid lg:grid-cols-2 mx-auto bg-gradient-to-r from-gray-300 to-gray-100 items-center shadow-md">
         <img src={bannerImg} alt="main-banner" className="w-full h-full hover:animate-pulse" />
         <div>
