@@ -2,7 +2,7 @@ import React from "react";
 
 const WhatsNew = () => {
   return (
-    <section className="bg-gray-100 mb-20 text-gray-800">
+    <section className="bg-gray-100 py-20 text-gray-800 shadow-md">
       <div className="container max-w-5xl px-4 py-12 mx-auto">
         <div className="grid gap-4 mx-4 sm:grid-cols-12">
           <div className="col-span-12 sm:col-span-3">
