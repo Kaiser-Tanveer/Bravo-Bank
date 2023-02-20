@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaEnvelopeOpenText, FaFacebookF, FaGithubAlt, FaLinkedinIn } from 'react-icons/fa';
 
 const Peoples = () => {
     const employees = [
@@ -58,17 +59,17 @@ const Peoples = () => {
                                     <p>{employee.title}</p>
                                 </div>
                                 <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
-                                    <a rel="noopener noreferrer" href="#" title="Email" className="text-gray-50 hover:text-emerald-600">
-
+                                    <a rel="noopener noreferrer" href="#" title="Email" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
+                                        <FaFacebookF className='text-xl' />
                                     </a>
-                                    <a rel="noopener noreferrer" href="#" title="Twitter" className="text-gray-50 hover:text-emerald-600">
-
+                                    <a rel="noopener noreferrer" href="#" title="Twitter" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
+                                        <FaEnvelopeOpenText className='text-xl' />
                                     </a>
-                                    <a rel="noopener noreferrer" href="#" title="LinkedIn" className="text-gray-50 hover:text-emerald-600">
-
+                                    <a rel="noopener noreferrer" href="#" title="LinkedIn" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
+                                        <FaLinkedinIn className='text-xl' />
                                     </a>
-                                    <a rel="noopener noreferrer" href="#" title="GitHub" className="text-gray-50 hover:text-emerald-600">
-
+                                    <a rel="noopener noreferrer" href="#" title="GitHub" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
+                                        <FaGithubAlt className='text-xl' />
                                     </a>
                                 </div>
                             </div>
