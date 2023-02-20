@@ -22,3 +22,15 @@
  4. react-reveal
  5. react-router-dom
  6. react-slick
+
+
+# Development:
+
+## Duration: (18th Feb 2023 - ongoing)
+
+## Team: 
+ 1. Kaiser Tanveer (Project Leader)
+ 2. Nazmul Bhuyian
+ 3. Md Galib hossain
+ 4. MD Golam Morshed
+ 5. Safwan Bin Ridwan
