@@ -1,14 +1,30 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useState } from 'react';
 import { FaHandHoldingUsd } from 'react-icons/fa';
 import { HiChevronDown, HiChevronUp, HiOutlineCreditCard, HiOutlineHome, HiOutlineUserAdd } from 'react-icons/hi';
 import { NavLink } from 'react-router-dom';
 import logo from '../../Assets/logo/favicon.png';
+import Spinner from '../../Pages/Spinner/Spinner';
 
 
 const SideMenu = () => {
     const [accOpen, setAccOpen] = useState(false);
     const [cardOpen, setCardOpen] = useState(false);
     const [loanOpen, setLoanOpen] = useState(false);
+
+    const { isLoading, refetch, data: types = [] } = useQuery({
+        queryKey: ['/accountsTypes'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/accountsTypes')
+            const data = await res.json()
+            return data
+        }
+    })
+
+    if(isLoading){
+        <Spinner></Spinner>
+    }
+
     return (
         <div>
             {/* small device button  */}
@@ -44,8 +60,9 @@ const SideMenu = () => {
                                 <li
                                     className={`rounded-lg font-semibold text-primary px-4 w-full duration-700`}>
                                     <NavLink
+                                    to=''
                                         onClick={() => setAccOpen(!accOpen)}
-                                        to='/' className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 justify-between p-2 space-x-3 rounded-md">
+                                        className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 justify-between p-2 space-x-3 rounded-md">
                                         <div className='flex items-center'>
                                             <HiOutlineUserAdd className='mr-2' />
                                             <span>Accounts</span>
@@ -60,18 +77,13 @@ const SideMenu = () => {
                                     {
                                         accOpen &&
                                         <ul className='group ease-linear duration-700 z-40 rounded-lg shadow-inner shadow-gray-700 hover:shadow-lg hover:shadow-primary p-2 bg-gray-100 w-full text-primary'>
-                                            <li className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700">
-                                                <NavLink to='/' className="space-x-3 hover:ml-2 duration-300 rounded-md">Student Account</NavLink>
-                                            </li>
-                                            <li className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
-                                                <NavLink to='/' className="space-x-3 hover:ml-2 duration-300 rounded-md">Savings Account</NavLink>
-                                            </li>
-                                            <li className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
-                                                <NavLink to='/' className="space-x-3 hover:ml-2 duration-300 rounded-md">Current Account</NavLink>
-                                            </li>
-                                            <li className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
-                                                <NavLink to='/' className="space-x-3 hover:ml-2 duration-300 rounded-md">Fixed Deposit Account</NavLink>
-                                            </li>
+                                            {
+                                                types?.map((type: { _id: React.Key | null | undefined; accountType: any; name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | ((props: { isActive: boolean; isPending: boolean; }) => React.ReactNode) | null | undefined; }) =>
+                                                    <li key={type._id} className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700">
+                                                        <NavLink to={`/accountDetail/${type.accountType}`} className="space-x-3 hover:ml-2 duration-300 rounded-md">{type?.name}</NavLink>
+                                                    </li>
+                                                )
+                                            }
                                         </ul>
                                     }
                                 </li>

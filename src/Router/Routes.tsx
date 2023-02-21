@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
-import Account from "../Pages/Account/Account";
+import AccountDetails from "../Pages/AccountsDetails/AccountDetails";
 import Home from "../Pages/HomePage/Home/Home";
 
 export const router = createBrowserRouter([
@@ -13,10 +13,8 @@ export const router = createBrowserRouter([
                 element: <Home />
             },
             {
-                // path: '/account/:accountType',
-                path: '/account',
-                element: <Account />,
-                loader: () => fetch(`Account.json`)
+                path: '/accountDetail/:accountType',
+                element: <AccountDetails />
             }
         ]
     }
