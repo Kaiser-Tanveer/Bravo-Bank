@@ -18,7 +18,7 @@ const AccountDetails = () => {
             .then(data => setDetails(data))
     }, [accountType]);
     return (
-        <div className='bg-gradient-to-br from-gray-300 to-gray-100 pt-12 lg:pb-20'>
+        <div className='bg-gradient-to-br from-gray-300 to-gray-100 pt-12 lg:pt-0 lg:pb-20'>
             <div className='relative'>
                 <img src={details?.img} alt="" className='w-full h-full' />
                 <div className='bg-gradient-to-r bg-opacity-30 from-primary via-gray-500 to-sky-500 py-1 pr-1 w-1/2 absolute top-0 -left-0 rounded-lg'>
