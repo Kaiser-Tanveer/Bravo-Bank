@@ -5,10 +5,10 @@ const Peoples = () => {
     const employees = [
         {
             name: "Nazmul Bhuiya",
-            img: '',
+            img: 'https://i.ibb.co/RSDfJdL/p.jpg',
             title: "Cash Manager",
-            facebook: "url",
-            linkedin: "url",
+            facebook: "https://www.facebook.com/nazmul.nobel.3",
+            linkedin: "https://www.linkedin.com/in/nazmul-bhuyian-mern-stack-developer/",
             github: "url"
         },
         {
@@ -59,14 +59,14 @@ const Peoples = () => {
                                     <p>{employee.title}</p>
                                 </div>
                                 <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
-                                    <a target='_blank' href="#" title="Email" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
+                                    <a target='_blank' href={employee.facebook} title="Email" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
                                         <FaFacebookF className='text-xl' />
+                                    </a>
+                                    <a target='_blank' href={employee.linkedin} title="LinkedIn" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
+                                        <FaLinkedinIn className='text-xl' />
                                     </a>
                                     <a target='_blank' href="#" title="Twitter" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
                                         <FaEnvelopeOpenText className='text-xl' />
-                                    </a>
-                                    <a target='_blank' href="#" title="LinkedIn" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
-                                        <FaLinkedinIn className='text-xl' />
                                     </a>
                                     <a target='_blank' href="#" title="GitHub" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
                                         <FaGithubAlt className='text-xl' />
