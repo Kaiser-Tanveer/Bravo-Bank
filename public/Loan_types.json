@@ -3,6 +3,7 @@
         "loanType": "personal",
         "name": "Personal Loan",
         "img": "",
+        "description": "Make Your Journey of Life Joyful. Whatever the occasion or requirement, make a smart financial choice with City Bank Personal Loan to fulfill all your dreams, reach new heights and make your day to day journey of life joyful.",
         "features": [
             "Loan amount from BDT 2 lacs to BDT 20 lacs",
             "Loan tenure 12 to 60 months",
@@ -20,6 +21,7 @@
         "loanType": "home",
         "name": "Home Loan",
         "img": "",
+        "description": "Make Your Dream Home a Reality. Make your dream home a reality with easy home loans from City Bank. Our wide range of options is designed to cater to your every home financing need, be it purchasing a new flat, constructing a house or renovating your existing home. Allow us to be the finance partner of one of the biggest investments of your lifetime and give you a delightful experience of banking.",
         "features": [
             "Loan amount ranging from BDT 5 lac to BDT 200 lac",
             "Repayment tenure 1 year to 25 years",
@@ -42,6 +44,7 @@
         "loanType": "student",
         "name": "Student Loan",
         "img": "",
+        "description": "Loan provided for education purpose, which may include tuition fees, living expense, medical insurance, airfare and other associated costs.",
         "features": [
             "Loan Amount: 100,000 BDT to 2,000,000 BDT",
             "Tenor: 1 to 5 Years",
@@ -57,6 +60,7 @@
         "loanType": "car",
         "name": "Car Loan",
         "img": "",
+        "description": "Your Wheel is now Your Will. Drive through the convenience with our 2nd Hand Auto Loan. You will be able to fullfill your dream of buying your first four-wheeler & enjoy",
         "features": [
             "Loan amount ranging from BDT 4 lac to BDT 40 lac",
             "Financing up to 50% of used vehicle price",
