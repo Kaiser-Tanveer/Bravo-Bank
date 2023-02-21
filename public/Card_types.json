@@ -1,0 +1,40 @@
+[
+    {
+        "cardType": "debit",
+        "name": "Credit Card",
+        "img": "",
+        "description": "Now comes the Visa Debit Card from City Bank. Your life, therefore, becomes hassle-free and safe; and it is Visa Electron branded, which makes you the proud owner of a meaningful plastic.",
+        "features": [
+            "Fast and easy",
+            "Safer than carrying cash",
+            "More convenient and safer than checks",
+            "Eliminate cost of purchasing checks",
+            "24/7 access to funds via ATMs"
+        ],
+        "eligibilities": [
+            "Age: 22 to 60 years",
+            "Salaried Executive: Minimum 2 years",
+            "Top Up: Allowable after 3 months (Minimum BDT 1 Lac)",
+            "Bangladeshi nationality"
+        ]
+    },
+    {
+        "cardType": "debit",
+        "name": "Credit Card",
+        "img": "",
+        "description": "",
+        "features": [
+            "Fast and easy",
+            "Safer than carrying cash",
+            "More convenient and safer than checks",
+            "Eliminate cost of purchasing checks",
+            "24/7 access to funds via ATMs"
+        ],
+        "eligibilities": [
+            "Age: 22 to 60 years",
+            "Salaried Executive: Minimum 2 years",
+            "Top Up: Allowable after 3 months (Minimum BDT 1 Lac)",
+            "Bangladeshi nationality"
+        ]
+    }
+]
