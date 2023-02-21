@@ -8,15 +8,15 @@ const Main = () => {
     return (
         <>
             <Navbar />
-            <div className='grid lg:grid-cols-12 pt-7 lg:pt-20 relative'>
-                <div className='lg:col-span-2 border-r-8 bg-gray-200 lg:border-primary shadow-md shadow-primary'>
+            <div className='lg:grid lg:grid-cols-12 lg:pt-20'>
+                <div className='lg:col-span-3 border border-r-primary hidden lg:block'>
                     <SideMenu />
                 </div>
-                <div className='col-span-12 lg:col-span-10 ml-auto w-full container mx-auto'>
+                <div className='col-span-12 lg:col-span-9 ml-auto w-full container mx-auto'>
                     <Outlet />
+                    <Footer />
                 </div>
             </div>
-            <Footer />
         </>
     );
 };
