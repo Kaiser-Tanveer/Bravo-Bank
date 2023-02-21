@@ -10,7 +10,8 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <Home />,
+                loader: () => fetch('https://bravo-bank-server.vercel.app/accountsTypes')
             },
             {
                 path: '/accountDetail/:accountType',
