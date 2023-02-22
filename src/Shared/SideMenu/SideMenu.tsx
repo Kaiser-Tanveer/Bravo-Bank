@@ -30,19 +30,23 @@ const SideMenu = () => {
         <aside className='z-40'>
             <div
                 onClick={() => setOpen(!open)}
-                className='fixed z-50 w-full lg:w-fit lg:hidden rounded-md ml-4 mt-2 p-[3px] top-0 left-0 bg-gradient-to-r from-pink-500 to-sky-500 duration-500'>
+                className='fixed z-50 lg:hidden'>
                 {
                     open ?
-                        <HiOutlineX
-                            className='text-3xl font-bold bg-gray-100 rounded-sm duration-500 ease-in-out text-primary'
-                        />
+                        <div className='fixed right-0 top-0 mr-4 mt-2 p-[3px] rounded-md bg-gradient-to-r from-sky-500 to-pink-500 duration-700'>
+                            <HiOutlineX
+                                className='text-3xl font-bold bg-gray-100 rounded-sm duration-500 ease-in-out text-primary'
+                            />
+                        </div>
                         :
-                        <HiMenu
-                            className='text-3xl font-bold bg-gray-100 rounded-sm duration-500 ease-in-out text-primary'
-                        />
+                        <div className='fixed left-0 top-0 ml-4 mt-2 p-[3px] rounded-md bg-gradient-to-r from-pink-500 to-sky-500 duration-700'>
+                            <HiMenu
+                                className='text-3xl font-bold bg-gray-100 rounded-sm duration-500 ease-in-out text-primary'
+                            />
+                        </div>
                 }
             </div>
-            <div className={`lg:block fixed py-8 bg-gray-100 rounded-sm shadow-lg shadow-gray-700 z-40 overflow-y-scroll ${open ? "block" : "left-0 bottom-0 top-0 hidden duration-700 h-full z-40"}`} >
+            <div className={`fixed top-0 bg-gray-100 lg:w-[25%] lg:block py-8 rounded-sm z-40 overflow-y-scroll ${open ? "block -mt-2 fixed w-full h-full duration-700 overflow-y-scroll" : "left-0 bottom-0 top-0 hidden z-40"}`} >
                 <div className="flex flex-col px-3 text-primary">
                     <div className="space-y-3">
                         <h2 className='font-extrabold text-4xl text-center text-transparent bg-gradient-to-r bg-clip-text from-pink-500 to-sky-500'>Bravo Bank</h2>
