@@ -9,10 +9,10 @@ const Main = () => {
         <>
             <Navbar />
             <div className='lg:grid lg:grid-cols-12 lg:pt-20'>
-                <div className='lg:col-span-3 border border-r-primary hidden lg:block'>
+                <div className='lg:col-span-3'>
                     <SideMenu />
                 </div>
-                <div className='col-span-12 lg:col-span-9 ml-auto w-full container mx-auto'>
+                <div className='col-span-12 lg:col-span-9 container mx-auto'>
                     <Outlet />
                     <Footer />
                 </div>
