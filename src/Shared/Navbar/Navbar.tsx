@@ -1,32 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import logo from '../../Assets/logo/favicon.png';
 
 const Navbar = () => {
 
-    let prevScrollpos = window.pageYOffset;
+    let navPrevScrollPos = window.pageYOffset;
     window.onscroll = function () {
-        const currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
+        const navCurrentScrollPos = window.pageYOffset;
+        if (navPrevScrollPos > navCurrentScrollPos) {
             (document.getElementById('navbar') as HTMLFormElement).style.top = "0";
         } else {
-            (document.getElementById('navbar') as HTMLFormElement).style.top = "-80px";
+            (document.getElementById('navbar') as HTMLFormElement).style.top = "-100px";
         }
-        prevScrollpos = currentScrollPos;
+        navPrevScrollPos = navCurrentScrollPos;
     }
-    // const [open, setOpen] = useState(false);
 
     return (
-        <header id="navbar" className="lg:p-4 bg-opacity-100 bg-primary mx-auto fixed w-full z-50 text-white">
-            <div className="container flex justify-between items-center mx-auto">
-                <Link rel="noopener noreferrer" to='/' aria-label="Back to homepage" className="flex items-center p-2">
-                    <h2 className='font-bold md:text-3xl uppercase text-2xl lg:ml-0 ml-12 text-transparent bg-gradient-to-b bg-clip-text from-gray-100 to-sky-300'>Bravo Bank</h2>
-                </Link>
-                <ul className="items-stretch flex space-x-3 ">
-                    <li className="flex">
-                        <Link rel="noopener noreferrer" to='/' className="flex text-xl items-center px-4 -mb-1 border-b-2 dark:border-transparent">Login</Link>
-                    </li>
-                </ul>
-
+        <header id="navbar" className="lg:p-4 bg-opacity-95 bg-primary top-0 glass mx-auto fixed w-full z-40 text-white px-6">
+            <div className="container flex justify-end py-2 items-center mx-auto">
+                <img src={logo} alt="logo" className='px-4 h-10 bg-gray-200 shadow-md shadow-gray-700 rounded-md' />
             </div>
 
         </header>
