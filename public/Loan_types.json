@@ -1,86 +1,80 @@
 [
-  {
-    "loan-id": "01",
-    "loanType": "personal",
-    "name": "Personal Loan",
-    "features": [
-      { "details": "Loan amount from BDT 2 lacs to BDT 20 lacs" },
-      { "details": "Loan tenure 12 to 60 months" },
-      { "details": "No hidden charges" },
-      { "details": "Competitive interest rate" }
-    ],
-    "eligibility": [
-      { "details": "Age: 22 to 60 years" },
-      { "details": "Salaried Executive: Minimum 2 years" },
-      { "details": "Professionals: Minimum 2 years of practice" },
-      { "details": "Businessman: Minimum 3 years" }
-    ]
-  },
-  {
-    "loan-id": "02",
-    "loanType": "home",
-    "name": "Home Loan",
-    "features": [
-      { "details": "Loan amount ranging from BDT 5 lac to BDT 200 lac" },
-      { "details": "Repayment tenure 1 year to 25 years" },
-      { "details": "Financing up to 70% of property value" },
-      { "details": "Semi-pucca financing facility" },
-      { "details": "Financing to Non Resident Bangladeshi (NRB)" },
-      { "details": "Home loan with overdraft (OD) facility" },
-      { "details": "No hidden cost" },
-      { "details": "Early settlement facility" },
-      { "details": "Loan across the country" }
-    ],
-    "eligibility": [
-      { "details": "Age: 22 to 65 years" },
-      { "details": "Experience: 3 years experience in respective field." },
-      { "details": "BDT 50,000 and above" },
-      { "details": "BDT 30,000 (Government officials only)" }
-    ]
-  },
-  {
-    "loan-id": "03",
-    "loanType": "student",
-    "name": "Student Loan",
-    "features": [
-      { "details": "Loan Amount: 100,000 BDT to 2,000,000 BDT" },
-      { "details": "Tenor: 1 to 5 Years" },
-      { "details": "Interest Rate: Competitive Interest Rate" },
-      { "details": "Top Up: Allowable after 3 months (Minimum BDT 1 Lac)" }
-    ],
-    "eligibility": [
-      { "details": "Applicant: Parent/s of the student or Legal Guardian" },
-      { "details": "Age: 12 to 24 years" }
-    ]
-  },
-  {
-    "loan-id": "04",
-    "loanType": "car",
-    "name": "Car Loan",
-    "features": [
-      { "details": "Loan amount ranging from BDT 4 lac to BDT 40 lac" },
-      { "details": "Financing up to 50% of used vehicle price" },
-      { "details": "Up to 100% financing for loan against cash security" },
-      {
-        "details": "Loan tenure 12 months to 72 months. Loan maturity must be 10 years from date of manufacturing"
-      },
-      { "details": "No hidden charges" },
-      { "details": "Competitive interest rate" }
-    ],
-    "eligibility": [
-      { "details": "Age: 22 to 65" },
-      {
-        "details": "Salaried Executive: Minimum 1 year experience including 6 months with current employer"
-      },
-      {
-        "details": "Professionals such as doctors, engineers, freelancers, and others with minimum 1 year of experience."
-      },
-      {
-        "details": "Businessman: Minimum 2 years involvement in the same business"
-      },
-      {
-        "details": "Income Criteria: Minimum Income: Salaried Segment - BDT 40,000, All other Segments BDT 60,000"
-      }
-    ]
-  }
+    {
+        "loanType": "personal",
+        "name": "Personal Loan",
+        "img": "",
+        "description": "Make Your Journey of Life Joyful. Whatever the occasion or requirement, make a smart financial choice with City Bank Personal Loan to fulfill all your dreams, reach new heights and make your day to day journey of life joyful.",
+        "features": [
+            "Loan amount from BDT 2 lacs to BDT 20 lacs",
+            "Loan tenure 12 to 60 months",
+            "No hidden charges",
+            "Competitive interest rate"
+        ],
+        "eligibilities": [
+            "Age: 22 to 60 years",
+            "Salaried Executive: Minimum 2 years",
+            "Professionals: Minimum 2 years of practice",
+            "Businessman: Minimum 3 years"
+        ]
+    },
+    {
+        "loanType": "home",
+        "name": "Home Loan",
+        "img": "",
+        "description": "Make Your Dream Home a Reality. Make your dream home a reality with easy home loans from City Bank. Our wide range of options is designed to cater to your every home financing need, be it purchasing a new flat, constructing a house or renovating your existing home. Allow us to be the finance partner of one of the biggest investments of your lifetime and give you a delightful experience of banking.",
+        "features": [
+            "Loan amount ranging from BDT 5 lac to BDT 200 lac",
+            "Repayment tenure 1 year to 25 years",
+            "Financing up to 70% of property value",
+            "Semi-pucca financing facility",
+            "Financing to Non Resident Bangladeshi (NRB)",
+            "Home loan with overdraft (OD) facility",
+            "No hidden cost",
+            "Early settlement facility",
+            "Loan across the country"
+        ],
+        "eligibilities": [
+            "Age: 22 to 65 years",
+            "Experience: 3 years experience in respective field.",
+            "BDT 50,000 and above",
+            "BDT 30,000 (Government officials only)"
+        ]
+    },
+    {
+        "loanType": "student",
+        "name": "Student Loan",
+        "img": "",
+        "description": "Loan provided for education purpose, which may include tuition fees, living expense, medical insurance, airfare and other associated costs.",
+        "features": [
+            "Loan Amount: 100,000 BDT to 2,000,000 BDT",
+            "Tenor: 1 to 5 Years",
+            "Interest Rate: Competitive Interest Rate",
+            "Top Up: Allowable after 3 months (Minimum BDT 1 Lac)"
+        ],
+        "eligibilities": [
+            "Applicant: Parent/s of the student or Legal Guardian",
+            "Age: 12 to 24 years"
+        ]
+    },
+    {
+        "loanType": "car",
+        "name": "Car Loan",
+        "img": "",
+        "description": "Your Wheel is now Your Will. Drive through the convenience with our 2nd Hand Auto Loan. You will be able to fullfill your dream of buying your first four-wheeler & enjoy",
+        "features": [
+            "Loan amount ranging from BDT 4 lac to BDT 40 lac",
+            "Financing up to 50% of used vehicle price",
+            "Up to 100% financing for loan against cash security",
+            "Loan tenure 12 months to 72 months. Loan maturity must be 10 years from date of manufacturing",
+            "No hidden charges",
+            "Competitive interest rate"
+        ],
+        "eligibilities": [
+            "Age: 22 to 65",
+            "Salaried Executive: Minimum 1 year experience including 6 months with current employer",
+            "Professionals such as doctors, engineers, freelancers, and others with minimum 1 year of experience.",
+            "Businessman: Minimum 2 years involvement in the same business",
+            "Income Criteria: Minimum Income: Salaried Segment - BDT 40,000, All other Segments BDT 60,000"
+        ]
+    }
 ]

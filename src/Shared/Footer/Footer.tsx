@@ -53,7 +53,7 @@ const Footer = () => {
             </div>
             <div className="flex items-center justify-center px-6 pt-12 text-sm">
                 <div>
-                    <img src={logo} alt="logo-img" className='w-24 mx-auto rounded-3xl border border-gray-300 shadow-lg hover:scale-125 duration-500' />
+                    <img src={logo} alt="logo-img" className='w-20 mx-auto shadow-inner shadow-gray-700 px-2 py-1 rounded-lg hover:scale-125 duration-500' />
                     <span className="dark:text-gray-700">© Copyright 1986. All Rights Reserved.</span>
                 </div>
             </div>

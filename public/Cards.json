@@ -1,0 +1,10 @@
+[
+    {
+        "cardType": "debit",
+        "name": "Debit Card"
+    },
+    {
+        "cardType": "credit",
+        "name": "Credit Card"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "loanType": "personal",
+        "name": "Personal Loan"
+    },
+    {
+        "loanType": "home",
+        "name": "Home Loan"
+    },
+    {
+        "loanType": "student",
+        "name": "Student Loan"
+    },
+    {
+        "loanType": "car",
+        "name": "Car Loan"
+    }
+]
