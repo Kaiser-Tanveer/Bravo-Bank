@@ -9,7 +9,7 @@ const Peoples = () => {
             title: "Cash Manager",
             facebook: "https://www.facebook.com/nazmul.nobel.3",
             linkedin: "https://www.linkedin.com/in/nazmul-bhuyian-mern-stack-developer/",
-            github: "url"
+            github: "https://github.com/nazmulbhuyian"
         },
         {
             name: "Kaiser Tanveer",
@@ -68,7 +68,7 @@ const Peoples = () => {
                                     <a target='_blank' href="#" title="Twitter" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
                                         <FaEnvelopeOpenText className='text-xl' />
                                     </a>
-                                    <a target='_blank' href="#" title="GitHub" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
+                                    <a target='_blank' href={employee.github} title="GitHub" className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500">
                                         <FaGithubAlt className='text-xl' />
                                     </a>
                                 </div>
