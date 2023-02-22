@@ -1,18 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import logo from '../../Assets/logo/favicon.png';
 
 const Navbar = () => {
 
-    let prevScrollpos = window.pageYOffset;
+    let navPrevScrollPos = window.pageYOffset;
     window.onscroll = function () {
-        const currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
+        const navCurrentScrollPos = window.pageYOffset;
+        if (navPrevScrollPos > navCurrentScrollPos) {
             (document.getElementById('navbar') as HTMLFormElement).style.top = "0";
         } else {
-            (document.getElementById('navbar') as HTMLFormElement).style.top = "-80px";
+            (document.getElementById('navbar') as HTMLFormElement).style.top = "-100px";
         }
-        prevScrollpos = currentScrollPos;
+        navPrevScrollPos = navCurrentScrollPos;
     }
 
     return (
