@@ -18,8 +18,9 @@ const CardsDetails = () => {
       .then((res) => res.json())
       .then((data) => setDetails(data));
   }, [cardType]);
-  console.log(details);
-  return <div></div>;
+  return <div>
+    <h1>{details?.name}</h1>
+  </div>;
 };
 
 export default CardsDetails;
