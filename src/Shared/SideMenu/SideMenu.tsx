@@ -19,7 +19,6 @@ const SideMenu = () => {
   const [cardOpen, setCardOpen] = useState(false);
   const [loanOpen, setLoanOpen] = useState(false);
   const [cardTypes, setCardTypes] = useState([]);
-  console.log(cardTypes);
 
   const {
     isLoading,
@@ -158,12 +157,18 @@ const SideMenu = () => {
                   {cardOpen && (
                     <ul className="group ease-linear duration-700 z-40 rounded-lg shadow-inner shadow-gray-700 hover:shadow-lg hover:shadow-primary p-2 bg-gray-50 w-full text-primary">
                       {cardTypes.map(
-                        (card: {
-                          _id: React.Key | null | undefined;
-                          cardType: any;
-                          name: string;
-                        }) => (
-                          <li className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700">
+                        (
+                          card: {
+                            _id: React.Key | null | undefined;
+                            cardType: any;
+                            name: string;
+                          },
+                          i
+                        ) => (
+                          <li
+                            key={i}
+                            className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700"
+                          >
                             <NavLink
                               to={`/cardDetail/${card?.cardType}`}
                               className="space-x-3 hover:ml-2 duration-300 rounded-md"
