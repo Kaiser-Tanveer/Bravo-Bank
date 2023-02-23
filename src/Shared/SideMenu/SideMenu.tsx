@@ -14,7 +14,7 @@ const SideMenu = () => {
     
     const [loans, setLoans] = useState([])
 
-    const { isLoading, refetch, data: types = [] } = useQuery({
+    const { isLoading, data: types = [] } = useQuery({
         queryKey: ['/accountsTypes'],
         queryFn: async () => {
             const res = await fetch('https://bravo-bank-server.vercel.app/accountsTypes')
