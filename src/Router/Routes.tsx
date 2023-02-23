@@ -3,6 +3,7 @@ import Main from "../Layouts/Main";
 import AccountDetails from "../Pages/AccountsDetails/AccountDetails";
 import CardsDetails from "../Pages/CardsDetails/CardsDetails";
 import Home from "../Pages/HomePage/Home/Home";
+import LoanDetails from "../Pages/LoanDetails/LoanDetails";
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +23,10 @@ export const router = createBrowserRouter([
       {
         path: "/cardDetail/:cardType",
         element: <CardsDetails />,
-        // loader: (params) => fetch(`http://localhost:5000/cards/${params.id}`),
+      },
+      {
+        path: "/loanDetail/:loanType",
+        element: <LoanDetails />,
       },
     ],
   },
