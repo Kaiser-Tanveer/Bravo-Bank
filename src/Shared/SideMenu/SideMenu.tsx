@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaHandHoldingUsd } from 'react-icons/fa';
 import { HiChevronDown, HiChevronUp, HiMenu, HiOutlineCreditCard, HiOutlineHome, HiOutlineUserAdd, HiOutlineX } from 'react-icons/hi';
 import { NavLink } from 'react-router-dom';
@@ -11,6 +11,8 @@ const SideMenu = () => {
     const [accOpen, setAccOpen] = useState(false);
     const [cardOpen, setCardOpen] = useState(false);
     const [loanOpen, setLoanOpen] = useState(false);
+    
+    const [loans, setLoans] = useState([])
 
     const { isLoading, refetch, data: types = [] } = useQuery({
         queryKey: ['/accountsTypes'],
@@ -20,6 +22,12 @@ const SideMenu = () => {
             return data
         }
     })
+
+    useEffect(() =>{
+        fetch('http://localhost:5000/loansTypes')
+        .then(res => res.json())
+        .then(data => setLoans(data))
+    }, [])
 
 
     if (isLoading) {
@@ -136,18 +144,13 @@ const SideMenu = () => {
                                     {
                                         loanOpen &&
                                         <ul className='group ease-linear duration-700 z-40 rounded-lg shadow-inner shadow-gray-700 hover:shadow-lg hover:shadow-primary p-2 bg-gray-50 w-full text-primary'>
-                                            <li className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700">
-                                                <NavLink to='/' className="space-x-3 hover:ml-2 duration-300 rounded-md">Personal Loan</NavLink>
-                                            </li>
-                                            <li className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
-                                                <NavLink to='/' className="space-x-3 hover:ml-2 duration-300 rounded-md">Home Loan</NavLink>
-                                            </li>
-                                            <li className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
-                                                <NavLink to='/' className="space-x-3 hover:ml-2 duration-300 rounded-md">Student Loan</NavLink>
-                                            </li>
-                                            <li className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full duration-700">
-                                                <NavLink to='/' className="space-x-3 hover:ml-2 duration-300 rounded-md">Car Loan</NavLink>
-                                            </li>
+                                            {
+                                                loans?.map((loan: { _id: React.Key | null | undefined; loanType: any; name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | ((props: { isActive: boolean; isPending: boolean; }) => React.ReactNode) | null | undefined; }) =>
+                                                    <li key={loan._id} className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700">
+                                                        <NavLink to={`/loanDetail/${loan.loanType}`} className="space-x-3 hover:ml-2 duration-300 rounded-md">{loan.name}</NavLink>
+                                                    </li>
+                                                )
+                                            }
                                         </ul>
                                     }
                                 </li>
