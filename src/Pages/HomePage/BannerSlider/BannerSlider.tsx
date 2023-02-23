@@ -11,7 +11,7 @@ const BannerSlider = () => {
       <div className="container">
         <img src={bannerImg} alt="main-banner" className="absolute right-0 h-96 w-full blur-sm" />
       </div>
-      <div className='rounded-lg bg-primary bg-opacity-90 grid grid-cols-1 md:grid-cols-2 h-96 w-full shadow-lg shadow-gray-700 border-2' style={{
+      <div className='rounded-lg bg-gradient-to-r from-primary to-sky-500 bg-opacity-90 grid grid-cols-1 md:grid-cols-2 h-96 w-full shadow-lg shadow-gray-700 border-2' style={{
         clipPath: 'polygon(0 0, 100% calc(100% - 100vw), calc(100% - 50vw) 100%, 0 100%)',
         boxShadow: "2px 20px 8px 12px darkgray"
       }}>
