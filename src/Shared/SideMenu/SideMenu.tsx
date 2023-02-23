@@ -33,7 +33,7 @@ const SideMenu = () => {
                 className='fixed z-50 lg:hidden'>
                 {
                     open ?
-                        <div className='fixed right-0 top-0 mr-4 mt-2 p-[3px] rounded-md bg-gradient-to-r from-sky-500 to-pink-500 duration-700'>
+                        <div className='fixed right-0 top-0 mr-4 mt-2 p-[3px] rounded-md bg-gradient-to-r from-sky-500 to-pink-500 hover:scale-125 duration-700'>
                             <HiOutlineX
                                 className='text-3xl font-bold bg-gray-100 rounded-sm duration-500 ease-in-out text-primary'
                             />
