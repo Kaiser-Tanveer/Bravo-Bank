@@ -6,28 +6,27 @@ import Home from "../Pages/HomePage/Home/Home";
 import LoanDetails from "../Pages/LoanDetails/LoanDetails";
 
 export const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Main />,
-    children: [
-      {
+    {
         path: "/",
-        element: <Home />,
-        loader: () =>
-          fetch("https://bravo-bank-server.vercel.app/accountsTypes"),
-      },
-      {
-        path: "/accountDetail/:accountType",
-        element: <AccountDetails />,
-      },
-      {
-        path: "/cardDetail/:cardType",
-        element: <CardsDetails />,
-      },
-      {
-        path: "/loanDetail/:loanType",
-        element: <LoanDetails />,
-      },
-    ],
-  },
+        element: <Main />,
+        children: [
+            {
+                path: "/",
+                element: <Home />,
+                loader: () => fetch("https://bravo-bank-server.vercel.app/accountsTypes"),
+            },
+            {
+                path: "/accountDetail/:accountType",
+                element: <AccountDetails />,
+            },
+            {
+                path: "/cardDetail/:cardType",
+                element: <CardsDetails />,
+            },
+            {
+                path: "/loanDetail/:loanType",
+                element: <LoanDetails />,
+            },
+        ],
+    },
 ]);
