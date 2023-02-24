@@ -14,7 +14,7 @@ const CardsDetails = () => {
   console.log(details);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/cards/${cardType}`)
+    fetch(`https://bravo-bank-server.vercel.app/cards/${cardType}`)
       .then((res) => res.json())
       .then((data) => setDetails(data));
   }, [cardType]);

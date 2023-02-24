@@ -39,12 +39,12 @@ const SideMenu = () => {
         },
     });
     useEffect(() => {
-        fetch("http://localhost:5000/cardsTypes")
+        fetch("https://bravo-bank-server.vercel.app/cardsTypes")
             .then((res) => res.json())
             .then((data) => setCardTypes(data));
     }, []);
     useEffect(() => {
-        fetch('http://localhost:5000/loansTypes')
+        fetch('https://bravo-bank-server.vercel.app/loansTypes')
             .then(res => res.json())
             .then(data => setLoans(data))
     }, [])

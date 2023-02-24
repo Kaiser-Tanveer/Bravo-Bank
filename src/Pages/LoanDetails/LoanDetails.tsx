@@ -14,7 +14,7 @@ const LoanDetails = () => {
     const [details, setDetails] = useState<detail>();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/loans/${loanType}`)
+        fetch(`https://bravo-bank-server.vercel.app/loans/${loanType}`)
             .then(res => res.json())
             .then(data => setDetails(data))
     }, [loanType]);
