@@ -23,7 +23,6 @@ const SideMenu = () => {
     const [cardTypes, setCardTypes] = useState([]);
     const [loans, setLoans] = useState([]);
 
-    console.log(cardTypes);
 
     const {
         isLoading,
@@ -136,11 +135,11 @@ const SideMenu = () => {
                                                 }) => (
                                                     <li
                                                         key={type._id}
-                                                        className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700"
+                                                        className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  duration-700"
                                                     >
                                                         <NavLink
                                                             to={`/accountDetail/${type.accountType}`}
-                                                            className="space-x-3 hover:ml-2 duration-300 rounded-md"
+                                                            className="space-x-3 block w-full hover:ml-2 duration-300 rounded-md py-2"
                                                         >
                                                             {type?.name}
                                                         </NavLink>
@@ -180,11 +179,11 @@ const SideMenu = () => {
                                                 ) => (
                                                     <li
                                                         key={i}
-                                                        className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700"
+                                                        className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  w-full  duration-700"
                                                     >
                                                         <NavLink
                                                             to={`/cardDetail/${card?.cardType}`}
-                                                            className="space-x-3 hover:ml-2 duration-300 rounded-md"
+                                                            className="space-x-3 block hover:ml-2 duration-300 rounded-md w-full py-2"
                                                         >
                                                             {card?.name}
                                                         </NavLink>
@@ -215,8 +214,11 @@ const SideMenu = () => {
                                         <ul className="group ease-linear duration-700 z-40 rounded-lg shadow-inner shadow-gray-700 hover:shadow-lg hover:shadow-primary p-2 bg-gray-50 w-full text-primary">
                                             {
                                                 loans?.map((loan: { _id: React.Key | null | undefined; loanType: any; name: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | ((props: { isActive: boolean; isPending: boolean; }) => React.ReactNode) | null | undefined; }) =>
-                                                    <li key={loan._id} className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary py-2 hover:bg-primary hover:text-white  w-full  duration-700">
-                                                        <NavLink to={`/loanDetail/${loan.loanType}`} className="space-x-3 hover:ml-2 duration-300 rounded-md">{loan.name}</NavLink>
+                                                    <li key={loan._id} className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  w-full  duration-700">
+                                                        <NavLink
+                                                            to={`/loanDetail/${loan.loanType}`} className="space-x-3 block w-full py-2 hover:ml-2 duration-300 rounded-md">
+                                                            {loan.name}
+                                                        </NavLink>
                                                     </li>
                                                 )
                                             }

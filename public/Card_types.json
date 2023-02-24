@@ -2,39 +2,33 @@
     {
         "cardType": "debit",
         "name": "Debit Card",
-        "img": "",
+        "img": "https://i.ibb.co/1JjywxC/Bank-Banner.jpg",
         "description": "Now comes the Visa Debit Card from Bravo Bank. Your life, therefore, becomes hassle-free and safe; and it is Visa Electron branded, which makes you the proud owner of a meaningful plastic.",
-        "features": [
-            "Fast and easy",
-            "Safer than carrying cash",
-            "More convenient and safer than checks",
-            "Eliminate cost of purchasing checks",
-            "24/7 access to funds via ATMs"
-        ],
-        "eligibilities": [
-            "Age: 22 to 60 years",
-            "Salaried Executive: Minimum 2 years",
-            "Top Up: Allowable after 3 months (Minimum BDT 1 Lac)",
-            "Bangladeshi nationality"
+        "rules": [
+            {
+                "title": "features",
+                "details": "Fast and easy. Safer than carrying cash. More convenient and safer than checks. Eliminate cost of purchasing checks. 24/7 access to funds via ATMs"
+            },
+            {
+                "title": "eligibilities",
+                "details": "Age: 22 to 60 years. Salaried Executive: Minimum 2 years. Top Up: Allowable after 3 months (Minimum BDT 1 Lac). Bangladeshi nationality"
+            }
         ]
     },
     {
-        "cardType": "debit",
+        "cardType": "credit",
         "name": "Credit Card",
-        "img": "",
+        "img": "https://i.ibb.co/f0LX23c/credit-Card-Ad-1.jpg",
         "description": "A credit card is a type of credit facility, provided by banks that allow customers to borrow funds within a pre-approved credit limit. It enables customers to make purchase transactions on goods and services. The credit card limit is determined by the credit card issuer based on factors such as income and credit score, which also decides the credit limit. ",
-        "features": [
-            "Fast and easy",
-            "Safer than carrying cash",
-            "More convenient and safer than checks",
-            "Eliminate cost of purchasing checks",
-            "24/7 access to funds via ATMs"
-        ],
-        "eligibilities": [
-            "Age: 22 to 60 years",
-            "Salaried Executive: Minimum 2 years",
-            "Top Up: Allowable after 3 months (Minimum BDT 1 Lac)",
-            "Bangladeshi nationality"
+        "rules": [
+            {
+                "title": "features",
+                "details": "Fast and easy. Safer than carrying cash. More convenient and safer than checks. Eliminate cost of purchasing checks. 24/7 access to funds via ATMs"
+            },
+            {
+                "title": "eligibilities",
+                "details": "Age: 22 to 60 years. Salaried Executive: Minimum 2 years. Top Up: Allowable after 3 months (Minimum BDT 1 Lac). Bangladeshi nationality"
+            }
         ]
     }
 ]
