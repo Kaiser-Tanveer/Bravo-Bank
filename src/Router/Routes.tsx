@@ -4,8 +4,13 @@ import AccountDetails from "../Pages/AccountsDetails/AccountDetails";
 import CardsDetails from "../Pages/CardsDetails/CardsDetails";
 import Home from "../Pages/HomePage/Home/Home";
 import LoanDetails from "../Pages/LoanDetails/LoanDetails";
+import NotFound from "../Pages/NotFound/NotFound";
 
 export const router = createBrowserRouter([
+    {
+        path: '*',
+        element: <NotFound />
+    },
     {
         path: "/",
         element: <Main />,
