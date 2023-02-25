@@ -77,6 +77,7 @@ const ContactUs = () => {
             className="border border-gray-300 rounded-md py-2 px-4 w-full focus:outline-none focus:border-blue-600"
           ></textarea>
         </div>
+        {/* Button */}
         <div className="flex">
           <button
             type="submit"
