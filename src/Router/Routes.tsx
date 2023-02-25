@@ -5,6 +5,7 @@ import CardsDetails from "../Pages/CardsDetails/CardsDetails";
 import Home from "../Pages/HomePage/Home/Home";
 import LoanDetails from "../Pages/LoanDetails/LoanDetails";
 import NotFound from "../Pages/NotFound/NotFound";
+import Register from "../Login/Register";
 
 export const router = createBrowserRouter([
     {
@@ -19,6 +20,14 @@ export const router = createBrowserRouter([
                 path: "/",
                 element: <Home />,
                 loader: () => fetch("https://bravo-bank-server.vercel.app/accountsTypes"),
+            },
+            {
+                path: "/register",
+                element: <Register />
+            },
+            {
+                path: "/logIn",
+                element: <Register />
             },
             {
                 path: "/accountDetail/:accountType",

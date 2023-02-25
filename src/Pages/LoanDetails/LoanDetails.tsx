@@ -34,7 +34,7 @@ const LoanDetails = () => {
             <hr className='border-2 border-sky-500 w-1/4 mx-auto mb-8' />
             <div className='grid md:grid-cols-2 gap-6 m-6 group'>
                 {
-                    details?.rules?.map((rule: { title: string, details: string }) => <div className='bg-gradient-to-r  group-hover:h-full hover:overflow-y-scroll h-28 from-primary to-sky-500 p-1 rounded-lg shadow-lg shadow-gray-700 hover:from-sky-500 hover:to-primary duration-700 overflow-hidden group-hover:blur-sm group-hover:scale-[80%] hover:!blur-0 hover:!scale-110'>
+                    details?.rules?.map((rule: { title: string, details: string }) => <div className='bg-gradient-to-r  group-hover:h-full h-28 from-primary to-sky-500 p-1 rounded-lg shadow-lg shadow-gray-700 hover:from-sky-500 hover:to-primary duration-700 overflow-hidden group-hover:blur-sm group-hover:scale-[80%] hover:!blur-0 hover:!scale-110'>
                         <div className='py-10 items-center'>
                             <h1 className='text-gray-100 px-2 pb-16 uppercase group-hover:pb-6 group-hover:w-full duration-700 text-center text-3xl md:font-bold font-semibold'>{rule?.title}</h1>
                             <p className='-mb-96 hover:bg-gray-200 p-6 rounded-lg group-hover:mb-0 ease-in-out duration-1000'>{rule?.details}</p>
