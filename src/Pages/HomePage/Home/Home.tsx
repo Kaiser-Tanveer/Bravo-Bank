@@ -6,6 +6,7 @@ import CardSlider from "../CardsSlider/CardSlider";
 import { useNavigation } from "react-router-dom";
 import Spinner from "../../Spinner/Spinner";
 import TaxCalculation from "../TaxCalculation/TaxCalculation";
+import AccountReg from "../../../AccountReg/AccountReg";
 const Home = () => {
   const navigation = useNavigation();
 
@@ -17,6 +18,7 @@ const Home = () => {
       <BannerSlider />
       <CardSlider />
       <TaxCalculation />
+      <AccountReg />
       <WhatsNew />
       <Peoples />
     </div>
