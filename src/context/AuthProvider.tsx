@@ -26,10 +26,7 @@ const AuthProvider = ({ children }: any) => {
     }
 
     const updateUser = (userInfo: any) => {
-        if(user !== null){
-            return updateProfile(auth.currentUser, userInfo)
-        }
-        
+            return updateProfile(user, userInfo)
     }
 
 
