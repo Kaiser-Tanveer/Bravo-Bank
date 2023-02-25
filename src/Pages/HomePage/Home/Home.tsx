@@ -5,6 +5,7 @@ import WhatsNew from "../WhatsNew/WhatsNew";
 import CardSlider from "../CardsSlider/CardSlider";
 import { useNavigation } from "react-router-dom";
 import Spinner from "../../Spinner/Spinner";
+import AccountReg from "../../../AccountReg/AccountReg";
 const Home = () => {
   const navigation = useNavigation();
 
@@ -15,6 +16,7 @@ const Home = () => {
     <div className="bg-gradient-to-tl from-gray-300 to-gray-100">
       <BannerSlider />
       <CardSlider />
+      <AccountReg />
       <WhatsNew />
       <Peoples />
     </div>

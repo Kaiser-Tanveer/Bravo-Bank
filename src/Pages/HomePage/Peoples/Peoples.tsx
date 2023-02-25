@@ -60,9 +60,9 @@ const Peoples = () => {
                 </h1>
                 <div className="flex flex-row flex-wrap-reverse justify-center mt-8 group">
                     {employees.map((employee) => (
-                        <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-primary text-gray-100 shadow-lg shadow-gray-700 group-hover:scale-90 hover:!scale-110">
+                        <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-primary text-gray-100 shadow-lg shadow-gray-700 group-hover:scale-90 hover:!scale-110 duration-500">
                             <img
-                                alt=""
+                                alt="employeeImage"
                                 className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500"
                                 src={employee.img}
                             />
