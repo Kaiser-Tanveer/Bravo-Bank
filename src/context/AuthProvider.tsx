@@ -29,18 +29,17 @@ const AuthProvider = ({ children }: any) => {
             return updateProfile(user, userInfo)
     }
 
-
-    useEffect((type: void) => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser =>{
-            console.log(currentUser);
-            setUser(currentUser)
-            setLoading(false);
-        })
-        return () => 
-        {
-           return unSubscribe;
-        }
-    }, [])
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+          console.log(currentUser);
+          setUser(currentUser);
+          setLoading(false);
+        });
+      
+        return () => {
+          unSubscribe();
+        };
+      }, []);
 
     const info = {
         createUser,

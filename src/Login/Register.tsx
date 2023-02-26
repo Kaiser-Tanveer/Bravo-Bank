@@ -1,8 +1,9 @@
 import { url } from 'inspector';
-import React from 'react';
+import React, { useContext } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { string } from 'yargs';
 import logo from '../Assets/logo/favicon.png';
+import { AuthContext } from '../context/AuthProvider';
 
 type userInput = {
     fName: string,
@@ -12,9 +13,13 @@ type userInput = {
 }
 
 const Register = () => {
+
+    const {createUser} = useContext(AuthContext)
+
     const { register, handleSubmit, formState: { errors } } = useForm<userInput>();
     const onSubmit: SubmitHandler<userInput> = (data) => {
         console.log(data);
+        createUser(data.email, data.password)
     }
     return (
         <div style={{ backgroundImage: "linear-gradient(to left, rgba(59, 130, 246, 0.75), rgba(117, 19, 93, 0.73)), url(https://i.ibb.co/L8yCcT4/shaking-hands-3096229-1920.jpg)", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover", }}
@@ -29,7 +34,7 @@ const Register = () => {
                     <div>
                         <label>First Name</label>
                         <input type="text"
-                            {...register("lName", { required: "Name is required" })} className='rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500'
+                            {...register("fName", { required: "Name is required" })} className='rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500'
                         />
                         {errors.fName &&
                             <p className='text-red-700 text-center' >{errors.fName.message}</p>}
