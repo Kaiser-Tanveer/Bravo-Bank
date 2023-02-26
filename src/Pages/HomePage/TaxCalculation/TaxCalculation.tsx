@@ -25,16 +25,16 @@ const TaxCalculation = () => {
             <form onSubmit={handleSubmit}>
                 <div className='lg:flex lg:gap-4'>
                     <div>
-                        <input onChange={handleUsd} className='lg:text-4xl text-white font-bold text-center text-transparent bg-gray-500 bg-gradient-to-r from-sky-500 to-pink-500 py-4' type="text" defaultValue={usd} />
+                        <input onChange={handleUsd} className='rounded-lg lg:text-4xl py-4 focus:ring-2 ' type="text" defaultValue={usd} />
                     </div>
                     <div>
-                        <input onChange={handleBdt} className='lg:text-4xl mt-4 lg:mt-0 text-white font-bold text-center text-transparent bg-gray-500 bg-gradient-to-r from-sky-500 to-pink-500 py-4' type="text" defaultValue={bdt}/>
+                        <input onChange={handleBdt} className='rounded-lg lg:text-4xl mt-4 lg:mt-0 py-4 focus:ring-2 ' type="text" defaultValue={bdt}/>
                     </div>
                 </div>
                 <div className='lg:flex lg:gap-4 mt-4'>
-                    <button type='submit' className='btn lg:text-4xl text-white font-bold text-center text-transparent bg-gray-500 bg-gradient-to-r from-sky-500 to-pink-500 py-4 mx-auto'>Calculate</button>
+                    <button type='submit' className='rounded-lg btn lg:text-4xl py-4 focus:ring-2  mx-auto'>Calculate</button>
                     <div>
-                        <input value={newValue} readOnly className='lg:text-4xl mt-4 lg:mt-0 text-white font-bold text-center text-transparent bg-gray-500 bg-gradient-to-r from-sky-500 to-pink-500 py-4' type="text" />
+                        <input value={newValue} readOnly className='rounded-lg lg:text-4xl mt-4 lg:mt-0 py-4 focus:ring-2 ' type="text" />
                     </div>
                 </div>
             </form>

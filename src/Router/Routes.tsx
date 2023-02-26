@@ -6,6 +6,7 @@ import Home from "../Pages/HomePage/Home/Home";
 import LoanDetails from "../Pages/LoanDetails/LoanDetails";
 import NotFound from "../Pages/NotFound/NotFound";
 import Register from "../Login/Register";
+import Login from "../Login/Login";
 
 export const router = createBrowserRouter([
     {
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/logIn",
-                element: <Register />
+                element: <Login />
             },
             {
                 path: "/accountDetail/:accountType",

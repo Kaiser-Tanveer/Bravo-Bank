@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import {
     HiChevronDown,
@@ -9,11 +9,17 @@ import {
     HiOutlineHome,
     HiOutlineUserAdd,
     HiOutlineX,
+    HiLogout,
+    HiLogin
 } from "react-icons/hi";
 import { NavLink, useNavigation } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider";
 import Spinner from "../../Pages/Spinner/Spinner";
 
 const SideMenu = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
     const navigation = useNavigation();
 
     const [open, setOpen] = useState(false);
@@ -22,6 +28,10 @@ const SideMenu = () => {
     const [loanOpen, setLoanOpen] = useState(false);
     const [cardTypes, setCardTypes] = useState([]);
     const [loans, setLoans] = useState([]);
+
+    const handleLogOut = () =>{
+        logOut(user?.email)
+    }
 
 
     const {
@@ -225,6 +235,27 @@ const SideMenu = () => {
                                         </ul>
                                     )}
                                 </li>
+                                {
+                                    !user ?
+                                        <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                                            <NavLink
+                                            to='/logIn'
+                                                className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                                            >
+                                                <HiLogout />
+                                                <span>Login</span>
+                                            </NavLink>
+                                        </li>
+                                        :
+                                        <li onClick={handleLogOut} className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                                            <button
+                                                className="w-full flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                                            >
+                                                <HiLogin />
+                                                <span>Log Out</span>
+                                            </button>
+                                        </li>
+                                }
                             </ul>
                         </div>
                     </div>
