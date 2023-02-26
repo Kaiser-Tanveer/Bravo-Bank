@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FaHandHoldingUsd } from "react-icons/fa";
 import {
   HiChevronDown,
@@ -9,13 +9,18 @@ import {
   HiOutlineHome,
   HiOutlineUserAdd,
   HiOutlineX,
+  HiLogout,
+  HiLogin,
   HiChatAlt,
 } from "react-icons/hi";
 import { NavLink, useNavigation } from "react-router-dom";
+import { AuthContext } from "../../context/AuthProvider";
 import Spinner from "../../Pages/Spinner/Spinner";
 
 const SideMenu = () => {
   const navigation = useNavigation();
+
+  const { user, logOut } = useContext(AuthContext);
 
   const [open, setOpen] = useState(false);
   const [accOpen, setAccOpen] = useState(false);
@@ -48,6 +53,9 @@ const SideMenu = () => {
       .then((res) => res.json())
       .then((data) => setLoans(data));
   }, []);
+  const handleLogOut = () => {
+    logOut(user?.email);
+  };
 
   if (isLoading) {
     <Spinner />;

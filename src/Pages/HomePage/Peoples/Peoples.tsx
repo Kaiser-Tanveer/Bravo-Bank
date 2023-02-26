@@ -10,11 +10,11 @@ const Peoples = () => {
     const employees = [
         {
             name: "Nazmul Bhuiya",
-            img: "",
+            img: "https://i.ibb.co/RSDfJdL/p.jpg",
             title: "Cash Manager",
-            facebook: "url",
-            linkedin: "url",
-            github: "url",
+            facebook: "https://www.facebook.com/nazmul.nobel.3",
+            linkedin: "https://www.linkedin.com/in/nazmul-bhuyian-mern-stack-developer/",
+            github: "https://github.com/nazmulbhuyian",
         },
         {
             name: "Kaiser Tanveer",
@@ -77,7 +77,7 @@ const Peoples = () => {
                             <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                                 <a
                                     rel="noopener noreferrer"
-                                    href="#"
+                                    href={employee?.facebook}
                                     title="Email"
                                     className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500"
                                 >
@@ -93,7 +93,7 @@ const Peoples = () => {
                                 </a>
                                 <a
                                     rel="noopener noreferrer"
-                                    href="#"
+                                    href={employee?.linkedin}
                                     title="LinkedIn"
                                     className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500"
                                 >
@@ -101,7 +101,7 @@ const Peoples = () => {
                                 </a>
                                 <a
                                     rel="noopener noreferrer"
-                                    href="#"
+                                    href={employee?.github}
                                     title="GitHub"
                                     className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500"
                                 >
