@@ -1,3 +1,4 @@
+
 import { url } from "inspector";
 import React, { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -114,3 +115,4 @@ const Register = () => {
 };
 
 export default Register;
+

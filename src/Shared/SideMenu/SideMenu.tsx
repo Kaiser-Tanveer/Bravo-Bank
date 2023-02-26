@@ -18,7 +18,10 @@ import { AuthContext } from "../../context/AuthProvider";
 import Spinner from "../../Pages/Spinner/Spinner";
 
 const SideMenu = () => {
-  const navigation = useNavigation();
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const navigation = useNavigation();
 
   const { user, logOut } = useContext(AuthContext);
 
@@ -28,6 +31,7 @@ const SideMenu = () => {
   const [loanOpen, setLoanOpen] = useState(false);
   const [cardTypes, setCardTypes] = useState([]);
   const [loans, setLoans] = useState([]);
+
 
   const {
     isLoading,
@@ -212,6 +216,7 @@ const SideMenu = () => {
                     <div className="flex items-center">
                       <FaHandHoldingUsd className="text-xl pr-2" />
                       <span>Loans</span>
+
                     </div>
                     {loanOpen ? (
                       <HiChevronUp className="text-xl" />
