@@ -4,7 +4,6 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { string } from 'yargs';
 import logo from '../Assets/logo/favicon.png';
-import { AuthContext } from '../context/AuthProvider';
 import banner from '../Assets/Banners/BravoBanner2.png';
 
 type userInput = {
