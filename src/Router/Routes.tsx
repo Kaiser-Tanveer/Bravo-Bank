@@ -27,6 +27,10 @@ export const router = createBrowserRouter([
                 element: <Register />
             },
             {
+                path: "/logIn",
+                element: <Login />
+            },
+            {
                 path: "/accountDetail/:accountType",
                 element: <AccountDetails />,
             },

@@ -50,7 +50,7 @@ const Login = () => {
                     </div>
                     <input type="submit" value='Login' className='w-full border-2 border-sky-500 bg-gradient-to-r from-sky-500 to-pink-500 rounded-md py-2 text-gray-100' />
                 </form>
-                <h2 className='text-gray-500 p-2'>New to Bravo Bank<Link to='/register' className='hover:underline hover:text-sky-500'> Please Register</Link></h2>
+                <h2 className='text-gray-500 p-2'>New to Bravo Bank? Please<Link to='/register' className='hover:underline hover:text-sky-500 ml-1'>Register</Link></h2>
             </section>
         </div>
     )
