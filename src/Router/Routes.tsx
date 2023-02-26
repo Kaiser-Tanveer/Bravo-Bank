@@ -30,6 +30,10 @@ export const router = createBrowserRouter([
         element: <Register />,
       },
       {
+        path: "/logIn",
+        element: <Login />,
+      },
+      {
         path: "/accountDetail/:accountType",
         element: <AccountDetails />,
       },
@@ -42,7 +46,7 @@ export const router = createBrowserRouter([
         element: <LoanDetails />,
       },
       {
-        path: "/contactus",
+        path: "/contactUs",
         element: <ContactUs />,
       },
     ],

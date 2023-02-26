@@ -19,9 +19,7 @@ import Spinner from "../../Pages/Spinner/Spinner";
 
 const SideMenu = () => {
 
-    const { user, logOut } = useContext(AuthContext)
-
-    const navigation = useNavigation();
+  const navigation = useNavigation();
 
   const { user, logOut } = useContext(AuthContext);
 
@@ -83,11 +81,10 @@ const SideMenu = () => {
         )}
       </div>
       <div
-        className={`fixed top-0 bg-gray-100 lg:w-[25%] lg:block py-8 rounded-sm z-40 overflow-y-scroll ${
-          open
-            ? "block -mt-2 fixed w-full h-full duration-700 overflow-y-scroll"
-            : "left-0 bottom-0 top-0 hidden z-40"
-        }`}
+        className={`fixed top-0 bg-gray-100 lg:w-[25%] lg:block py-8 rounded-sm z-40 overflow-y-scroll ${open
+          ? "block -mt-2 fixed w-full h-full duration-700 overflow-y-scroll"
+          : "left-0 bottom-0 top-0 hidden z-40"
+          }`}
       >
         <div className="flex flex-col px-3 text-primary">
           <div className="space-y-3">
@@ -130,21 +127,21 @@ const SideMenu = () => {
                           _id: React.Key | null | undefined;
                           accountType: any;
                           name:
-                            | string
-                            | number
-                            | boolean
-                            | React.ReactElement<
-                                any,
-                                string | React.JSXElementConstructor<any>
-                              >
-                            | React.ReactFragment
-                            | React.ReactPortal
-                            | ((props: {
-                                isActive: boolean;
-                                isPending: boolean;
-                              }) => React.ReactNode)
-                            | null
-                            | undefined;
+                          | string
+                          | number
+                          | boolean
+                          | React.ReactElement<
+                            any,
+                            string | React.JSXElementConstructor<any>
+                          >
+                          | React.ReactFragment
+                          | React.ReactPortal
+                          | ((props: {
+                            isActive: boolean;
+                            isPending: boolean;
+                          }) => React.ReactNode)
+                          | null
+                          | undefined;
                         }) => (
                           <li
                             key={type._id}
@@ -231,21 +228,21 @@ const SideMenu = () => {
                           _id: React.Key | null | undefined;
                           loanType: any;
                           name:
-                            | string
-                            | number
-                            | boolean
-                            | React.ReactElement<
-                                any,
-                                string | React.JSXElementConstructor<any>
-                              >
-                            | React.ReactFragment
-                            | React.ReactPortal
-                            | ((props: {
-                                isActive: boolean;
-                                isPending: boolean;
-                              }) => React.ReactNode)
-                            | null
-                            | undefined;
+                          | string
+                          | number
+                          | boolean
+                          | React.ReactElement<
+                            any,
+                            string | React.JSXElementConstructor<any>
+                          >
+                          | React.ReactFragment
+                          | React.ReactPortal
+                          | ((props: {
+                            isActive: boolean;
+                            isPending: boolean;
+                          }) => React.ReactNode)
+                          | null
+                          | undefined;
                         }) => (
                           <li
                             key={loan._id}
@@ -263,16 +260,37 @@ const SideMenu = () => {
                     </ul>
                   )}
                 </li>
-                {/*  */}
                 <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
                   <NavLink
-                    to="/contactus"
+                    to="/contactUs"
                     className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
                   >
                     <HiChatAlt />
                     <span>Contact Us</span>
                   </NavLink>
                 </li>
+                {
+                  user ?
+                    <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                      <button
+                        onClick={handleLogOut}
+                        className="flex w-full items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                      >
+                        <HiLogout />
+                        <span>Log Out</span>
+                      </button>
+                    </li>
+                    :
+                    <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                      <NavLink
+                        to="/logIn"
+                        className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                      >
+                        <HiLogin />
+                        <span>Login</span>
+                      </NavLink>
+                    </li>
+                }
               </ul>
             </div>
           </div>
