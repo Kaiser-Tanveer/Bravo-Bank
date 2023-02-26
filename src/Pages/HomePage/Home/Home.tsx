@@ -6,6 +6,7 @@ import CardSlider from "../CardsSlider/CardSlider";
 import { useNavigation } from "react-router-dom";
 import Spinner from "../../Spinner/Spinner";
 import TaxCalculation from "../TaxCalculation/TaxCalculation";
+
 const Home = () => {
   const navigation = useNavigation();
 

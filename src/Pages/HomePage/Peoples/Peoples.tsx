@@ -10,11 +10,11 @@ const Peoples = () => {
     const employees = [
         {
             name: "Nazmul Bhuiya",
-            img: "",
+            img: "https://i.ibb.co/RSDfJdL/p.jpg",
             title: "Cash Manager",
-            facebook: "url",
-            linkedin: "url",
-            github: "url",
+            facebook: "https://www.facebook.com/nazmul.nobel.3",
+            linkedin: "https://www.linkedin.com/in/nazmul-bhuyian-mern-stack-developer/",
+            github: "https://github.com/nazmulbhuyian",
         },
         {
             name: "Kaiser Tanveer",
@@ -59,8 +59,10 @@ const Peoples = () => {
                     Who deserve a Thanks
                 </h1>
                 <div className="flex flex-row flex-wrap-reverse justify-center mt-8 group">
-                    {employees.map((employee) => (
-                        <div className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-primary text-gray-100 shadow-lg shadow-gray-700 group-hover:scale-90 hover:!scale-110 duration-500">
+                    {employees.map((employee, i) => (
+                        <div
+                            key={i}
+                            className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-primary text-gray-100 shadow-lg shadow-gray-700 group-hover:scale-90 hover:!scale-110 duration-500">
                             <img
                                 alt="employeeImage"
                                 className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500"
@@ -75,7 +77,7 @@ const Peoples = () => {
                             <div className="flex items-center justify-center p-3 space-x-3 border-t-2">
                                 <a
                                     rel="noopener noreferrer"
-                                    href="#"
+                                    href={employee?.facebook}
                                     title="Email"
                                     className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500"
                                 >
@@ -91,7 +93,7 @@ const Peoples = () => {
                                 </a>
                                 <a
                                     rel="noopener noreferrer"
-                                    href="#"
+                                    href={employee?.linkedin}
                                     title="LinkedIn"
                                     className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500"
                                 >
@@ -99,7 +101,7 @@ const Peoples = () => {
                                 </a>
                                 <a
                                     rel="noopener noreferrer"
-                                    href="#"
+                                    href={employee?.github}
                                     title="GitHub"
                                     className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500"
                                 >

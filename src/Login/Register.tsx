@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { string } from 'yargs';
 import logo from '../Assets/logo/favicon.png';
 import { AuthContext } from '../context/AuthProvider';
+import banner from '../Assets/Banners/BravoBanner2.png';
 
 type userInput = {
     fName: string,
@@ -26,7 +27,7 @@ const Register = () => {
         navigate('/')
     }
     return (
-        <div style={{ backgroundImage: "linear-gradient(to left, rgba(59, 130, 246, 0.75), rgba(117, 19, 93, 0.73)), url(https://i.ibb.co/L8yCcT4/shaking-hands-3096229-1920.jpg)", backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover", }}
+        <div style={{ backgroundImage: `linear-gradient(to left, rgba(59, 130, 246, 0.75), rgba(117, 19, 93, 0.73)), url(${banner})`, backgroundPosition: "center", backgroundRepeat: "no-repeat", backgroundSize: "cover", }}
             className='container py-20'
         >
             <section className='w-5/6 md:w-96 mx-auto relative bg-transparent border border-primary p-6 rounded-lg shadow-xl shadow-gray-900 bg-gradient-to-r from-gray-200 to-gray-100'>
