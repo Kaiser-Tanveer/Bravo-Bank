@@ -1,4 +1,3 @@
-
 import { url } from "inspector";
 import React, { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -9,8 +8,8 @@ import banner from "../Assets/Banners/BravoBanner2.png";
 import { AuthContext } from "../context/AuthProvider";
 
 type userInput = {
-  fName: string;
-  lName: string;
+  fullName: string;
+  // lName: string;
   email: string;
   password: string;
 };
@@ -26,9 +25,30 @@ const Register = () => {
     formState: { errors },
   } = useForm<userInput>();
   const onSubmit: SubmitHandler<userInput> = (data) => {
-    console.log(data);
-    createUser(data.email, data.password);
-    navigate("/");
+    createUser(data.email, data.password)
+      .then((result: any) => {
+        const user = result.user;
+
+        const userData = {
+          name: data.fullName,
+          email: data.email,
+        };
+        // fetching
+        fetch("http://localhost:5000/users", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+          });
+
+        navigate("/");
+      })
+      .catch((err: any) => console.error(err));
   };
   return (
     <div
@@ -51,17 +71,19 @@ const Register = () => {
         </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div>
-            <label>First Name</label>
+            <label>Full Name</label>
             <input
               type="text"
-              {...register("fName", { required: "Name is required" })}
+              {...register("fullName", { required: "Name is required" })}
               className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
             />
-            {errors.fName && (
-              <p className="text-red-700 text-center">{errors.fName.message}</p>
+            {errors.fullName && (
+              <p className="text-red-700 text-center">
+                {errors.fullName.message}
+              </p>
             )}
           </div>
-          <div>
+          {/* <div>
             <label>Last Name</label>
             <input
               type="text"
@@ -71,7 +93,7 @@ const Register = () => {
             {errors.lName && (
               <p className="text-red-700 text-center">{errors.lName.message}</p>
             )}
-          </div>
+          </div> */}
           <div>
             <label>Email</label>
             <input
@@ -115,4 +137,3 @@ const Register = () => {
 };
 
 export default Register;
-
