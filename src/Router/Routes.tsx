@@ -10,6 +10,7 @@ import Register from "../Login/Register";
 import Login from "../Login/Login";
 import Dashboard from "../Layouts/Dashboard";
 import Accounts from "../Pages/Dashboard/userRoutes/Accounts";
+import AccountsReg from "../Pages/AccountsReg/AccountsReg";
 
 export const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ export const router = createBrowserRouter([
       {
         path: "/logIn",
         element: <Login />,
+      },
+      {
+        path: "/openAcc",
+        element: <AccountsReg />,
       },
       {
         path: "/accountDetail/:accountType",

@@ -13,6 +13,7 @@ import {
   HiLogin,
   HiChatAlt,
   HiOutlineClipboardList,
+  HiUser,
 } from "react-icons/hi";
 import { NavLink, useNavigation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
@@ -300,6 +301,22 @@ const SideMenu = () => {
                         <span>Login</span>
                       </NavLink>
                     </li>
+                }
+                {
+                  user &&
+                  <li className="rounded-lg absolute bottom-4 left-0 font-semibold text-sky-500 px-4 w-full duration-700">
+                    <NavLink
+                      to="/logIn"
+                      className="flex items-center justify-between hover:bg-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                    >
+                      <div className="bg-gradient-to-r from-pink-500 to-sky-500 rounded-full p-1">
+                        <img src="" alt="me"
+                          className=""
+                        />
+                      </div>
+                      <span>Profile</span>
+                    </NavLink>
+                  </li>
                 }
               </ul>
             </div>
