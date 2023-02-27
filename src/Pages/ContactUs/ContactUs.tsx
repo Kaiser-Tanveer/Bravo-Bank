@@ -1,41 +1,50 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
 
+
+type userInput = {
+  fullName: string;
+  email: string;
+  password: string;
+  contact: string;
+  message: string;
+};
 const ContactUs = () => {
 
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<userInput>();
+
+  const form = useRef<HTMLFormElement>(null);
+
+  const onSubmit: SubmitHandler<userInput> = (data) => {
+    if (form.current !== null) {
+      emailjs.sendForm('service_g66z9h5', 'template_w4dlvjt', form.current, "WdRjephW6B8q1428b")
+        .then((result: any) => {
+          console.log(result.text);
+          reset()
+        }, (error: any) => {
+          console.log(error.text);
+        });
+    }
+
+  }
 
   return (
     <div className="max-w-lg mx-auto py-12">
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>
-      <form className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label
-              htmlFor="firstName"
-              className="block text-lg font-medium text-gray-700"
-            >
-              First name
-            </label>
-            <input
-              type="text"
-              name="firstName"
-              id="firstName"
-              className="border border-gray-300 rounded-md py-2 px-4 w-full focus:outline-none focus:border-blue-600"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="lastName"
-              className="block text-lg font-medium text-gray-700"
-            >
-              Last name
-            </label>
-            <input
-              type="text"
-              name="lastName"
-              id="lastName"
-              className="border border-gray-300 rounded-md py-2 px-4 w-full focus:outline-none focus:border-blue-600"
-            />
-          </div>
+      <form className="space-y-6" onSubmit={handleSubmit(onSubmit)} ref={form}>
+        <div>
+          <label
+            htmlFor="firstName"
+            className="block text-lg font-medium text-gray-700"
+          >
+            Your name
+          </label>
+          <input
+            {...register("fullName", { required: "First Name is required" })}
+            type="text"
+            className="border border-gray-300 rounded-md py-2 px-4 w-full focus:outline-none focus:border-blue-600"
+          />
         </div>
         <div>
           <label
@@ -45,9 +54,8 @@ const ContactUs = () => {
             Email address
           </label>
           <input
+            {...register("email", { required: "Email is required" })}
             type="email"
-            name="email"
-            id="email"
             className="border border-gray-300 rounded-md py-2 px-4 w-full focus:outline-none focus:border-blue-600"
           />
         </div>
@@ -59,9 +67,8 @@ const ContactUs = () => {
             Contact NUmber
           </label>
           <input
-            type="email"
-            name="email"
-            id="email"
+            {...register("contact", { required: "Contact is required" })}
+            type="text"
             className="border border-gray-300 rounded-md py-2 px-4 w-full focus:outline-none focus:border-blue-600"
           />
         </div>
@@ -73,8 +80,7 @@ const ContactUs = () => {
             Message
           </label>
           <textarea
-            name="message"
-            id="message"
+            {...register("message", { required: "Message is required" })}
             rows={4}
             className="border border-gray-300 rounded-md py-2 px-4 w-full focus:outline-none focus:border-blue-600"
           ></textarea>
