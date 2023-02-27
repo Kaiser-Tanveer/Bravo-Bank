@@ -1,6 +1,8 @@
-import React from "react";
+import React from 'react';
 
 const ContactUs = () => {
+
+
   return (
     <div className="max-w-lg mx-auto py-12">
       <h1 className="text-3xl font-bold mb-6">Contact Us</h1>

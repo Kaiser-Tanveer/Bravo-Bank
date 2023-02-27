@@ -20,11 +20,7 @@ const Register = () => {
 
   const { createUser } = useContext(AuthContext);
 
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm<userInput>();
+  const {register, handleSubmit, formState: { errors }, } = useForm<userInput>();
   const onSubmit: SubmitHandler<userInput> = (data) => {
     console.log(data);
     createUser(data.email, data.password);
