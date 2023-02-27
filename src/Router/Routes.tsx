@@ -8,6 +8,8 @@ import LoanDetails from "../Pages/LoanDetails/LoanDetails";
 import NotFound from "../Pages/NotFound/NotFound";
 import Register from "../Login/Register";
 import Login from "../Login/Login";
+import Dashboard from "../Layouts/Dashboard";
+import Accounts from "../Pages/Dashboard/userRoutes/Accounts";
 
 export const router = createBrowserRouter([
   {
@@ -50,6 +52,20 @@ export const router = createBrowserRouter([
         element: <ContactUs />,
       },
     ],
+  },
+  {
+    path: '/dashboard',
+    element: <Dashboard />,
+    children: [
+      {
+        path: '/dashboard',
+        element: <Accounts />
+      },
+      {
+        path: '/dashboard/acc',
+        element: <Accounts />
+      },
+    ]
   },
 
 ]);
