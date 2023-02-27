@@ -31,7 +31,7 @@ const DashboardMenu = () => {
                         <hr className="w-full border border-sky-500" />
                         <div className="flex-1">
                             <ul className="pt-2 pb-4 space-y-1 text-sm pr-4">
-                                <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                                <li className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
                                     <NavLink
                                         to="/"
                                         className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
@@ -40,7 +40,7 @@ const DashboardMenu = () => {
                                         <span>Home</span>
                                     </NavLink>
                                 </li>
-                                <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                                <li className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
                                     <NavLink
                                         to="/dashboard/acc"
                                         className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
