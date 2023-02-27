@@ -12,6 +12,7 @@ import {
   HiLogout,
   HiLogin,
   HiChatAlt,
+  HiOutlineClipboardList,
 } from "react-icons/hi";
 import { NavLink, useNavigation } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
@@ -269,22 +270,31 @@ const SideMenu = () => {
                     <span>Contact Us</span>
                   </NavLink>
                 </li>
+                <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                  <NavLink
+                    to="/dashboard"
+                    className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                  >
+                    <HiOutlineClipboardList />
+                    <span>Dashboard</span>
+                  </NavLink>
+                </li>
                 {
                   user ?
-                    <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                    <li className="rounded-lg font-semibold text-pink-500 px-4 w-full duration-700">
                       <button
                         onClick={handleLogOut}
-                        className="flex w-full items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                        className="flex w-full items-center hover:bg-pink-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
                       >
                         <HiLogout />
                         <span>Log Out</span>
                       </button>
                     </li>
                     :
-                    <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                    <li className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
                       <NavLink
                         to="/logIn"
-                        className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                        className="flex items-center hover:bg-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
                       >
                         <HiLogin />
                         <span>Login</span>
