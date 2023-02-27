@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { FaUnlock } from 'react-icons/fa';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom';
 
 type detail = {
     Description: string,
@@ -40,6 +42,15 @@ const AccountDetails = () => {
                         </div>
                     </div>)
                 }
+            </div>
+            <div className='w-full p-8 rounded-lg bg-gradient-to-r from-gray-100 to-gray-300'>
+                <Link
+                    to="/openAcc"
+                    className='py-4 px-10 text-xl font-bold text-gray-100 bg-pink-500 rounded-md flex items-center justify-center mx-5 hover:scale-110 duration-700'
+                >
+                    <FaUnlock className='mr-2' />
+                    <span>Open Account</span>
+                </Link>
             </div>
         </div>
     )
