@@ -64,7 +64,7 @@ const Register = () => {
       image
     }
     console.log("test:", info);
-    fetch("http://localhost:5000/users", {
+    fetch("https://bravo-bank-server.vercel.app/users", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
