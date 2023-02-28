@@ -304,16 +304,16 @@ const SideMenu = () => {
                 }
                 {
                   user &&
-                  <li className="rounded-lg absolute bottom-4 left-0 font-semibold text-sky-500 px-4 w-full duration-700">
+                  <li className="absolute bottom-4 left-0 font-semibold text-sky-500 px-4 w-full border-t-2 border-sky-500 duration-700">
                     <NavLink
-                      to="/logIn"
+                      to=""
                       className="flex items-center justify-between hover:bg-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
                     >
                       {
                         user?.photoURL ?
                           <div className="bg-gradient-to-r from-pink-500 to-sky-500 rounded-full p-[3px] border-t border-primary group">
                             <img src={user?.photoURL} alt="me"
-                              className="w-10 h-10 rounded-full bg-gray-100"
+                              className="w-10 h-10 rounded-full bg-gray-100 hover:scale-150 duration-500"
                             />
                           </div>
                           :
@@ -321,7 +321,9 @@ const SideMenu = () => {
                             <HiUser className="text-3xl rounded-full bg-gray-900" />
                           </div>
                       }
-                      <span>Profile</span>
+                      <p>
+                        {user?.displayName}
+                      </p>
                     </NavLink>
                   </li>
                 }
