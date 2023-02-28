@@ -1,51 +1,87 @@
-import { url } from "inspector";
+
 import React, { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { NavLink, useNavigate } from "react-router-dom";
-import { string } from "yargs";
 import logo from "../Assets/logo/favicon.png";
 import banner from "../Assets/Banners/BravoBanner2.png";
 import { AuthContext } from "../context/AuthProvider";
+import { toast } from "react-hot-toast";
 
 type userInput = {
+  img: string;
   fullName: string;
-  // lName: string;
   email: string;
   password: string;
+  photoURL: string;
+  displayName: string;
 };
 
 const Register = () => {
   const navigate = useNavigate();
 
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUser } = useContext(AuthContext);
 
-  const {register, handleSubmit, formState: { errors }, } = useForm<userInput>();
+  const imageHostKey = '14f1e107e329b44a04c4481b2e76451e';
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<userInput>();
   const onSubmit: SubmitHandler<userInput> = (data) => {
     createUser(data.email, data.password)
       .then((result: any) => {
         const user = result.user;
+        const image = data.img[0];
+        const formData = new FormData();
+        formData.append('image', image)
+        const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`
+        fetch(url, {
+          method: 'POST',
+          body: formData
+        })
+          .then(res => res.json())
 
-        const userData = {
-          name: data.fullName,
-          email: data.email,
-        };
-        // fetching
-        fetch("http://localhost:5000/users", {
+          .then(imgData => {
+            if (imgData.status === 200) {
+              const image = imgData.data.url;
+              const userData = {
+                displayName: data.fullName,
+                photoURL: image
+              };
+              updateUser(userData)
+                .then(() => {
+                  console.log(userData);
+                  saveUser(data.fullName, data.email, image)
+                })
+                .catch((err: any) => console.error(err))
+            }
+          })
+          .catch(error => console.error(error))
+      })  
+  };
+
+  const saveUser = (fullName: string, email: string, image: any) => {
+    const info = {
+      fullName,
+      email,
+      image
+    }
+    fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {
-            "content-type": "application/json",
+            "Content-type": "application/json",
           },
-          body: JSON.stringify(userData),
+          body: JSON.stringify(info),
         })
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-          });
-
-        navigate("/");
+      .then(res => res.json())
+      .then(data => {
+        if (data.acknowledged === true) {
+          // setLoginUserEmail(email)
+          toast.success('User Created Successfully')
+          reset()
+          navigate('/')
+        }
       })
       .catch((err: any) => console.error(err));
-  };
+  }
+
   return (
     <div
       style={{
@@ -79,17 +115,6 @@ const Register = () => {
               </p>
             )}
           </div>
-          {/* <div>
-            <label>Last Name</label>
-            <input
-              type="text"
-              {...register("lName", { required: "Name is required" })}
-              className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-            />
-            {errors.lName && (
-              <p className="text-red-700 text-center">{errors.lName.message}</p>
-            )}
-          </div> */}
           <div>
             <label>Email</label>
             <input
@@ -112,6 +137,17 @@ const Register = () => {
               <p className="text-red-700 text-center">
                 {errors.password.message}
               </p>
+            )}
+          </div>
+          <div>
+            <label>Profile Photo</label>
+            <input
+              type="file"
+              {...register("img", { required: "Profile Photo is required" })}
+              className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+            />
+            {errors.img && (
+              <p className="text-red-700 text-center">{errors.img.message}</p>
             )}
           </div>
           <input

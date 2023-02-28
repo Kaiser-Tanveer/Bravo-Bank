@@ -32,7 +32,7 @@ const BannerSlider = () => {
             />
           </p>
           <Link
-            to=''
+            to='/openAcc'
             className="absolute bottom-16 left-6 md:bottom-1/5 md:left-[3%] bg-gradient-to-r from-sky-500 to-gray-100 hover:p-1 rounded-md hover:scale-110 duration-700 group">
             <button
               className="flex hover:justify-between items-center uppercase font-bold text-gray-200 bg-gradient-to-l from-sky-500 to-pink-600 px-6 rounded-md py-3 hover:text-gray-50 border-2 group-hover:border-none border-gray-100 duration-500">
