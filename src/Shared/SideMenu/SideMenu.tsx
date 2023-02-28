@@ -311,9 +311,9 @@ const SideMenu = () => {
                     >
                       {
                         user?.photoURL ?
-                          <div className="bg-gradient-to-r from-pink-500 to-sky-500 rounded-full p-[3px] group">
+                          <div className="bg-gradient-to-r from-pink-500 to-sky-500 rounded-full p-[3px] border-t border-primary group">
                             <img src={user?.photoURL} alt="me"
-                              className="rounded-full bg-gray-100"
+                              className="w-10 h-10 rounded-full bg-gray-100"
                             />
                           </div>
                           :
