@@ -96,7 +96,7 @@ const SideMenu = () => {
             <hr className="w-full border border-sky-500" />
             <div className="flex-1">
               <ul className="pt-2 pb-4 space-y-1 text-sm pr-4">
-                <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                <li onClick={() => setOpen(!open)} className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
                   <NavLink
                     to="/"
                     className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
@@ -146,6 +146,7 @@ const SideMenu = () => {
                           | undefined;
                         }) => (
                           <li
+                            onClick={() => setOpen(!open)}
                             key={type._id}
                             className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  duration-700"
                           >
@@ -190,6 +191,7 @@ const SideMenu = () => {
                           i
                         ) => (
                           <li
+                            onClick={() => setOpen(!open)}
                             key={i}
                             className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  w-full  duration-700"
                           >
@@ -247,6 +249,7 @@ const SideMenu = () => {
                           | undefined;
                         }) => (
                           <li
+                            onClick={() => setOpen(!open)}
                             key={loan._id}
                             className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  w-full  duration-700"
                           >
@@ -262,7 +265,7 @@ const SideMenu = () => {
                     </ul>
                   )}
                 </li>
-                <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                <li onClick={() => setOpen(!open)} className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
                   <NavLink
                     to="/contactUs"
                     className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
@@ -271,7 +274,7 @@ const SideMenu = () => {
                     <span>Contact Us</span>
                   </NavLink>
                 </li>
-                <li className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
+                <li onClick={() => setOpen(!open)} className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
                   <NavLink
                     to="/dashboard"
                     className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
@@ -282,7 +285,9 @@ const SideMenu = () => {
                 </li>
                 {
                   user ?
-                    <li className="rounded-lg font-semibold text-pink-500 px-4 w-full duration-700">
+                    <li
+                      onClick={() => setOpen(!open)}
+                      className="rounded-lg font-semibold text-pink-500 px-4 w-full duration-700">
                       <button
                         onClick={handleLogOut}
                         className="flex w-full items-center hover:bg-pink-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
@@ -292,7 +297,7 @@ const SideMenu = () => {
                       </button>
                     </li>
                     :
-                    <li className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
+                    <li onClick={() => setOpen(!open)} className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
                       <NavLink
                         to="/logIn"
                         className="flex items-center hover:bg-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
@@ -304,7 +309,7 @@ const SideMenu = () => {
                 }
                 {
                   user &&
-                  <li className="absolute bottom-4 left-0 font-semibold text-sky-500 px-4 w-full border-t-2 border-sky-500 duration-700">
+                  <li className="sticky bg-gray-200 bottom-0 left-0 font-semibold text-sky-500 px-4 w-full border-t-2 border-sky-500 duration-700">
                     <NavLink
                       to=""
                       className="flex items-center justify-between hover:bg-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
