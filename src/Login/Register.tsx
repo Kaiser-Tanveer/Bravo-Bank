@@ -54,7 +54,7 @@ const Register = () => {
             }
           })
           .catch(error => console.error(error))
-      })  
+      })
   };
 
   const saveUser = (fullName: string, email: string, image: any) => {
@@ -63,19 +63,18 @@ const Register = () => {
       email,
       image
     }
+    console.log("test:", info);
     fetch("http://localhost:5000/users", {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json",
-          },
-          body: JSON.stringify(info),
-        })
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(info),
+    })
       .then(res => res.json())
       .then(data => {
         if (data.acknowledged === true) {
-          // setLoginUserEmail(email)
-          toast.success('User Created Successfully')
-          reset()
+          toast.success('User Created Successfully');
           navigate('/')
         }
       })
