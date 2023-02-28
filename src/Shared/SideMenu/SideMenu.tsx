@@ -309,11 +309,18 @@ const SideMenu = () => {
                       to="/logIn"
                       className="flex items-center justify-between hover:bg-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
                     >
-                      <div className="bg-gradient-to-r from-pink-500 to-sky-500 rounded-full p-1">
-                        <img src="" alt="me"
-                          className=""
-                        />
-                      </div>
+                      {
+                        user?.photoURL ?
+                          <div className="bg-gradient-to-r from-pink-500 to-sky-500 rounded-full p-[3px] group">
+                            <img src={user?.photoURL} alt="me"
+                              className="rounded-full bg-gray-100"
+                            />
+                          </div>
+                          :
+                          <div className="bg-gradient-to-r from-pink-500 to-sky-500 rounded-full p-[3px]">
+                            <HiUser className="text-3xl rounded-full bg-gray-900" />
+                          </div>
+                      }
                       <span>Profile</span>
                     </NavLink>
                   </li>
