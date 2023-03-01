@@ -311,7 +311,7 @@ const SideMenu = () => {
                   user &&
                   <li className="sticky bg-gray-200 bottom-0 left-0 font-semibold text-sky-500 px-4 w-full border-t-2 border-sky-500 duration-700">
                     <NavLink
-                      to=""
+                      to="/userProfile"
                       className="flex items-center justify-between hover:bg-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
                     >
                       {

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
+import { toast } from 'react-hot-toast';
 
 type taxInput = {
     salary: number

@@ -11,6 +11,7 @@ import Login from "../Login/Login";
 import Dashboard from "../Layouts/Dashboard";
 import Accounts from "../Pages/Dashboard/userRoutes/Accounts";
 import AccountsReg from "../Pages/AccountsReg/AccountsReg";
+import UserProfile from "../Pages/UserProfile/UserProfile";
 
 export const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ export const router = createBrowserRouter([
         path: "/contactUs",
         element: <ContactUs />,
       },
+      {
+        path: "/userProfile",
+        element: <UserProfile />,
+      },
     ],
   },
   {
@@ -66,10 +71,10 @@ export const router = createBrowserRouter([
         path: '/dashboard',
         element: <Accounts />
       },
-      {
-        path: '/dashboard/acc',
-        element: <Accounts />
-      },
+      // {
+      //   path: '/dashboard/acc',
+      //   element: <Accounts />
+      // },
     ]
   },
 
