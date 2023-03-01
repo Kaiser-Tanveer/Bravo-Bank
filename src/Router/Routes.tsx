@@ -12,6 +12,9 @@ import Dashboard from "../Layouts/Dashboard";
 import Accounts from "../Pages/Dashboard/userRoutes/Accounts";
 import UserProfile from "../Pages/UserProfile/UserProfile";
 import AccountsReg from "../Pages/AllRequests/AccountsReg/AccountsReg";
+import MyAccounts from "../Pages/UserProfile/MyAccounts/MyAccounts";
+import MyCards from "../Pages/UserProfile/MyCards/MyCards";
+import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
 
 export const router = createBrowserRouter([
   {
@@ -60,6 +63,18 @@ export const router = createBrowserRouter([
       {
         path: "/userProfile",
         element: <UserProfile />,
+      },
+      {
+        path: "/myAccounts",
+        element: <MyAccounts />,
+      },
+      {
+        path: "/myCards",
+        element: <MyCards />,
+      },
+      {
+        path: "/myLoans",
+        element: <MyLoans />,
       },
     ],
   },
