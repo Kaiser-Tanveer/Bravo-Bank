@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Student Account"
+    },
+    {
+        "name": "Savings Account"
+    },
+    {
+        "name": "Current Account"
+    },
+    {
+        "name": "Fixed Deposit Account"
+    },
+    {
+        "name": "Debit Card"
+    },
+    {
+        "name": "Credit Card"
+    },
+    {
+        "name": "Personal Loan"
+    },
+    {
+        "name": "Home Loan"
+    },
+    {
+        "name": "Student Loan"
+    },
+    {
+        "name": "Car Loan"
+    }
+]
