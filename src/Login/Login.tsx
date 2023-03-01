@@ -19,7 +19,7 @@ const Login = () => {
     const onSubmit: SubmitHandler<userInput> = (data) => {
         console.log(data);
         signIn(data.email, data.password)
-        navigate('/')
+        navigate('/');
     }
 
     return (

@@ -8,6 +8,7 @@ import Spinner from "../../Spinner/Spinner";
 import Planning from "../Planning/Planning";
 import Security from "../Security/Security";
 // import TaxCalculation from "../TaxCalculation/TaxCalculation";
+import TaxCalculation from "../TaxCalculation/TaxCalculation";
 
 const Home = () => {
   const navigation = useNavigation();
@@ -19,7 +20,7 @@ const Home = () => {
     <div className="bg-gradient-to-tl from-gray-300 to-gray-100">
       <BannerSlider />
       <CardSlider />
-      {/* <TaxCalculation /> */}
+      <TaxCalculation />
       <WhatsNew />
       <Planning />
       <Security />
