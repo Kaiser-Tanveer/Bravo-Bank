@@ -10,8 +10,8 @@ import Register from "../Login/Register";
 import Login from "../Login/Login";
 import Dashboard from "../Layouts/Dashboard";
 import Accounts from "../Pages/Dashboard/userRoutes/Accounts";
-import AccountsReg from "../Pages/AccountsReg/AccountsReg";
 import UserProfile from "../Pages/UserProfile/UserProfile";
+import AccountsReg from "../Pages/AllRequests/AccountsReg/AccountsReg";
 
 export const router = createBrowserRouter([
   {

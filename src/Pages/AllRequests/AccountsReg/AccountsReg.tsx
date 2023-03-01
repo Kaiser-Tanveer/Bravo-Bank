@@ -39,7 +39,8 @@ const AccountsReg = () => {
                         user: data.fName + " " + data.lName,
                         email: data.email,
                         phone: data.tel,
-                        img: profilePhoto
+                        img: profilePhoto,
+                        status: "pending",
                     }
 
                     fetch("http://localhost:5000/requestedUsers", {
@@ -70,7 +71,7 @@ const AccountsReg = () => {
         >
             <section className="w-5/6 md:w-[500px] mx-auto relative bg-transparent p-6 rounded-lg shadow-xl shadow-gray-900 bg-gradient-to-r from-gray-200 to-gray-100">
                 <h2 className="text-4xl font-bold text-center pb-6 text-gray-700 underline">
-                    Your Information
+                    Request Account
                 </h2>
                 <form
                     onSubmit={handleSubmit(onSubmit)}
@@ -79,11 +80,12 @@ const AccountsReg = () => {
                         <label>Account Types</label>
                         <select
                             {...register("role", { required: "Please select the Account Type" })}
+                            onChange={(e) => console.log(e.target.value)}
                             className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500">
                             <option value="student">Students Account</option>
-                            <option value="student">Savings Account</option>
-                            <option value="student">Current Account</option>
-                            <option value="student">Fix Deposit Account</option>
+                            <option value="savings">Savings Account</option>
+                            <option value="current">Current Account</option>
+                            <option value="fixDeposit">Fix Deposit Account</option>
                         </select>
                         {errors.fName && (
                             <p className="text-red-700 text-center">

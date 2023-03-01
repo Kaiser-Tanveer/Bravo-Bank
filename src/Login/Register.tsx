@@ -63,7 +63,6 @@ const Register = () => {
       email,
       image
     }
-    console.log("test:", info);
     fetch("https://bravo-bank-server.vercel.app/users", {
       method: "POST",
       headers: {
@@ -73,7 +72,8 @@ const Register = () => {
     })
       .then(res => res.json())
       .then(data => {
-        if (data.acknowledged === true) {
+        console.log(data);
+        if (data.acknowledged) {
           toast.success('User Created Successfully');
           navigate('/')
         }
