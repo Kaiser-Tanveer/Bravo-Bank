@@ -6,12 +6,15 @@ import CardSlider from "../CardsSlider/CardSlider";
 import { useNavigation } from "react-router-dom";
 import Spinner from "../../Spinner/Spinner";
 import TaxCalculation from "../TaxCalculation/TaxCalculation";
+import Planning from "../Planning/Planning";
+import Security from "../Security/Security";
+import Education from "../Education/Education";
 
 const Home = () => {
   const navigation = useNavigation();
 
   if (navigation.state === "loading") {
-    return <Spinner />
+    return <Spinner />;
   }
   return (
     <div className="bg-gradient-to-tl from-gray-300 to-gray-100">
@@ -19,6 +22,9 @@ const Home = () => {
       <CardSlider />
       <TaxCalculation />
       <WhatsNew />
+      <Planning />
+      <Security />
+      <Education />
       <Peoples />
     </div>
   );
