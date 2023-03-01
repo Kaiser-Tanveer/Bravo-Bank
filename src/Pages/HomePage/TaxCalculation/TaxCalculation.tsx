@@ -7,7 +7,6 @@ type taxInput = {
 }
 
 const TaxCalculation = () => {
-
     const { register, handleSubmit, formState: { errors }, reset } = useForm<taxInput>();
 
     const [result, setResult] = useState(0)
@@ -45,7 +44,7 @@ const TaxCalculation = () => {
                 <div>
                     <input
                         {...register("salary", { required: "Salary is required" })}
-                        className='rounded-lg w-full text-xl p-4 focus:ring-pink-500 focus:outline-none focus:border-sky-500 border-2 ' type="number" placeholder='Enter Your Salary' />
+                        className='rounded-lg w-full text-xl p-4 focus:ring-pink-500 focus:outline-none focus:border-sky-500 border-2 ' type="number" placeholder='Enter Your Salary (more than 1 Lac)' />
                     {errors.salary && (
                         <p className="text-red-700 text-center">
                             {errors.salary.message}

@@ -1,15 +1,19 @@
 import React from 'react';
 import { SubmitHandler, useForm } from "react-hook-form";
+import { toast } from "react-hot-toast";
 
 // type of Account Registration data 
 type formInput = {
+    role: string,
     fName: string,
     lName: string,
     email: string,
-    pp: string,
+    tel: number;
+    img: string,
 }
 
 const AccountsReg = () => {
+    const imageHostKey = '14f1e107e329b44a04c4481b2e76451e';
     const {
         register,
         handleSubmit,
@@ -17,8 +21,43 @@ const AccountsReg = () => {
     } = useForm<formInput>();
 
     const onSubmit: SubmitHandler<formInput> = (data) => {
-        console.log(data);
-    }
+        const image = data.img[0];
+        const formData = new FormData();
+        formData.append('image', image)
+        const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`
+        fetch(url, {
+            method: 'POST',
+            body: formData
+        })
+            .then(res => res.json())
+            .then(imgData => {
+                if (imgData.success) {
+                    const profilePhoto = imgData.data.url;
+
+                    const regData = {
+                        role: data.role,
+                        user: data.fName + " " + data.lName,
+                        email: data.email,
+                        phone: data.tel,
+                        img: profilePhoto
+                    }
+
+                    fetch("http://localhost:5000/requestedUsers", {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(regData)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.acknowledged) {
+                                toast.success('Requested for your Account Successfully!!');
+                            };
+                        });
+                };
+            });
+    };
     return (
         <div
             style={{
@@ -30,12 +69,28 @@ const AccountsReg = () => {
             className='container mx-auto py-20'
         >
             <section className="w-5/6 md:w-[500px] mx-auto relative bg-transparent p-6 rounded-lg shadow-xl shadow-gray-900 bg-gradient-to-r from-gray-200 to-gray-100">
-                <h2 className="text-4xl font-bold text-center text-gray-700 underline">
+                <h2 className="text-4xl font-bold text-center pb-6 text-gray-700 underline">
                     Your Information
                 </h2>
                 <form
                     onSubmit={handleSubmit(onSubmit)}
                 >
+                    <div>
+                        <label>Account Types</label>
+                        <select
+                            {...register("role", { required: "Please select the Account Type" })}
+                            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500">
+                            <option value="student">Students Account</option>
+                            <option value="student">Savings Account</option>
+                            <option value="student">Current Account</option>
+                            <option value="student">Fix Deposit Account</option>
+                        </select>
+                        {errors.fName && (
+                            <p className="text-red-700 text-center">
+                                {errors.fName.message}
+                            </p>
+                        )}
+                    </div>
                     <div>
                         <label>First Name</label>
                         <input
@@ -72,14 +127,26 @@ const AccountsReg = () => {
                         )}
                     </div>
                     <div>
+                        <label>Phone</label>
+                        <input
+                            type="tel"
+                            {...register("tel", { required: "Phone No. is required" })}
+                            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                            defaultValue="+880"
+                        />
+                        {errors.tel && (
+                            <p className="text-red-700 text-center">{errors.tel.message}</p>
+                        )}
+                    </div>
+                    <div>
                         <label>Profile Photo</label>
                         <input
                             type="file"
-                            {...register("pp", { required: "Profile Photo is required" })}
+                            {...register("img", { required: "Profile Photo is required" })}
                             className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                         />
-                        {errors.pp && (
-                            <p className="text-red-700 text-center">{errors.pp.message}</p>
+                        {errors.img && (
+                            <p className="text-red-700 text-center">{errors.img.message}</p>
                         )}
                     </div>
                     <input
