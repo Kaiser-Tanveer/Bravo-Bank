@@ -19,7 +19,6 @@ const Navbar = () => {
             <div className="container flex justify-end py-2 items-center mx-auto">
                 <img src={logo} alt="logo" className='px-4 h-10 bg-gray-200 shadow-md shadow-gray-700 rounded-md' />
             </div>
-
         </header>
     );
 };

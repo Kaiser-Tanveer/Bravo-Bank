@@ -24,14 +24,14 @@ const Peoples = () => {
             linkedin: "url",
             github: "url",
         },
-        {
-            name: "Golam Morshed",
-            img: "",
-            title: "Distributor",
-            facebook: "url",
-            linkedin: "url",
-            github: "url",
-        },
+        // {
+        //     name: "Golam Morshed",
+        //     img: "",
+        //     title: "Distributor",
+        //     facebook: "url",
+        //     linkedin: "url",
+        //     github: "url",
+        // },
         {
             name: "Galib Hossain",
             img: "https://i.ibb.co/3CLgbVc/1670427282163.png",
@@ -40,14 +40,14 @@ const Peoples = () => {
             linkedin: "url",
             github: "url",
         },
-        {
-            name: "Safwan Bin Ridwan",
-            img: "",
-            title: "Hiring Manager",
-            facebook: "url",
-            linkedin: "url",
-            github: "url",
-        },
+        // {
+        //     name: "Safwan Bin Ridwan",
+        //     img: "",
+        //     title: "Hiring Manager",
+        //     facebook: "url",
+        //     linkedin: "url",
+        //     github: "url",
+        // },
     ];
     return (
         <section className="py-6 bg-gray-100 text-gray-800">
