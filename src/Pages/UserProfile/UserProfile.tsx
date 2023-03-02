@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
   return (
-    <section>
+    <section className='min-h-screen'>
       {
         user ?
           <header className='container mx-auto mb-10 px-6 bg-gradient-to-r from-pink-500 to-sky-500 flex justify-between items-center border-b-2 border-sky-500'>
@@ -24,7 +24,7 @@ const UserProfile = () => {
           :
           <h2 className='text-4xl font-semibold text-pink-500 text-center py-10'>Please, Login to view your profile!!</h2>
       }
-      <main className='grid md:grid-cols-3 gap-6 group'>
+      <main className='w-5/6 mx-auto md:w-full grid md:grid-cols-3 gap-6 group'>
         <Link to="/myAccounts" className='border-4 border-gray-700 rounded-lg hover:border-sky-500 group-hover:scale-90 hover:!scale-100 duration-500'>
           <HiUserAdd className='text-8xl text-gray-700 mx-auto group-hover:text-sky-500 duration-500' />
           <h2 className='text-3xl font-extrabold text-center text-gray-700 group-hover:text-sky-500 duration-500'>Your Accounts</h2>
