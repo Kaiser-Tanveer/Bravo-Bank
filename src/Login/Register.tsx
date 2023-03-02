@@ -23,7 +23,7 @@ const Register = () => {
 
   const imageHostKey = '14f1e107e329b44a04c4481b2e76451e';
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm<userInput>();
+  const { register, handleSubmit, formState: { errors } } = useForm<userInput>();
   const onSubmit: SubmitHandler<userInput> = (data) => {
     createUser(data.email, data.password)
       .then((result: any) => {

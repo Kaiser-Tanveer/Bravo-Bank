@@ -7,26 +7,26 @@ const Accounts = () => {
     const { isLoading, refetch, data: usersInfo = [] } = useQuery({
         queryKey: ['/requestedUsers'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/requestedUsers')
+            const res = await fetch('https://bravo-bank-server.vercel.app/requestedUsers')
             const data = await res.json()
             return data
         }
     })
 
-    const handleDelete = (id: string) =>{
-            fetch(`http://localhost:5000/requestedUsersDelete/${id}`, {
-                method: 'DELETE',
-                headers: {
-    
+    const handleDelete = (id: string) => {
+        fetch(`https://bravo-bank-server.vercel.app/requestedUsersDelete/${id}`, {
+            method: 'DELETE',
+            headers: {
+
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    toast.success('User Delete Successfully')
+                    refetch()
                 }
             })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount) {
-                        toast.success('User Delete Successfully')
-                        refetch()
-                    }
-                })
     }
 
     return (
