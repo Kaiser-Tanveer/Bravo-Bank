@@ -15,6 +15,7 @@ import AccountsReg from "../Pages/AllRequests/AccountsReg/AccountsReg";
 import MyAccounts from "../Pages/UserProfile/MyAccounts/MyAccounts";
 import MyCards from "../Pages/UserProfile/MyCards/MyCards";
 import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
+import SingleaccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
 
 export const router = createBrowserRouter([
   {
@@ -76,21 +77,25 @@ export const router = createBrowserRouter([
         path: "/myLoans",
         element: <MyLoans />,
       },
+
+      {
+        path: "/singleDetails/:accountid",
+        element: <SingleaccountDetails />,
+      },
     ],
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     element: <Dashboard />,
     children: [
       {
-        path: '/dashboard',
-        element: <Accounts />
+        path: "/dashboard",
+        element: <Accounts />,
       },
       // {
       //   path: '/dashboard/acc',
       //   element: <Accounts />
       // },
-    ]
+    ],
   },
-
 ]);
