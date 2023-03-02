@@ -23,7 +23,6 @@ const MyAccounts = () => {
     },
   });
 
-  console.log(accounts);
 
   return (
     <section className="py-10 lg:py-0">
