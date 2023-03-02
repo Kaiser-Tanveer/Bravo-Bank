@@ -59,13 +59,12 @@ const AccountsReg = () => {
                         permanentArea: data.permanentArea,
                         nid: data.nid,
                         nomineeName: data.nomineeName,
-                        nomineeId: data.nomineeName,
+                        nomineeId: data.nomineeId,
                         nomineeRelation: data.nomineeRelation,
                         gender: data.gender,
                         birthDate: data.birthDate,
+                        amount: 0
                     };
-
-                    console.log(regData);
 
                     fetch("http://localhost:5000/requestedUsers", {
                         method: "POST",
@@ -194,8 +193,8 @@ const AccountsReg = () => {
                             onChange={(e) => console.log(e.target.value)}
                             className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                         >
-                            <option value="student">Male</option>
-                            <option value="savings">Female</option>
+                            <option>Male</option>
+                            <option>Female</option>
                         </select>
                         {errors.gender && (
                             <p className="text-red-700 text-center">
@@ -312,13 +311,13 @@ const AccountsReg = () => {
                                 onChange={(e) => console.log(e.target.value)}
                                 className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                             >
-                                <option value="student">Father</option>
-                                <option value="savings">Mother</option>
-                                <option value="current">Child</option>
-                                <option value="current">Brother</option>
-                                <option value="current">Partner</option>
-                                <option value="current">GrandChild</option>
-                                <option value="fixDeposit">Grandparents</option>
+                                <option>Father</option>
+                                <option>Mother</option>
+                                <option>Child</option>
+                                <option>Brother</option>
+                                <option>Partner</option>
+                                <option>GrandChild</option>
+                                <option>Grandparents</option>
                             </select>
                             {errors.nomineeRelation && (
                                 <p className="text-red-700 text-center">

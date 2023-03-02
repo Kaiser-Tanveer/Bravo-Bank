@@ -1,19 +1,23 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
+import { AuthContext } from '../../../context/AuthProvider';
 
 const MyAccounts = () => {
+
+    const {user} = useContext(AuthContext)
+
     // Loading Accounts data from usersAcc collection 
     const {
         isLoading,
         refetch,
         data: accounts = [],
     } = useQuery({
-        queryKey: ["/userAccounts"],
+        queryKey: ["/userAccount", user?.email],
         queryFn: async () => {
             const res = await fetch(
-                "http://localhost:5000/userAccounts"
+                `http://localhost:5000/userAccount?email=${user?.email}`
             );
             const data = await res.json();
             return data;
@@ -25,7 +29,7 @@ const MyAccounts = () => {
     return (
         <section className='py-10 lg:py-0'>
             {
-                (accounts.length > 1) ?
+                (accounts.length >= 0) ?
                     <div>
                         <h1 className='text-4xl text-center font-bold text-transparent bg-gradient-to-r bg-clip-text from-pink-500 bg-gray-100 to-sky-500 py-10'>My Accounts {accounts.length}</h1>
                         <main className=''>
