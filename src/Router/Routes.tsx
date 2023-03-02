@@ -16,6 +16,9 @@ import MyAccounts from "../Pages/UserProfile/MyAccounts/MyAccounts";
 import MyCards from "../Pages/UserProfile/MyCards/MyCards";
 import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
 import SingleaccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
+import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import CardRequest from "../Pages/Dashboard/CardRequest/CardRequest";
 
 export const router = createBrowserRouter([
   {
@@ -92,10 +95,18 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: <Accounts />,
       },
-      // {
-      //   path: '/dashboard/acc',
-      //   element: <Accounts />
-      // },
+      {
+        path: "/dashboard/singleAccDetails/:id",
+        element: <SingleAccDetails />,
+      },
+      {
+        path: "/dashboard/allUsers",
+        element: <AllUsers />,
+      },
+      {
+        path: "/dashboard/cardRequest",
+        element: <CardRequest />,
+      },
     ],
   },
 ]);

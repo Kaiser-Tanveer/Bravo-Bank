@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { toast } from 'react-hot-toast';
+import { NavLink } from 'react-router-dom';
 
 const Accounts = () => {
 
@@ -12,7 +13,6 @@ const Accounts = () => {
             return data
         }
     })
-    console.log(usersInfo);
 
     const handleDelete = (id: string) => {
         fetch(`http://localhost:5000/requestedUsersDelete/${id}`, {
@@ -25,6 +25,22 @@ const Accounts = () => {
             .then(data => {
                 if (data.deletedCount) {
                     toast.success('User Delete Successfully')
+                    refetch()
+                }
+            })
+    }
+
+    const handStatus = (id: string) => {
+        fetch(`http://localhost:5000/userStatusUpdate/${id}`, {
+            method: 'PUT',
+            headers: {
+
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('Status updated successfully')
                     refetch()
                 }
             })
@@ -59,8 +75,21 @@ const Accounts = () => {
                                     <td className="p-3">{user?.user}</td>
                                     <td className="p-3">{user?.email}</td>
                                     <td className="p-3">{user?.role}</td>
-                                    <td className="p-3"><button className="btn bg-orange-500 text-white p-2">{user?.status}</button></td>
-                                    <td className="p-3"><button className="btn bg-orange-500 text-white p-2">Details</button></td>
+                                    <td className="p-3">
+                                        {
+                                            user?.status === 'pending' ?
+                                            <button onClick={() => handStatus(user?._id)} className="btn bg-orange-500 text-white p-2">{user?.status}</button>
+                                            :
+                                            <button className="p-3">{user?.status}</button>
+                                        }
+                                    </td>
+                                    <td className="p-3">
+                                        <NavLink to={`/dashboard/singleAccDetails/${user?._id}`}>
+                                            <button className="text-sky-500 border-2 border-sky-500 bg-pink-500 hover:scale-110 rounded-md px-1 duration-500">
+                                                Details
+                                            </button>
+                                        </NavLink>
+                                    </td>
                                     <td><button onClick={() => handleDelete(user?._id)} className="btn bg-orange-500 p-2 text-white">Delete</button></td>
                                 </tr>)
                             }
