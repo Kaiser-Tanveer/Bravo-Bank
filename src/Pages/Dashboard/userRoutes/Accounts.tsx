@@ -5,16 +5,17 @@ import { toast } from 'react-hot-toast';
 const Accounts = () => {
 
     const { isLoading, refetch, data: usersInfo = [] } = useQuery({
-        queryKey: ['/requestedUsers'],
+        queryKey: ['/userAccounts'],
         queryFn: async () => {
-            const res = await fetch('https://bravo-bank-server.vercel.app/requestedUsers')
+            const res = await fetch('http://localhost:5000/userAccounts')
             const data = await res.json()
             return data
         }
     })
+    console.log(usersInfo);
 
     const handleDelete = (id: string) => {
-        fetch(`https://bravo-bank-server.vercel.app/requestedUsersDelete/${id}`, {
+        fetch(`http://localhost:5000/requestedUsersDelete/${id}`, {
             method: 'DELETE',
             headers: {
 
@@ -43,6 +44,7 @@ const Accounts = () => {
                                 <th className="p-3">User E-mail</th>
                                 <th className="p-3">Account Type</th>
                                 <th className="p-3">Status</th>
+                                <th className="p-3">Details</th>
                                 <th className="p-3">Delete</th>
                             </tr>
                         </thead>
@@ -57,8 +59,9 @@ const Accounts = () => {
                                     <td className="p-3">{user?.user}</td>
                                     <td className="p-3">{user?.email}</td>
                                     <td className="p-3">{user?.role}</td>
-                                    <td className="p-3"><button className="btn bg-orange-500 text-white">{user?.status}</button></td>
-                                    <td><button onClick={() => handleDelete(user?._id)} className="btn bg-orange-500 p-3 text-white">Delete</button></td>
+                                    <td className="p-3"><button className="btn bg-orange-500 text-white p-2">{user?.status}</button></td>
+                                    <td className="p-3"><button className="btn bg-orange-500 text-white p-2">Details</button></td>
+                                    <td><button onClick={() => handleDelete(user?._id)} className="btn bg-orange-500 p-2 text-white">Delete</button></td>
                                 </tr>)
                             }
                         </tbody>
