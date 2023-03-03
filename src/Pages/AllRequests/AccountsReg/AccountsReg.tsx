@@ -55,6 +55,7 @@ const AccountsReg = () => {
                         phone: data.tel,
                         img: profilePhoto,
                         status: "pending",
+                        card: "blank",
                         residentialArea: data.residentialArea,
                         permanentArea: data.permanentArea,
                         nid: data.nid,
