@@ -19,7 +19,8 @@ import SingleaccountDetails from "../Pages/UserProfile/SingleaccountDetails/Sing
 import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import CardRequest from "../Pages/Dashboard/CardRequest/CardRequest";
-
+import Terms from "../Shared/Footer/Terms/Terms";
+import Faq from "../Shared/Footer/Faq/Faq";
 
 export const router = createBrowserRouter([
   {
@@ -90,6 +91,14 @@ export const router = createBrowserRouter([
       {
         path: "/cardsReq",
         element: <CardRequest />,
+      },
+      {
+        path: "/termsconditions",
+        element: <Terms />,
+      },
+      {
+        path: "/faq",
+        element: <Faq />,
       },
     ],
   },
