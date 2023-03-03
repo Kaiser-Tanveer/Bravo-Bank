@@ -23,15 +23,16 @@ const MyCards = () => {
     console.log(cards);
 
     return (
-        <div>
-            <h1 className='text-4xl text-center py-10'>My Cards Shows here..</h1>
-
+        <div className=''>
             {
-                cards?.map((card: { cards: string, cardStatus: string }) =>
+                cards?.map((card: { cards: string, cardStatus: string, user: string }) =>
                     <div>
                         {
                             card?.cardStatus === 'success' ?
-                                <img src={card?.cards} alt="" />
+                                <div className='py-20'>
+                                    <img src={card?.cards} alt="" className='w-96 mx-auto' />
+                                    <h5 className='text-center text-2xl -mt-10 text-gray-100 font-semibold tracking-widest uppercase'>{card.user}</h5>
+                                </div>
                                 :
                                 ''
                         }

@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { AuthContext } from '../../../context/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 
 type cardInfo = {
@@ -15,6 +15,7 @@ type cardInfo = {
 }
 
 const CardsRequest = () => {
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
 
     const { id } = useParams()
@@ -56,7 +57,8 @@ const CardsRequest = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    toast.success("Cards Request Done")
+                    toast.success("Requested Successfully!!!");
+                    navigate('/myAccounts')
                 }
             })
     }
