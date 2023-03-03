@@ -21,7 +21,7 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import LoanRequest from "../Pages/UserProfile/LoanRequest/LoanRequest";
 import UserLoanReq from "../Pages/Dashboard/LoanRequest/UserLoanReq";
 import CardRequest from "../Pages/AllRequests/CardsRequest/CardsRequest";
-import UserCardReq from "../Pages/Dashboard/CardRequest/UserCardReq";
+import UserCardReq from "../Pages/Dashboard/UserCardRequest/UserCardReq";
 
 
 export const router = createBrowserRouter([
