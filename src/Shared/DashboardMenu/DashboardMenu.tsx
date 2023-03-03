@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HiMenu, HiOutlineHome, HiOutlineX, HiUserAdd } from 'react-icons/hi';
+import { HiMenu, HiOutlineHome, HiOutlineX, HiUserAdd, HiCreditCard } from 'react-icons/hi';
 import { NavLink } from 'react-router-dom';
 
 const DashboardMenu = () => {
@@ -47,6 +47,24 @@ const DashboardMenu = () => {
                                     >
                                         <HiUserAdd />
                                         <span>Accounts Info</span>
+                                    </NavLink>
+                                </li>
+                                <li className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
+                                    <NavLink
+                                        to="/dashboard/cardRequest"
+                                        className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                                    >
+                                        <HiCreditCard />
+                                        <span>Card Request</span>
+                                    </NavLink>
+                                </li>
+                                <li className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
+                                    <NavLink
+                                        to="/dashboard/allUsers"
+                                        className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                                    >
+                                        <HiUserAdd />
+                                        <span>All Users</span>
                                     </NavLink>
                                 </li>
                             </ul>

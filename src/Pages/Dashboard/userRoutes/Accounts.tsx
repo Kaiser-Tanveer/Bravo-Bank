@@ -1,20 +1,21 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { toast } from 'react-hot-toast';
+import { NavLink } from 'react-router-dom';
 
 const Accounts = () => {
 
     const { isLoading, refetch, data: usersInfo = [] } = useQuery({
-        queryKey: ['/requestedUsers'],
+        queryKey: ['/userAccounts'],
         queryFn: async () => {
-            const res = await fetch('https://bravo-bank-server.vercel.app/requestedUsers')
+            const res = await fetch('http://localhost:5000/userAccounts')
             const data = await res.json()
             return data
         }
     })
 
     const handleDelete = (id: string) => {
-        fetch(`https://bravo-bank-server.vercel.app/requestedUsersDelete/${id}`, {
+        fetch(`http://localhost:5000/requestedUsersDelete/${id}`, {
             method: 'DELETE',
             headers: {
 
@@ -24,6 +25,22 @@ const Accounts = () => {
             .then(data => {
                 if (data.deletedCount) {
                     toast.success('User Delete Successfully')
+                    refetch()
+                }
+            })
+    }
+
+    const handStatus = (id: string) => {
+        fetch(`http://localhost:5000/userStatusUpdate/${id}`, {
+            method: 'PUT',
+            headers: {
+
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('Status updated successfully')
                     refetch()
                 }
             })
@@ -43,6 +60,7 @@ const Accounts = () => {
                                 <th className="p-3">User E-mail</th>
                                 <th className="p-3">Account Type</th>
                                 <th className="p-3">Status</th>
+                                <th className="p-3">Details</th>
                                 <th className="p-3">Delete</th>
                             </tr>
                         </thead>
@@ -57,8 +75,22 @@ const Accounts = () => {
                                     <td className="p-3">{user?.user}</td>
                                     <td className="p-3">{user?.email}</td>
                                     <td className="p-3">{user?.role}</td>
-                                    <td className="p-3"><button className="btn bg-orange-500 text-white">{user?.status}</button></td>
-                                    <td><button onClick={() => handleDelete(user?._id)} className="btn bg-orange-500 p-3 text-white">Delete</button></td>
+                                    <td className="p-3">
+                                        {
+                                            user?.status === 'pending' ?
+                                            <button onClick={() => handStatus(user?._id)} className="btn bg-orange-500 text-white p-2">{user?.status}</button>
+                                            :
+                                            <button className="p-3">{user?.status}</button>
+                                        }
+                                    </td>
+                                    <td className="p-3">
+                                        <NavLink to={`/dashboard/singleAccDetails/${user?._id}`}>
+                                            <button className="text-sky-500 border-2 border-sky-500 bg-pink-500 hover:scale-110 rounded-md px-1 duration-500">
+                                                Details
+                                            </button>
+                                        </NavLink>
+                                    </td>
+                                    <td><button onClick={() => handleDelete(user?._id)} className="btn bg-orange-500 p-2 text-white">Delete</button></td>
                                 </tr>)
                             }
                         </tbody>

@@ -8,9 +8,10 @@ const UserProfile = () => {
   const { user } = useContext(AuthContext);
   return (
     <section className='min-h-screen mt-14 lg:pt-0'>
+
       {
         user ?
-          <header className='container mx-auto mb-10 px-6 bg-gradient-to-r from-pink-500 to-sky-500 flex justify-between items-center border-b-2 border-sky-500'>
+          <header className='container mx-auto mb-10 px-6 bg-gradient-to-r from-pink-500 to-sky-500 flex flex-col md:flex-row justify-between items-center border-b-2 border-sky-500'>
             <div className='py-3'>
               <img src={user?.photoURL} alt="ProfilePhoto" className='w-24 h-24 rounded-full border-2 border-sky-500 mx-auto p-1' />
               <h5 className='font-bold text-xl text-gray-100'>{user?.displayName}</h5>
