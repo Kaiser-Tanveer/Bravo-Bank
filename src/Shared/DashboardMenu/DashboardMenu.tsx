@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FaHandHoldingUsd } from 'react-icons/fa';
 import { HiMenu, HiOutlineHome, HiOutlineX, HiUserAdd, HiCreditCard } from 'react-icons/hi';
 import { NavLink } from 'react-router-dom';
 
@@ -56,6 +57,15 @@ const DashboardMenu = () => {
                                     >
                                         <HiCreditCard />
                                         <span>Card Request</span>
+                                    </NavLink>
+                                </li>
+                                <li className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
+                                    <NavLink
+                                        to="/dashboard/loanRequest"
+                                        className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                                    >
+                                        <FaHandHoldingUsd />
+                                        <span>Loan Request</span>
                                     </NavLink>
                                 </li>
                                 <li className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">

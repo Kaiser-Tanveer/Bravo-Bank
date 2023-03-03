@@ -49,6 +49,7 @@ const MyAccounts = () => {
 
                       <Th>Account Status</Th>
                       {account.status === "success" && <Th>Card Status</Th>}
+                      {account.status === "success" && <Th>Loan Status</Th>}
                     </Tr>
                   </Thead>
                   <Tbody>
@@ -75,6 +76,15 @@ const MyAccounts = () => {
                           <button className="text-gray-700 border-2 border-gray-700 font-extrabold bg-sky-500 hover:scale-110 rounded-md px-1 duration-500">
                             Request
                           </button>
+                        </Td>
+                      )}
+                      {account.status === "success" && (
+                        <Td>
+                          <NavLink to={`/loanReq/${account?._id}`}>
+                            <button className="text-gray-700 border-2 border-gray-700 font-extrabold bg-sky-500 hover:scale-110 rounded-md px-1 duration-500">
+                              Request
+                            </button>
+                          </NavLink>
                         </Td>
                       )}
                     </Tr>
