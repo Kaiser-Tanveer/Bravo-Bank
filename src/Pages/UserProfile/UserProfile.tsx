@@ -7,7 +7,8 @@ import { Link } from 'react-router-dom';
 const UserProfile = () => {
   const { user } = useContext(AuthContext);
   return (
-    <section className='min-h-screen py-14 lg:py-0'>
+    <section className='min-h-screen mt-14 lg:pt-0'>
+
       {
         user ?
           <header className='container mx-auto mb-10 px-6 bg-gradient-to-r from-pink-500 to-sky-500 flex flex-col md:flex-row justify-between items-center border-b-2 border-sky-500'>

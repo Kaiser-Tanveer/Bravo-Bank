@@ -20,6 +20,7 @@ import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import CardRequest from "../Pages/Dashboard/CardRequest/CardRequest";
 
+
 export const router = createBrowserRouter([
   {
     path: "*",
@@ -85,6 +86,7 @@ export const router = createBrowserRouter([
         path: "/singleDetails/:accountid",
         element: <SingleaccountDetails />,
       },
+
       {
         path: "/cardsReq",
         element: <CardRequest />,
