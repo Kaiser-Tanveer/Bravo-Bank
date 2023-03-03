@@ -22,6 +22,7 @@ const MyAccounts = () => {
             return data;
         },
     });
+    console.log(accounts);
 
 
     return (
@@ -49,6 +50,7 @@ const MyAccounts = () => {
 
                                             <Th>Account Status</Th>
                                             {account.status === "success" && <Th>Card Status</Th>}
+                                            {account.status === "success" && <Th>Loan Status</Th>}
                                         </Tr>
                                     </Thead>
                                     <Tbody>
@@ -72,9 +74,32 @@ const MyAccounts = () => {
                                             </Td>
                                             {account.status === "success" && (
                                                 <Td>
-                                                    <button className="text-gray-700 border-2 border-gray-700 font-extrabold bg-sky-500 hover:scale-110 rounded-md px-1 duration-500">
-                                                        Request
-                                                    </button>
+                                                    {
+                                                        account?.cards === "pending" ?
+                                                            <h3>Pending</h3>
+                                                            :
+                                                            <>
+                                                                {
+                                                                    account?.cardStatus === 'success' ?
+                                                                        <h3>Success</h3>
+                                                                        :
+                                                                        <NavLink to={`/cardsReq/${account?._id}`}>
+                                                                            <button className="text-gray-700 border-2 border-gray-700 font-extrabold bg-sky-500 hover:scale-110 rounded-md px-1 duration-500">
+                                                                                Request
+                                                                            </button>
+                                                                        </NavLink>
+                                                                }
+                                                            </>
+                                                    }
+                                                </Td>
+                                            )}
+                                            {account.status === "success" && (
+                                                <Td>
+                                                    <NavLink to={`/loanReq/${account?._id}`}>
+                                                        <button className="text-gray-700 border-2 border-gray-700 font-extrabold bg-sky-500 hover:scale-110 rounded-md px-1 duration-500">
+                                                            Request
+                                                        </button>
+                                                    </NavLink>
                                                 </Td>
                                             )}
                                         </Tr>
