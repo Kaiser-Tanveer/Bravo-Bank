@@ -84,7 +84,7 @@ const CardRequest = () => {
                         <option value="debit">Debit Card</option>
                         <option value="credit">Credit Card</option>
                     </select>
-                    {errors.card && (
+                    {errors?.card && (
                         <p className="text-red-700 text-center">{errors.card.message}</p>
                     )}
                 </div>
