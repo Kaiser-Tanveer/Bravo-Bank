@@ -18,7 +18,10 @@ import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
 import SingleaccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
 import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
-import CardRequest from "../Pages/Dashboard/CardRequest/CardRequest";
+// import LoanRequest from "../Pages/UserProfile/LoanRequest/LoanRequest";
+// import UserLoanReq from "../Pages/Dashboard/LoanRequest/UserLoanReq";
+import CardRequest from "../Pages/AllRequests/CardsRequest/CardsRequest";
+import UserCardRequest from "../Pages/Dashboard/UserCardRequest/UserCardRequest";
 
 
 export const router = createBrowserRouter([
@@ -86,9 +89,13 @@ export const router = createBrowserRouter([
         path: "/singleDetails/:accountid",
         element: <SingleaccountDetails />,
       },
+      {
+        path: "/loanReq/:id",
+        // element: <LoanRequest />,
+      },
 
       {
-        path: "/cardsReq",
+        path: "/cardsReq/:id",
         element: <CardRequest />,
       },
     ],
@@ -109,6 +116,14 @@ export const router = createBrowserRouter([
         path: "/dashboard/allUsers",
         element: <AllUsers />,
       },
+      {
+        path: "/dashboard/cardRequest",
+        element: <UserCardRequest />,
+      },
+      // {
+      //   path: "/dashboard/loanRequest",
+      //   element: <UserLoanReq />,
+      // },
     ],
   },
 ]);
