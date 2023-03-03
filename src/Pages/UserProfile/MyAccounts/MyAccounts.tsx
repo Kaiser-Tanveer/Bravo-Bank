@@ -22,6 +22,7 @@ const MyAccounts = () => {
       return data;
     },
   });
+  console.log(accounts);
 
 
   return (
@@ -73,9 +74,23 @@ const MyAccounts = () => {
                       </Td>
                       {account.status === "success" && (
                         <Td>
-                          <button className="text-gray-700 border-2 border-gray-700 font-extrabold bg-sky-500 hover:scale-110 rounded-md px-1 duration-500">
-                            Request
-                          </button>
+                          {
+                            account?.cards === "pending" ?
+                              <h3>Pending</h3>
+                              :
+                              <>
+                                {
+                                  account?.cardStatus === 'success' ?
+                                    <h3>Success</h3>
+                                    :
+                                    <NavLink to={`/cardsReq/${account?._id}`}>
+                                      <button className="text-gray-700 border-2 border-gray-700 font-extrabold bg-sky-500 hover:scale-110 rounded-md px-1 duration-500">
+                                        Request
+                                      </button>
+                                    </NavLink>
+                                }
+                              </>
+                          }
                         </Td>
                       )}
                       {account.status === "success" && (
@@ -94,14 +109,16 @@ const MyAccounts = () => {
             ))}
           </main>
         </div>
-      ) : (
-        <h1 className="text-4xl text-center font-semibold py-10">
-          Sorry!! You have no accounts. Please{" "}
-          <Link to="/openAcc" className="hover:text-sky-500 hover:underline">
-            create one
-          </Link>{" "}
-        </h1>
-      )}
+      )
+        :
+        (
+          <h1 className="text-4xl text-center font-semibold py-10">
+            Sorry!! You have no accounts. Please
+            <Link to="/openAcc" className="hover:text-sky-500 hover:underline">
+              create one
+            </Link>
+          </h1>
+        )}
     </section>
   );
 };
