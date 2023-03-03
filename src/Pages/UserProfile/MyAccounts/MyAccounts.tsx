@@ -84,14 +84,16 @@ const MyAccounts = () => {
             ))}
           </main>
         </div>
-      ) : (
-        <h1 className="text-4xl text-center font-semibold py-10">
-          Sorry!! You have no accounts. Please{" "}
-          <Link to="/openAcc" className="hover:text-sky-500 hover:underline">
-            create one
-          </Link>{" "}
-        </h1>
-      )}
+      )
+        :
+        (
+          <h1 className="text-4xl text-center font-semibold py-10">
+            Sorry!! You have no accounts. Please
+            <Link to="/openAcc" className="hover:text-sky-500 hover:underline">
+              create one
+            </Link>
+          </h1>
+        )}
     </section>
   );
 };

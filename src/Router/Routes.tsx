@@ -85,6 +85,10 @@ export const router = createBrowserRouter([
         path: "/singleDetails/:accountid",
         element: <SingleaccountDetails />,
       },
+      {
+        path: "/cardsReq",
+        element: <CardRequest />,
+      },
     ],
   },
   {
@@ -102,10 +106,6 @@ export const router = createBrowserRouter([
       {
         path: "/dashboard/allUsers",
         element: <AllUsers />,
-      },
-      {
-        path: "/dashboard/cardRequest",
-        element: <CardRequest />,
       },
     ],
   },
