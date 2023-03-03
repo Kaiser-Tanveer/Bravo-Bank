@@ -2,25 +2,30 @@ import React, { useContext } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { AuthContext } from '../../../context/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
+import { useNavigate, useParams } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
 
 type cardInfo = {
-    name: string,
+    user: string,
     email: string,
     card: string,
-    phone: number,
-    nid: number,
-    accNum: number,
+    phone: string,
+    nid: string,
+    accNum: string,
 }
 
-const CardRequest = () => {
+const CardsRequest = () => {
+    const navigate = useNavigate();
     const { user } = useContext(AuthContext);
 
-    const { isLoading, refetch, data: usersInfo = [] } = useQuery({
-        queryKey: ['/userAccInfo'],
+    const { id } = useParams()
+
+    const { isLoading, refetch, data: usersInfo = {} } = useQuery({
+        queryKey: ['/singleAccDetails', id],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/userAccounts?email=${user?.email}`)
+            const res = await fetch(`http://localhost:5000/singleAccDetails/${id}`)
             const data = await res.json()
-            console.log(data);
+            return data
         }
     })
 
@@ -32,26 +37,30 @@ const CardRequest = () => {
 
     const onSubmit: SubmitHandler<cardInfo> = (data) => {
         const cardData = {
-            name: user?.displayName,
-            email: user?.email,
+            name: usersInfo.user,
+            email: usersInfo?.email,
             card: data.card,
-            phone: data.phone,
-            nid: data.nid,
-            accNum: data.accNum
+            phone: usersInfo.phone,
+            nid: usersInfo.nid,
+            accNum: usersInfo._id,
+            accountType: usersInfo.role,
+            status: 'pending'
         }
 
-
-        // fetch("http://localhost:5000/cardsReq", {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(cardData)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        // console.log(data);
-        //     })
+        fetch("http://localhost:5000/cardsReq", {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(cardData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success("Requested Successfully!!!");
+                    navigate('/myAccounts')
+                }
+            })
     }
     return (
         <section
@@ -72,13 +81,12 @@ const CardRequest = () => {
                         {...register("card", {
                             required: "Please select the Account Type",
                         })}
-                        onChange={(e) => console.log(e.target.value)}
                         className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                     >
                         <option value="debit">Debit Card</option>
                         <option value="credit">Credit Card</option>
                     </select>
-                    {errors.card && (
+                    {errors?.card && (
                         <p className="text-red-700 text-center">{errors.card.message}</p>
                     )}
                 </div>
@@ -87,13 +95,14 @@ const CardRequest = () => {
                         <label>Full Name</label>
                         <input
                             type="text"
-                            {...register("name", { required: "Name is required" })}
+                            {...register("user")}
                             className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                             placeholder="ex: Kaiser Tanveer"
+                            value={usersInfo?.user}
                         />
-                        {errors.name && (
+                        {errors.user && (
                             <p className="text-red-700 text-center">
-                                {errors.name.message}
+                                {errors.user.message}
                             </p>
                         )}
                     </div>
@@ -101,10 +110,10 @@ const CardRequest = () => {
                 <div>
                     <label>Email</label>
                     <input
-                        type="email" readOnly
-                        {...register("email", { required: "Name is required" })}
+                        type="email"
+                        {...register("email")}
                         className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-                        defaultValue={user?.email}
+                        value={usersInfo?.email}
                     />
                     {errors.email && (
                         <p className="text-red-700 text-center">{errors.email.message}</p>
@@ -113,10 +122,10 @@ const CardRequest = () => {
                 <div>
                     <label>Phone</label>
                     <input
-                        type="tel"
-                        {...register("phone", { required: "Phone No. is required" })}
+                        type="text"
+                        {...register("phone")}
                         className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-                        defaultValue="+880"
+                        value={usersInfo?.phone}
                     />
                     {errors.phone && (
                         <p className="text-red-700 text-center">{errors.phone.message}</p>
@@ -125,9 +134,10 @@ const CardRequest = () => {
                 <div>
                     <label>NID</label>
                     <input
-                        type="tel"
-                        {...register("nid", { required: "NID No. is required" })}
+                        type="text"
+                        {...register("nid")}
                         className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                        value={usersInfo?.nid}
                     />
                     {errors.nid && (
                         <p className="text-red-700 text-center">{errors.nid.message}</p>
@@ -136,9 +146,10 @@ const CardRequest = () => {
                 <div>
                     <label>Account Number</label>
                     <input
-                        type="number"
-                        {...register("accNum", { required: "Account No. is required" })}
+                        type='text'
+                        {...register("accNum")}
                         className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                        value={usersInfo?._id}
                     />
                     {errors.accNum && (
                         <p className="text-red-700 text-center">{errors.accNum.message}</p>
@@ -154,4 +165,4 @@ const CardRequest = () => {
     )
 }
 
-export default CardRequest
+export default CardsRequest;

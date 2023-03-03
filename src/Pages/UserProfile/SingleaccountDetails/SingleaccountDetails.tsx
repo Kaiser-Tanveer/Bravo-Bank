@@ -101,11 +101,10 @@ const SingleaccountDetails = () => {
             <div>
               <p className="text-gray-600">Status</p>
               <span
-                className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${
-                  account.status !== "pending"
-                    ? "bg-green-100 text-green-800"
-                    : "bg-red-100 text-red-800"
-                }`}
+                className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${account.status !== "pending"
+                  ? "bg-green-100 text-green-800"
+                  : "bg-red-100 text-red-800"
+                  }`}
               >
                 {account.status}
               </span>
@@ -119,6 +118,17 @@ const SingleaccountDetails = () => {
             <div>
               <p className="text-gray-600">Role</p>
               <p className="text-lg font-medium">{account.role}</p>
+            </div>
+            <div>
+              <p className="text-gray-600">Cards</p>
+              <span
+                className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${account.status === "pending"
+                  ? "bg-green-100 text-green-800"
+                  : "bg-red-100 text-red-800"
+                  }`}
+              >
+                {account.cards}
+              </span>
             </div>
           </div>
         </div>

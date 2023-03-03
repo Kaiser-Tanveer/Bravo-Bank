@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col space-y-4">
           <h2 className="font-medium">Getting started</h2>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
-            <NavLink to="/termsconditions">Terms & Conidtions</NavLink>
+            <NavLink to="/termsconditions">Terms & Conditions</NavLink>
             <NavLink to="/faq">FAQ</NavLink>
           </div>
         </div>
