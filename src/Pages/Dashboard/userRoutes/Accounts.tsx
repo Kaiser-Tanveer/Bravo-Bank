@@ -2,21 +2,23 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { toast } from 'react-hot-toast';
 import { FaInfoCircle, FaTrashAlt } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigation } from 'react-router-dom';
+import Spinner from '../../Spinner/Spinner';
 
 const Accounts = () => {
+    const navigation = useNavigation();
 
     const { isLoading, refetch, data: usersInfo = [] } = useQuery({
         queryKey: ['/userAccounts'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/userAccounts')
+            const res = await fetch('https://bravo-bank-server.vercel.app/userAccounts')
             const data = await res.json()
             return data
         }
     })
 
     const handleDelete = (id: string) => {
-        fetch(`http://localhost:5000/requestedUsersDelete/${id}`, {
+        fetch(`https://bravo-bank-server.vercel.app/requestedUsersDelete/${id}`, {
             method: 'DELETE',
             headers: {
 
@@ -32,7 +34,7 @@ const Accounts = () => {
     }
 
     const handStatus = (id: string) => {
-        fetch(`http://localhost:5000/userStatusUpdate/${id}`, {
+        fetch(`https://bravo-bank-server.vercel.app/userStatusUpdate/${id}`, {
             method: 'PUT',
             headers: {
 
@@ -45,6 +47,10 @@ const Accounts = () => {
                     refetch()
                 }
             })
+    }
+
+    if (navigation.state === "loading") {
+        return <Spinner />
     }
 
     return (

@@ -2,20 +2,23 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { toast } from 'react-hot-toast';
 import { FaTrashAlt } from 'react-icons/fa';
+import Spinner from '../../Spinner/Spinner';
+import { useNavigation } from 'react-router-dom';
 
 const AllUsers = () => {
+    const navigation = useNavigation();
 
     const { isLoading, refetch, data: users = [] } = useQuery({
         queryKey: ['/allUsers'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allUsers')
+            const res = await fetch('https://bravo-bank-server.vercel.app/allUsers')
             const data = await res.json()
             return data
         }
     })
 
     const handleDelete = (id: string) => {
-        fetch(`http://localhost:5000/allUsers/${id}`, {
+        fetch(`https://bravo-bank-server.vercel.app/allUsers/${id}`, {
             method: 'DELETE',
             headers: {
 
@@ -28,6 +31,10 @@ const AllUsers = () => {
                     refetch()
                 }
             })
+    }
+
+    if (navigation.state === "loading") {
+        return <Spinner />
     }
 
     return (

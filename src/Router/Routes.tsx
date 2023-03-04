@@ -11,13 +11,18 @@ import Login from "../Login/Login";
 import Dashboard from "../Layouts/Dashboard";
 import Accounts from "../Pages/Dashboard/userRoutes/Accounts";
 import UserProfile from "../Pages/UserProfile/UserProfile";
-import AccountsReg from "../Pages/AllRequests/AccountsReg/AccountsReg";
+import AccountsRequest from "../Pages/AllRequests/AccountsRequest/AccountsRequest";
 import MyAccounts from "../Pages/UserProfile/MyAccounts/MyAccounts";
 import MyCards from "../Pages/UserProfile/MyCards/MyCards";
 import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
 import SingleaccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
 import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import Terms from "../Shared/Footer/Terms/Terms";
+import Faq from "../Shared/Footer/Faq/Faq";
+import CardsRequest from "../Pages/AllRequests/CardsRequest/CardsRequest";
+import UserCardRequest from "../Pages/Dashboard/UserCardRequest/UserCardRequest";
+import LoanRequest from "../Pages/AllRequests/LoanRequest/LoanRequest";
 
 export const router = createBrowserRouter([
   {
@@ -45,7 +50,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/openAcc",
-        element: <AccountsReg />,
+        element: <AccountsRequest />,
       },
       {
         path: "/accountDetail/:accountType",
@@ -86,12 +91,20 @@ export const router = createBrowserRouter([
       },
       {
         path: "/loanReq/:id",
-        // element: <LoanRequest />,
+        element: <LoanRequest />,
       },
 
       {
         path: "/cardsReq/:id",
         element: <CardsRequest />,
+      },
+      {
+        path: "/terms&Conditions",
+        element: <Terms />,
+      },
+      {
+        path: "/terms&faq",
+        element: <Faq />,
       },
     ],
   },
