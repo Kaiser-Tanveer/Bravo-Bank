@@ -23,6 +23,9 @@ import Faq from "../Shared/Footer/Faq/Faq";
 import CardsRequest from "../Pages/AllRequests/CardsRequest/CardsRequest";
 import UserCardRequest from "../Pages/Dashboard/UserCardRequest/UserCardRequest";
 import LoanRequest from "../Pages/AllRequests/LoanRequest/LoanRequest";
+import MoneyTrans from "../Pages/UserProfile/MoneyTrans/MoneyTrans";
+import UserLoanReq from "../Pages/Dashboard/UserLoanReq/UserLoanReq";
+import UserLoanDetail from "../Pages/Dashboard/UserLoanReq/UserLoanDetail";
 
 export const router = createBrowserRouter([
   {
@@ -86,8 +89,8 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "/singleDetails/:accountid",
-        element: <SingleaccountDetails />,
+        path: "/singleLoanDetail/:id",
+        element: <UserLoanDetail />,
       },
       {
         path: "/loanReq/:id",
@@ -105,6 +108,10 @@ export const router = createBrowserRouter([
       {
         path: "/terms&faq",
         element: <Faq />,
+      },
+      {
+        path: "/moneyTrans/:id",
+        element: <MoneyTrans />,
       },
     ],
   },
@@ -128,10 +135,10 @@ export const router = createBrowserRouter([
         path: "/dashboard/cardRequest",
         element: <UserCardRequest />,
       },
-      // {
-      //   path: "/dashboard/loanRequest",
-      //   element: <UserLoanReq />,
-      // },
+      {
+        path: "/dashboard/loanRequest",
+        element: <UserLoanReq />,
+      },
     ],
   },
 ]);

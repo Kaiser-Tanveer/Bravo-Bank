@@ -12,9 +12,11 @@ type cardInfo = {
     nid: string,
     accNum: string,
     income: number,
-    passport: string,
+    img: string,
     company: string,
     evidence: string,
+    lAmount: number,
+    lDuration: string
 }
 
 const LoanRequest = () => {
@@ -32,6 +34,8 @@ const LoanRequest = () => {
         }
     })
 
+    const imageHostKey = '14f1e107e329b44a04c4481b2e76451e';
+
     const {
         register,
         handleSubmit,
@@ -39,35 +43,51 @@ const LoanRequest = () => {
     } = useForm<cardInfo>();
 
     const onSubmit: SubmitHandler<cardInfo> = (data) => {
-        const loanData = {
-            name: usersInfo.user,
-            email: usersInfo?.email,
-            loan: data.loan,
-            passport: data.passport,
-            income: data.income,
-            company: data.company,
-            evidence: data.evidence,
-            phone: usersInfo.phone,
-            nid: usersInfo.nid,
-            accNum: usersInfo._id,
-            accountType: usersInfo.role,
-            status: 'pending'
-        }
-
-        console.log(loanData);
-
-        fetch("http://localhost:5000/loanReq", {
+        const image = data.img[0];
+        const formData = new FormData();
+        formData.append('image', image)
+        const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`
+        fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(loanData)
+            body: formData
         })
             .then(res => res.json())
-            .then(data => {
-                if (data.acknowledged) {
-                    toast.success("Requested for the Loan Successfully!!!");
-                    navigate('/myAccounts')
+
+            .then(imgData => {
+                if (imgData.status === 200) {
+                    const loanData = {
+                        name: usersInfo.user,
+                        email: usersInfo?.email,
+                        loan: data.loan,
+                        passport: imgData.data.display_url,
+                        income: data.income,
+                        company: data.company,
+                        evidence: data.evidence,
+                        phone: usersInfo.phone,
+                        nid: usersInfo.nid,
+                        accNum: usersInfo._id,
+                        accountType: usersInfo.role,
+                        status: 'pending',
+                        lAmount: data.lAmount,
+                        lDuration: data.lDuration
+                    }
+
+                    console.log(loanData);
+
+                    fetch("http://localhost:5000/loanReq", {
+                        method: 'POST',
+                        headers: {
+                            'Content-type': 'application/json'
+                        },
+                        body: JSON.stringify(loanData)
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.acknowledged) {
+                                toast.success("Requested for the Loan Successfully!!!");
+                                navigate('/myAccounts')
+                            }
+                        })
                 }
             })
     }
@@ -179,15 +199,43 @@ const LoanRequest = () => {
                     )}
                 </div>
                 <div>
-                    <label>Passport PDF Link</label>
+                    <label>Loan Amount</label>
                     <input
-                        type='text'
-                        {...register("passport")}
+                        type='number'
+                        {...register("lAmount")}
+                        className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                        placeholder='ex: XYZ Co. Ltd'
+                    />
+                    {errors.lAmount && (
+                        <p className="text-red-700 text-center">{errors.lAmount.message}</p>
+                    )}
+                </div>
+                <div>
+                    <label>Choose Loan Duration</label>
+                    <select
+                        {...register("lDuration", {
+                            required: "Please select the Account Type",
+                        })}
+                        className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                    >
+                        <option value="12">12 Months</option>
+                        <option value="18">18 Months</option>
+                        <option value="24">24 Months</option>
+                    </select>
+                    {errors?.lDuration && (
+                        <p className="text-red-700 text-center">{errors.lDuration.message}</p>
+                    )}
+                </div>
+                <div>
+                    <label>Passport Image</label>
+                    <input
+                        type="file"
+                        {...register("img")}
                         className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                         placeholder='Your passport pdf link'
                     />
-                    {errors.passport && (
-                        <p className="text-red-700 text-center">{errors.passport.message}</p>
+                    {errors.img && (
+                        <p className="text-red-700 text-center">{errors.img.message}</p>
                     )}
                 </div>
                 <div>
