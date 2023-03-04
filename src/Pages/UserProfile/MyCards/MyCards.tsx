@@ -31,7 +31,7 @@ const MyCards = () => {
                             card?.cardStatus === 'success' ?
                                 <div className='py-20'>
                                     <img src={card?.cards} alt="" className='w-96 mx-auto' />
-                                    <h5 className='text-center text-2xl -mt-10 text-gray-100 font-semibold tracking-widest uppercase'>{card.user}</h5>
+                                    <h5 className='text-center text-2xl -mt-12 text-gray-100 font-semibold tracking-widest uppercase'>{card.user}</h5>
                                 </div>
                                 :
                                 ''

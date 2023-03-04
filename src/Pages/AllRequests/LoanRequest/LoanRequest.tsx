@@ -56,20 +56,20 @@ const LoanRequest = () => {
 
         console.log(loanData);
 
-        // https://bravo-bank-server.vercel.app/loanReq", {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(loanData)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         if (data.acknowledged) {
-        //             toast.success("Requested Successfully!!!");
-        //             navigate('/myAccounts')
-        //         }
-        //     })
+        fetch("http://localhost:5000/loanReq", {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(loanData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success("Requested for the Loan Successfully!!!");
+                    navigate('/myAccounts')
+                }
+            })
     }
     return (
         <section
