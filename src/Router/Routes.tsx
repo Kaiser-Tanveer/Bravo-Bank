@@ -18,10 +18,6 @@ import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
 import SingleaccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
 import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
-import Terms from "../Shared/Footer/Terms/Terms";
-import Faq from "../Shared/Footer/Faq/Faq";
-import CardsRequest from "../Pages/AllRequests/CardsRequest/CardsRequest";
-import UserCardRequest from "../Pages/Dashboard/UserCardRequest/UserCardRequest";
 
 export const router = createBrowserRouter([
   {
@@ -96,14 +92,6 @@ export const router = createBrowserRouter([
       {
         path: "/cardsReq/:id",
         element: <CardsRequest />,
-      },
-      {
-        path: "/termsconditions",
-        element: <Terms />,
-      },
-      {
-        path: "/faq",
-        element: <Faq />,
       },
     ],
   },
