@@ -12,7 +12,7 @@ const UserProfile = () => {
     return <Spinner />
   }
   return (
-    <section className='min-h-screen mt-14 lg:pt-0'>
+    <section className='min-h-screen mt-14 lg:mt-0'>
 
       {
         user ?
