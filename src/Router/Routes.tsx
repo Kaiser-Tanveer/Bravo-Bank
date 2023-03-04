@@ -18,9 +18,6 @@ import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
 import SingleaccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
 import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
-import CardsRequest from "../Pages/AllRequests/CardsRequest/CardsRequest";
-import UserCardRequest from "../Pages/Dashboard/UserCardRequest/UserCardRequest";
-
 
 export const router = createBrowserRouter([
   {
