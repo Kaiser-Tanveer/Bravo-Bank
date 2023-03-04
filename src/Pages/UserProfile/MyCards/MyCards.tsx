@@ -14,7 +14,7 @@ const MyCards = () => {
         queryKey: ["/userAccount", user?.email],
         queryFn: async () => {
             const res = await fetch(
-                `http://localhost:5000/userAccount?email=${user?.email}`
+                `https://bravo-bank-server.vercel.app/userAccount?email=${user?.email}`
             );
             const data = await res.json();
             return data;

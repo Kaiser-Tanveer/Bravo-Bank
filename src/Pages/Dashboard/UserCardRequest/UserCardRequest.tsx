@@ -2,14 +2,16 @@ import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import { toast } from 'react-hot-toast'
 import { FaInfoCircle, FaTrashAlt } from 'react-icons/fa'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigation } from 'react-router-dom'
+import Spinner from '../../Spinner/Spinner'
 
 const UserCardRequest = () => {
+  const navigation = useNavigation();
 
   const { isLoading, refetch, data: usersInfo = [] } = useQuery({
     queryKey: ['/dashCardReq'],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/dashCardReq`)
+      const res = await fetch(`https://bravo-bank-server.vercel.app/dashCardReq`)
       const data = await res.json()
       return data
     }
@@ -22,7 +24,7 @@ const UserCardRequest = () => {
         accNum: accNum,
         card: card
       }
-      fetch("http://localhost:5000/dashCardDebit", {
+      fetch("https://bravo-bank-server.vercel.app/dashCardDebit", {
         method: 'PUT',
         headers: {
           'Content-type': 'application/json'
@@ -43,7 +45,7 @@ const UserCardRequest = () => {
         accNum: accNum,
         card: card
       }
-      fetch("http://localhost:5000/dashCardCredit", {
+      fetch("https://bravo-bank-server.vercel.app/dashCardCredit", {
         method: 'PUT',
         headers: {
           'Content-type': 'application/json'
@@ -65,7 +67,7 @@ const UserCardRequest = () => {
       id: id,
       accNum: accNum
     }
-    fetch("http://localhost:5000/dashCardDelete", {
+    fetch("https://bravo-bank-server.vercel.app/dashCardDelete", {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json'
@@ -75,10 +77,14 @@ const UserCardRequest = () => {
       .then(res => res.json())
       .then(data => {
         if (data.acknowledged) {
-          toast.success("Card Request Decline")
-          refetch()
+          toast.success("Card Request Decline");
+          refetch();
         }
       })
+  }
+
+  if (navigation.state === "loading") {
+    return <Spinner />
   }
 
   return (

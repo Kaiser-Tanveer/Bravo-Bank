@@ -23,7 +23,7 @@ const SingleaccountDetails = () => {
   const { accountid } = useParams();
   const [accounts, setAccounts] = useState<any>([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/myAccounts/${accountid}`)
+    fetch(`https://bravo-bank-server.vercel.app/myAccounts/${accountid}`)
       .then((res) => res.json())
       .then((data) => setAccounts(data));
   }, [accountid]);

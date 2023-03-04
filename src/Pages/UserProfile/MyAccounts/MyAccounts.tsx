@@ -18,7 +18,7 @@ const MyAccounts = () => {
         queryKey: ["/userAccount", user?.email],
         queryFn: async () => {
             const res = await fetch(
-                `http://localhost:5000/userAccount?email=${user?.email}`
+                `https://bravo-bank-server.vercel.app/userAccount?email=${user?.email}`
             );
             const data = await res.json();
             return data;
@@ -110,6 +110,10 @@ const MyAccounts = () => {
                             </div>
                         ))}
                     </main>
+                    <div className="grid md:grid-cols-2 gap-6 py-20">
+                        <button className="flex items-center justify-center px-4 h-32 w-96 mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-6xl text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"> <FaPlusCircle className="mr-2" /><span>Deposit</span></button>
+                        <button className="flex items-center justify-center px-4 h-32 w-96 mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-6xl text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"><HiCurrencyDollar className="mr-2" /><span>Transfer</span></button>
+                    </div>
                 </div>
             )
                 :
@@ -121,10 +125,6 @@ const MyAccounts = () => {
                         </Link>
                     </h1>
                 )}
-            <div className="grid md:grid-cols-2 gap-6 py-20">
-                <button className="flex items-center justify-center px-4 h-32 w-96 mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-6xl text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"> <FaPlusCircle className="mr-2" /><span>Deposit</span></button>
-                <button className="flex items-center justify-center px-4 h-32 w-96 mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-6xl text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"><HiCurrencyDollar className="mr-2" /><span>Transfer</span></button>
-            </div>
         </section>
     );
 };

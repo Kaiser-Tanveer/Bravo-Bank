@@ -1,20 +1,23 @@
-import React, { useContext } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { AuthContext } from '../../../context/AuthProvider';
-import { useQuery } from '@tanstack/react-query';
-import { useNavigate, useParams } from 'react-router-dom';
+import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
+import { useNavigate, useParams } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { useQuery } from '@tanstack/react-query';
 
 type cardInfo = {
     user: string,
-    email: string,
-    card: string,
+    loan: string,
     phone: string,
     nid: string,
     accNum: string,
+    income: number,
+    passport: string,
+    company: string,
+    evidence: string,
 }
 
-const CardsRequest = () => {
+const LoanRequest = () => {
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
 
@@ -36,10 +39,14 @@ const CardsRequest = () => {
     } = useForm<cardInfo>();
 
     const onSubmit: SubmitHandler<cardInfo> = (data) => {
-        const cardData = {
+        const loanData = {
             name: usersInfo.user,
             email: usersInfo?.email,
-            card: data.card,
+            loan: data.loan,
+            passport: data.passport,
+            income: data.income,
+            company: data.company,
+            evidence: data.evidence,
             phone: usersInfo.phone,
             nid: usersInfo.nid,
             accNum: usersInfo._id,
@@ -47,26 +54,28 @@ const CardsRequest = () => {
             status: 'pending'
         }
 
-        fetch("https://bravo-bank-server.vercel.app/cardsReq", {
-            method: 'POST',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(cardData)
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.acknowledged) {
-                    toast.success("Requested Successfully!!!");
-                    navigate('/myAccounts')
-                }
-            })
+        console.log(loanData);
+
+        // https://bravo-bank-server.vercel.app/loanReq", {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(loanData)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         if (data.acknowledged) {
+        //             toast.success("Requested Successfully!!!");
+        //             navigate('/myAccounts')
+        //         }
+        //     })
     }
     return (
         <section
             style={{
                 backgroundImage:
-                    "linear-gradient(to left, rgba(59, 130, 246, 0.75), rgba(117, 19, 93, 0.73)), url(https://i.ibb.co/BBqf4jP/cards-Req-Bg.webp)",
+                    "linear-gradient(to left, rgba(59, 130, 246, 0.75), rgba(117, 19, 93, 0.73)), url(https://i.ibb.co/yQFGV86/loanBg.jpg)",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
@@ -74,20 +83,22 @@ const CardsRequest = () => {
             className='py-16 min-h-screen lg:py-10'>
             <form onSubmit={handleSubmit(onSubmit)}
                 className='container max-w-[450px] mx-auto text-gray-100 border-2 border-gray-100 p-6 rounded-lg shadow-lg shadow-pink-500'>
-                <h1 className='text-4xl text-center font-extrabold text-gray-50 pb-6 underline'>Request a card</h1>
+                <h1 className='text-4xl text-center font-extrabold text-gray-50 pb-6 underline'>Request Loan</h1>
                 <div>
-                    <label>Choose a Card</label>
+                    <label>Choose Loan type</label>
                     <select
-                        {...register("card", {
+                        {...register("loan", {
                             required: "Please select the Account Type",
                         })}
                         className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                     >
-                        <option value="debit">Debit Card</option>
-                        <option value="credit">Credit Card</option>
+                        <option value="car">Car Loan</option>
+                        <option value="student">Student Loan</option>
+                        <option value="home">Home Loan</option>
+                        <option value="personal">Personal Loan</option>
                     </select>
-                    {errors?.card && (
-                        <p className="text-red-700 text-center">{errors.card.message}</p>
+                    {errors?.loan && (
+                        <p className="text-red-700 text-center">{errors.loan.message}</p>
                     )}
                 </div>
                 <div>
@@ -106,18 +117,6 @@ const CardsRequest = () => {
                             </p>
                         )}
                     </div>
-                </div>
-                <div>
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        {...register("email")}
-                        className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-                        value={usersInfo?.email}
-                    />
-                    {errors.email && (
-                        <p className="text-red-700 text-center">{errors.email.message}</p>
-                    )}
                 </div>
                 <div>
                     <label>Phone</label>
@@ -155,6 +154,53 @@ const CardsRequest = () => {
                         <p className="text-red-700 text-center">{errors.accNum.message}</p>
                     )}
                 </div>
+                <div>
+                    <label>Monthly Income(Minimum 50000 BDT)</label>
+                    <input
+                        type='number'
+                        {...register("income")}
+                        className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                        placeholder='ex: 50000 BDT'
+                    />
+                    {errors.income && (
+                        <p className="text-red-700 text-center">{errors.income.message}</p>
+                    )}
+                </div>
+                <div>
+                    <label>Company Name</label>
+                    <input
+                        type='text'
+                        {...register("company")}
+                        className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                        placeholder='ex: XYZ Co. Ltd'
+                    />
+                    {errors.company && (
+                        <p className="text-red-700 text-center">{errors.company.message}</p>
+                    )}
+                </div>
+                <div>
+                    <label>Passport PDF Link</label>
+                    <input
+                        type='text'
+                        {...register("passport")}
+                        className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                        placeholder='Your passport pdf link'
+                    />
+                    {errors.passport && (
+                        <p className="text-red-700 text-center">{errors.passport.message}</p>
+                    )}
+                </div>
+                <div>
+                    <label>Valid Evidence of Company & Residential</label>
+                    <textarea
+                        {...register("evidence")}
+                        className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                        placeholder='Attach Your Pdf links here..'
+                    />
+                    {errors.evidence && (
+                        <p className="text-red-700 text-center">{errors.evidence.message}</p>
+                    )}
+                </div>
                 <input
                     type="submit"
                     value="Request"
@@ -162,7 +208,7 @@ const CardsRequest = () => {
                 />
             </form>
         </section>
-    )
-}
+    );
+};
 
-export default CardsRequest;
+export default LoanRequest;

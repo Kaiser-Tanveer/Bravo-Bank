@@ -22,7 +22,7 @@ type formInput = {
     birthDate: string;
 };
 
-const AccountsReg = () => {
+const AccountsRequest = () => {
     const imageHostKey = "14f1e107e329b44a04c4481b2e76451e";
 
     const navigate = useNavigate();
@@ -67,7 +67,7 @@ const AccountsReg = () => {
                         amount: 0
                     };
 
-                    fetch("http://localhost:5000/requestedUsers", {
+                    fetch("https://bravo-bank-server.vercel.app/requestedUsers", {
                         method: "POST",
                         headers: {
                             "content-type": "application/json",
@@ -339,4 +339,4 @@ const AccountsReg = () => {
     );
 };
 
-export default AccountsReg;
+export default AccountsRequest;

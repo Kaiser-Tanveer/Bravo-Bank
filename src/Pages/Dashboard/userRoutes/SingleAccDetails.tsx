@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom';
+import { useNavigation, useParams } from 'react-router-dom';
+import Spinner from '../../Spinner/Spinner';
 
 const SingleAccDetails = () => {
+  const navigation = useNavigation();
 
   const { id } = useParams();
   const [detail, setDetail] = useState<any>([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/singleAccDetails/${id}`)
+    fetch(`https://bravo-bank-server.vercel.app/singleAccDetails/${id}`)
       .then((res) => res.json())
       .then((data) => setDetail(data));
   }, [id]);
+
+  if (navigation.state === "loading") {
+    return <Spinner />
+  }
 
   return (
     <div className="w-5/6 mx-auto px-4 py-8">
@@ -84,8 +90,8 @@ const SingleAccDetails = () => {
             <p className="text-gray-600">Status</p>
             <span
               className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${detail?.status !== "pending"
-                  ? "bg-green-100 text-green-800"
-                  : "bg-red-100 text-red-800"
+                ? "bg-green-100 text-green-800"
+                : "bg-red-100 text-red-800"
                 }`}
             >
               {detail?.status}

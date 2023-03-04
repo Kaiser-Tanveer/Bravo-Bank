@@ -2,10 +2,15 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider';
 import { HiCreditCard, HiUserAdd } from 'react-icons/hi';
 import { FaHandHoldingUsd } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigation } from 'react-router-dom';
+import Spinner from '../Spinner/Spinner';
 
 const UserProfile = () => {
+  const navigation = useNavigation();
   const { user } = useContext(AuthContext);
+  if (navigation.state === "loading") {
+    return <Spinner />
+  }
   return (
     <section className='min-h-screen mt-14 lg:pt-0'>
 
