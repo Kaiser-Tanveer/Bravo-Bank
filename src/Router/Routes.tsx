@@ -23,6 +23,8 @@ import Faq from "../Shared/Footer/Faq/Faq";
 import CardsRequest from "../Pages/AllRequests/CardsRequest/CardsRequest";
 import UserCardRequest from "../Pages/Dashboard/UserCardRequest/UserCardRequest";
 import LoanRequest from "../Pages/AllRequests/LoanRequest/LoanRequest";
+import Privacy from "../Shared/Footer/Privacy/Privacy";
+import Careers from "../Shared/Footer/Careers/Careers";
 
 export const router = createBrowserRouter([
   {
@@ -103,8 +105,16 @@ export const router = createBrowserRouter([
         element: <Terms />,
       },
       {
-        path: "/terms&faq",
+        path: "/faq",
         element: <Faq />,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy />,
+      },
+      {
+        path: "/careers",
+        element: <Careers />,
       },
     ],
   },
