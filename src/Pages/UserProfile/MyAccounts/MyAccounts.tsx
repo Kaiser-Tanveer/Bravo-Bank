@@ -47,7 +47,7 @@ const MyAccounts = () => {
                                     <Thead>
                                         <Tr>
                                             <Th>Name</Th>
-                                            <Th>Email</Th>
+                                            <Th>Amount</Th>
                                             <Th>Phone</Th>
 
                                             <Th>Account Status</Th>
@@ -58,7 +58,7 @@ const MyAccounts = () => {
                                     <Tbody>
                                         <Tr>
                                             <Td>{account.user}</Td>
-                                            <Td>{account.email}</Td>
+                                            <Td>{account.amount}</Td>
                                             <Td>{account.phone}</Td>
 
                                             <Td>

@@ -23,15 +23,10 @@ import Faq from "../Shared/Footer/Faq/Faq";
 import CardsRequest from "../Pages/AllRequests/CardsRequest/CardsRequest";
 import UserCardRequest from "../Pages/Dashboard/UserCardRequest/UserCardRequest";
 import LoanRequest from "../Pages/AllRequests/LoanRequest/LoanRequest";
-import Privacy from "../Shared/Footer/Privacy/Privacy";
-import Careers from "../Shared/Footer/Careers/Careers";
 import MoneyTrans from "../Pages/UserProfile/MoneyTrans/MoneyTrans";
-import UserLoanDetail from "../Pages/Dashboard/UserLoanReq/UserLoanDetail";
 import UserLoanReq from "../Pages/Dashboard/UserLoanReq/UserLoanReq";
-import Customerreviews from "../Shared/Footer/Customerreviews/Customerreviews";
-import SecurityInformation from "../Shared/Footer/SecurityInformation/SecurityInformation";
-import Accessibility from "../Shared/Footer/Accessibility/Accessibility";
-import LegalInformation from "../Shared/Footer/LegalInformation/LegalInformation";
+import UserLoanDetail from "../Pages/Dashboard/UserLoanReq/UserLoanDetail";
+
 
 export const router = createBrowserRouter([
   {
@@ -64,6 +59,10 @@ export const router = createBrowserRouter([
       {
         path: "/accountDetail/:accountType",
         element: <AccountDetails />,
+      },
+      {
+        path: "/singleDetails/:accountid",
+        element: <SingleaccountDetails />,
       },
       {
         path: "/cardDetail/:cardType",
@@ -116,32 +115,8 @@ export const router = createBrowserRouter([
         element: <Faq />,
       },
       {
-        path: "/privacy",
-        element: <Privacy />,
-      },
-      {
-        path: "/careers",
-        element: <Careers />,
-      },
-      {
         path: "/moneyTrans/:id",
         element: <MoneyTrans />,
-      },
-      {
-        path: "/customerreviews",
-        element: <Customerreviews />,
-      },
-      {
-        path: "/securityinformation",
-        element: <SecurityInformation />,
-      },
-      {
-        path: "/accessibility",
-        element: <Accessibility />,
-      },
-      {
-        path: "/legalinformation",
-        element: <LegalInformation />,
       },
     ],
   },

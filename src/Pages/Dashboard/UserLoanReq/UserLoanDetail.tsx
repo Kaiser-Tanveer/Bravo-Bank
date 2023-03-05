@@ -89,6 +89,10 @@ const UserLoanDetail = () => {
                         <p className="text-lg font-medium">{detail?.evidence}</p>
                 </div>
                 <div>
+                        <p className="text-gray-600">Total Loan Amount</p>
+                        <p className="text-lg font-medium">{detail?.tLAmount}</p>
+                </div>
+                <div>
                     <img src={detail?.passport} alt=""/>
                 </div>
             </div>
