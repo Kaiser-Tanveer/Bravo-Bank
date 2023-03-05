@@ -60,6 +60,10 @@ export const router = createBrowserRouter([
         element: <AccountDetails />,
       },
       {
+        path: "/singleDetails/:accountid",
+        element: <SingleaccountDetails />,
+      },
+      {
         path: "/cardDetail/:cardType",
         element: <CardsDetails />,
       },

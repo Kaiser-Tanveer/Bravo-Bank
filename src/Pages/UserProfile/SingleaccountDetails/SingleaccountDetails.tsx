@@ -32,6 +32,7 @@ const SingleaccountDetails = () => {
     <div className="w-5/6 mx-auto px-4 py-8">
       {accounts.map((account: any) => (
         <div className="flex flex-col space-y-6">
+          <h1>{account?.tLAmount}</h1>
           <div className="flex items-center space-x-4">
             <img
               className="w-16 h-16 rounded-full"
