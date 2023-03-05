@@ -9,17 +9,31 @@ const Footer = () => {
         <div className="flex flex-col space-y-4">
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/terms&Conditions">Terms & Conditions</NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/faq">FAQ</NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/accessibility">Accessibility Statement</NavLink>
           </div>
         </div>
         <div className="flex flex-col space-y-4">
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/privacy">Privacy & Policy</NavLink>
           </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/legalinformation">Legal Information</NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/securityinformation">Security Information</NavLink>
+          </div>
         </div>
         <div className="flex flex-col space-y-4">
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/careers">Careers</NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/customerreviews">Customer Reviews</NavLink>
           </div>
         </div>
         <div className="flex flex-col space-y-4">

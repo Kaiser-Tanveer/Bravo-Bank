@@ -97,23 +97,37 @@ const MyAccounts = () => {
                                             )}
                                             {account.status === "success" && (
                                                 <Td>
-                                                    <NavLink to={`/loanReq/${account?._id}`}>
-                                                        <button className="text-pink-500 border-2 border-pink-500 font-extrabold hover:bg-pink-500 hover:text-gray-100 hover:scale-110 rounded-md px-1 duration-500">
-                                                            Request
-                                                        </button>
-                                                    </NavLink>
+                                                    {
+                                                        account?.loanStatus === "pending" ?
+                                                            <h3 className="text-pink-500 font-bold">Pending...</h3>
+                                                            :
+                                                            <>
+                                                                {
+                                                                    account?.loanStatus === 'success' ?
+                                                                        <h3 className="text-sky-500 font-bold">Success</h3>
+                                                                        :
+                                                                        <NavLink to={`/loanReq/${account?._id}`}>
+                                                                            <button className="text-sky-500 border-2 border-sky-500 font-extrabold hover:bg-sky-500 hover:text-gray-100 hover:scale-110 rounded-md px-1 duration-500">
+                                                                                Request
+                                                                            </button>
+                                                                        </NavLink>
+                                                                }
+                                                            </>
+                                                    }
                                                 </Td>
                                             )}
                                         </Tr>
                                     </Tbody>
                                 </Table>
+                                <div className="grid md:grid-cols-2 gap-6 mt-6">
+                                    <button className="text-3xl p-3 flex items-center justify-center mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"> <FaPlusCircle className="mr-2" /><span>Deposit</span></button>
+                                    <NavLink to={`/moneyTrans/${account._id}`}>
+                                        <button className="text-3xl p-3 flex items-center justify-center mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"><HiCurrencyDollar className="mr-2" /><span>Transfer</span></button>
+                                    </NavLink>
+                                </div>
                             </div>
                         ))}
                     </main>
-                    <div className="grid md:grid-cols-2 gap-6 py-20">
-                        <button className="flex items-center justify-center px-4 h-32 w-96 mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-6xl text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"> <FaPlusCircle className="mr-2" /><span>Deposit</span></button>
-                        <button className="flex items-center justify-center px-4 h-32 w-96 mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-6xl text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"><HiCurrencyDollar className="mr-2" /><span>Transfer</span></button>
-                    </div>
                 </div>
             )
                 :

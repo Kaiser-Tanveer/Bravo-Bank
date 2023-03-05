@@ -25,6 +25,13 @@ import UserCardRequest from "../Pages/Dashboard/UserCardRequest/UserCardRequest"
 import LoanRequest from "../Pages/AllRequests/LoanRequest/LoanRequest";
 import Privacy from "../Shared/Footer/Privacy/Privacy";
 import Careers from "../Shared/Footer/Careers/Careers";
+import MoneyTrans from "../Pages/UserProfile/MoneyTrans/MoneyTrans";
+import UserLoanDetail from "../Pages/Dashboard/UserLoanReq/UserLoanDetail";
+import UserLoanReq from "../Pages/Dashboard/UserLoanReq/UserLoanReq";
+import Customerreviews from "../Shared/Footer/Customerreviews/Customerreviews";
+import SecurityInformation from "../Shared/Footer/SecurityInformation/SecurityInformation";
+import Accessibility from "../Shared/Footer/Accessibility/Accessibility";
+import LegalInformation from "../Shared/Footer/LegalInformation/LegalInformation";
 
 export const router = createBrowserRouter([
   {
@@ -88,8 +95,8 @@ export const router = createBrowserRouter([
       },
 
       {
-        path: "/singleDetails/:accountid",
-        element: <SingleaccountDetails />,
+        path: "/singleLoanDetail/:id",
+        element: <UserLoanDetail />,
       },
       {
         path: "/loanReq/:id",
@@ -116,6 +123,26 @@ export const router = createBrowserRouter([
         path: "/careers",
         element: <Careers />,
       },
+      {
+        path: "/moneyTrans/:id",
+        element: <MoneyTrans />,
+      },
+      {
+        path: "/customerreviews",
+        element: <Customerreviews />,
+      },
+      {
+        path: "/securityinformation",
+        element: <SecurityInformation />,
+      },
+      {
+        path: "/accessibility",
+        element: <Accessibility />,
+      },
+      {
+        path: "/legalinformation",
+        element: <LegalInformation />,
+      },
     ],
   },
   {
@@ -138,10 +165,10 @@ export const router = createBrowserRouter([
         path: "/dashboard/cardRequest",
         element: <UserCardRequest />,
       },
-      // {
-      //   path: "/dashboard/loanRequest",
-      //   element: <UserLoanReq />,
-      // },
+      {
+        path: "/dashboard/loanRequest",
+        element: <UserLoanReq />,
+      },
     ],
   },
 ]);
