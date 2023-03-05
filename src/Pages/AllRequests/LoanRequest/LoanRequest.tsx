@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
@@ -20,6 +20,9 @@ type cardInfo = {
 }
 
 const LoanRequest = () => {
+
+    const [nobel, setNobel] = useState(0)
+
     const navigate = useNavigate();
     const { user } = useContext(AuthContext);
 
@@ -43,6 +46,7 @@ const LoanRequest = () => {
     } = useForm<cardInfo>();
 
     const onSubmit: SubmitHandler<cardInfo> = (data) => {
+
         const image = data.img[0];
         const formData = new FormData();
         formData.append('image', image)
@@ -54,42 +58,125 @@ const LoanRequest = () => {
             .then(res => res.json())
 
             .then(imgData => {
-                if (imgData.status === 200) {
-                    const loanData = {
-                        name: usersInfo.user,
-                        email: usersInfo?.email,
-                        loan: data.loan,
-                        passport: imgData.data.display_url,
-                        income: data.income,
-                        company: data.company,
-                        evidence: data.evidence,
-                        phone: usersInfo.phone,
-                        nid: usersInfo.nid,
-                        accNum: usersInfo._id,
-                        accountType: usersInfo.role,
-                        status: 'pending',
-                        lAmount: data.lAmount,
-                        lDuration: data.lDuration
-                    }
+                if (imgData.status === 200)
 
-                    console.log(loanData);
+                    if (data.lDuration === '12') {
+                        const nobel = Number(data.lAmount)
+                        const totalInterest = Number(nobel * 0.03)
+                        const newAmount = Number(nobel + totalInterest)
+                        setNobel(newAmount)
 
-                    fetch("http://localhost:5000/loanReq", {
-                        method: 'POST',
-                        headers: {
-                            'Content-type': 'application/json'
-                        },
-                        body: JSON.stringify(loanData)
-                    })
-                        .then(res => res.json())
-                        .then(data => {
-                            console.log(data);
-                            if (data.acknowledged) {
-                                toast.success("Requested for a Loan Successfully!!!");
-                                navigate('/myAccounts');
-                            }
+                        const loanData = {
+                            name: usersInfo.user,
+                            email: usersInfo?.email,
+                            loan: data.loan,
+                            passport: imgData.data.display_url,
+                            income: data.income,
+                            company: data.company,
+                            evidence: data.evidence,
+                            phone: usersInfo.phone,
+                            nid: usersInfo.nid,
+                            accNum: usersInfo._id,
+                            accountType: usersInfo.role,
+                            status: 'pending',
+                            lAmount: data.lAmount,
+                            lDuration: data.lDuration,
+                            tLAmount: newAmount
+                        }
+
+                        fetch("http://localhost:5000/loanReq", {
+                            method: 'POST',
+                            headers: {
+                                'Content-type': 'application/json'
+                            },
+                            body: JSON.stringify(loanData)
                         })
-                }
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.acknowledged) {
+                                    toast.success("Requested for the Loan Successfully!!!");
+                                    navigate('/myAccounts')
+                                }
+                            })
+                    }
+                    else if (data.lDuration === '18') {
+                        const nobel = Number(data.lAmount)
+                        const totalInterest = Number(nobel * 0.05)
+                        const newAmount = Number(nobel + totalInterest)
+                        setNobel(newAmount)
+
+                        const loanData = {
+                            name: usersInfo.user,
+                            email: usersInfo?.email,
+                            loan: data.loan,
+                            passport: imgData.data.display_url,
+                            income: data.income,
+                            company: data.company,
+                            evidence: data.evidence,
+                            phone: usersInfo.phone,
+                            nid: usersInfo.nid,
+                            accNum: usersInfo._id,
+                            accountType: usersInfo.role,
+                            status: 'pending',
+                            lAmount: data.lAmount,
+                            lDuration: data.lDuration,
+                            tLAmount: newAmount
+                        }
+
+                        fetch("http://localhost:5000/loanReq", {
+                            method: 'POST',
+                            headers: {
+                                'Content-type': 'application/json'
+                            },
+                            body: JSON.stringify(loanData)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.acknowledged) {
+                                    toast.success("Requested for the Loan Successfully!!!");
+                                    navigate('/myAccounts')
+                                }
+                            })
+                    }
+                    else {
+                        const nobel = Number(data.lAmount)
+                        const totalInterest = Number(nobel * 0.07)
+                        const newAmount = Number(nobel + totalInterest)
+                        setNobel(newAmount)
+
+                        const loanData = {
+                            name: usersInfo.user,
+                            email: usersInfo?.email,
+                            loan: data.loan,
+                            passport: imgData.data.display_url,
+                            income: data.income,
+                            company: data.company,
+                            evidence: data.evidence,
+                            phone: usersInfo.phone,
+                            nid: usersInfo.nid,
+                            accNum: usersInfo._id,
+                            accountType: usersInfo.role,
+                            status: 'pending',
+                            lAmount: data.lAmount,
+                            lDuration: data.lDuration,
+                            tLAmount: newAmount
+                        }
+
+                        fetch("http://localhost:5000/loanReq", {
+                            method: 'POST',
+                            headers: {
+                                'Content-type': 'application/json'
+                            },
+                            body: JSON.stringify(loanData)
+                        })
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.acknowledged) {
+                                    toast.success("Requested for the Loan Successfully!!!");
+                                    navigate('/myAccounts')
+                                }
+                            })
+                    }
             })
     }
     return (
@@ -219,9 +306,9 @@ const LoanRequest = () => {
                         })}
                         className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                     >
-                        <option value="12">12 Months</option>
-                        <option value="18">18 Months</option>
-                        <option value="24">24 Months</option>
+                        <option value="12">12 Months (interest 3%)</option>
+                        <option value="18">18 Months (interest 5%)</option>
+                        <option value="24">24 Months(interest 7%)</option>
                     </select>
                     {errors?.lDuration && (
                         <p className="text-red-700 text-center">{errors.lDuration.message}</p>
