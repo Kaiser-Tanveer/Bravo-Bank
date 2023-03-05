@@ -83,9 +83,10 @@ const LoanRequest = () => {
                     })
                         .then(res => res.json())
                         .then(data => {
+                            console.log(data);
                             if (data.acknowledged) {
-                                toast.success("Requested for the Loan Successfully!!!");
-                                navigate('/myAccounts')
+                                toast.success("Requested for a Loan Successfully!!!");
+                                navigate('/myAccounts');
                             }
                         })
                 }
