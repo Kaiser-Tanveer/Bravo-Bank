@@ -27,6 +27,7 @@ import MoneyTrans from "../Pages/UserProfile/MoneyTrans/MoneyTrans";
 import UserLoanReq from "../Pages/Dashboard/UserLoanReq/UserLoanReq";
 import UserLoanDetail from "../Pages/Dashboard/UserLoanReq/UserLoanDetail";
 
+
 export const router = createBrowserRouter([
   {
     path: "*",
@@ -110,7 +111,7 @@ export const router = createBrowserRouter([
         element: <Terms />,
       },
       {
-        path: "/terms&faq",
+        path: "/faq",
         element: <Faq />,
       },
       {

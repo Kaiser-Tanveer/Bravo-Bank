@@ -7,22 +7,36 @@ const Footer = () => {
     <footer className="p-6 dark:bg-gray-100 dark:text-gray-800 border border-t-2 border-b-0 border-x-0 border-primary mt-5">
       <div className="container grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
         <div className="flex flex-col space-y-4">
-          <h2 className="font-medium">Getting started</h2>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/terms&Conditions">Terms & Conditions</NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/faq">FAQ</NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/accessibility">Accessibility Statement</NavLink>
           </div>
         </div>
         <div className="flex flex-col space-y-4">
-          <h2 className="font-medium">Core Concepts</h2>
-          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700"></div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/privacy">Privacy & Policy</NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/legalinformation">Legal Information</NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/securityinformation">Security Information</NavLink>
+          </div>
         </div>
         <div className="flex flex-col space-y-4">
-          <h2 className="font-medium">Customization</h2>
-          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700"></div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/careers">Careers</NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/customerreviews">Customer Reviews</NavLink>
+          </div>
         </div>
         <div className="flex flex-col space-y-4">
-          <h2 className="font-medium">Community</h2>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink
               to="https://github.com/Kaiser-Tanveer/Bravo-Bank"

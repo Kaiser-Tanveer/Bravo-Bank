@@ -234,6 +234,7 @@ const MoneyTrans = () => {
         />
       </form>
     </section>
+
   )
 }
 

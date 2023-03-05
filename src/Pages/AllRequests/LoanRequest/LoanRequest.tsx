@@ -46,7 +46,6 @@ const LoanRequest = () => {
     } = useForm<cardInfo>();
 
     const onSubmit: SubmitHandler<cardInfo> = (data) => {
-
         const image = data.img[0];
         const formData = new FormData();
         formData.append('image', image)
