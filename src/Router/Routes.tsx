@@ -15,7 +15,7 @@ import AccountsRequest from "../Pages/AllRequests/AccountsRequest/AccountsReques
 import MyAccounts from "../Pages/UserProfile/MyAccounts/MyAccounts";
 import MyCards from "../Pages/UserProfile/MyCards/MyCards";
 import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
-import SingleaccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
+import SingleAccountDetails from "../Pages/UserProfile/SingleAccountDetails/SingleAccountDetails";
 import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import Terms from "../Shared/Footer/Terms/Terms";
@@ -26,7 +26,12 @@ import LoanRequest from "../Pages/AllRequests/LoanRequest/LoanRequest";
 import MoneyTrans from "../Pages/UserProfile/MoneyTrans/MoneyTrans";
 import UserLoanReq from "../Pages/Dashboard/UserLoanReq/UserLoanReq";
 import UserLoanDetail from "../Pages/Dashboard/UserLoanReq/UserLoanDetail";
-
+import SecurityInformation from "../Shared/Footer/SecurityInformation/SecurityInformation";
+import Accessibility from "../Shared/Footer/Accessibility/Accessibility";
+import Privacy from "../Shared/Footer/Privacy/Privacy";
+import Careers from "../Shared/Footer/Careers/Careers";
+import LegalInformation from "../Shared/Footer/LegalInformation/LegalInformation";
+import CustomerReviews from "../Shared/Footer/CustomerReviews/CustomerReviews";
 
 export const router = createBrowserRouter([
   {
@@ -61,8 +66,8 @@ export const router = createBrowserRouter([
         element: <AccountDetails />,
       },
       {
-        path: "/singleDetails/:accountid",
-        element: <SingleaccountDetails />,
+        path: "/singleDetails/:accountId",
+        element: <SingleAccountDetails />,
       },
       {
         path: "/cardDetail/:cardType",
@@ -113,6 +118,34 @@ export const router = createBrowserRouter([
       {
         path: "/faq",
         element: <Faq />,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy />,
+      },
+      {
+        path: "/careers",
+        element: <Careers />,
+      },
+      {
+        path: "/moneyTrans/:id",
+        element: <MoneyTrans />,
+      },
+      {
+        path: "/customerReviews",
+        element: <CustomerReviews />,
+      },
+      {
+        path: "/securityInformation",
+        element: <SecurityInformation />,
+      },
+      {
+        path: "/accessibility",
+        element: <Accessibility />,
+      },
+      {
+        path: "/legalInformation",
+        element: <LegalInformation />,
       },
       {
         path: "/moneyTrans/:id",

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Customerreviews = () => {
+const CustomerReviews = () => {
   return (
     <div className="bg-gray-100 py-4 px-4">
       <h4 className="text-3xl text-gray-600 mb-2">Customer Reviews</h4>
@@ -41,4 +41,4 @@ const Customerreviews = () => {
   );
 };
 
-export default Customerreviews;
+export default CustomerReviews;

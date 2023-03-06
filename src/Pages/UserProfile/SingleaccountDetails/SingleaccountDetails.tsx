@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 
-const SingleaccountDetails = () => {
+const SingleAccountDetails = () => {
   //   type formInput = {
   //     role: string;
   //     user: string;
@@ -20,13 +20,13 @@ const SingleaccountDetails = () => {
   //     birthDate: string;
   //     amount: number;
   //   };
-  const { accountid } = useParams();
+  const { accountid: accountId } = useParams();
   const [accounts, setAccounts] = useState<any>([]);
   useEffect(() => {
-    fetch(`https://bravo-bank-server.vercel.app/myAccounts/${accountid}`)
+    fetch(`https://bravo-bank-server.vercel.app/myAccounts/${accountId}`)
       .then((res) => res.json())
       .then((data) => setAccounts(data));
-  }, [accountid]);
+  }, [accountId]);
 
   return (
     <div className="w-5/6 mx-auto px-4 py-8">
@@ -138,4 +138,4 @@ const SingleaccountDetails = () => {
   );
 };
 
-export default SingleaccountDetails;
+export default SingleAccountDetails;
