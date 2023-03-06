@@ -8,7 +8,7 @@ const UserLoanDetail = () => {
     const { id } = useParams();
     const [detail, setDetail] = useState<any>([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/singleLoanDetails/${id}`)
+        fetch(`https://bravo-bank-server.vercel.app/singleLoanDetails/${id}`)
             .then((res) => res.json())
             .then((data) => setDetail(data));
     }, [id]);
@@ -85,15 +85,15 @@ const UserLoanDetail = () => {
                     </div>
                 </div>
                 <div>
-                        <p className="text-gray-600">Avidence</p>
-                        <p className="text-lg font-medium">{detail?.evidence}</p>
+                    <p className="text-gray-600">Avidence</p>
+                    <p className="text-lg font-medium">{detail?.evidence}</p>
                 </div>
                 <div>
-                        <p className="text-gray-600">Total Loan Amount</p>
-                        <p className="text-lg font-medium">{detail?.tLAmount}</p>
+                    <p className="text-gray-600">Total Loan Amount</p>
+                    <p className="text-lg font-medium">{detail?.tLAmount}</p>
                 </div>
                 <div>
-                    <img src={detail?.passport} alt=""/>
+                    <img src={detail?.passport} alt="" />
                 </div>
             </div>
         </div>

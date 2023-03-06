@@ -83,7 +83,7 @@ const LoanRequest = () => {
                             tLAmount: newAmount
                         }
 
-                        fetch("http://localhost:5000/loanReq", {
+                        fetch("https://bravo-bank-server.vercel.app/loanReq", {
                             method: 'POST',
                             headers: {
                                 'Content-type': 'application/json'
@@ -122,7 +122,7 @@ const LoanRequest = () => {
                             tLAmount: newAmount
                         }
 
-                        fetch("http://localhost:5000/loanReq", {
+                        fetch("https://bravo-bank-server.vercel.app/loanReq", {
                             method: 'POST',
                             headers: {
                                 'Content-type': 'application/json'
@@ -161,7 +161,7 @@ const LoanRequest = () => {
                             tLAmount: newAmount
                         }
 
-                        fetch("http://localhost:5000/loanReq", {
+                        fetch("https://bravo-bank-server.vercel.app/loanReq", {
                             method: 'POST',
                             headers: {
                                 'Content-type': 'application/json'
