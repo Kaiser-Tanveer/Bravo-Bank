@@ -2,7 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
-import { useParams } from 'react-router-dom'
+import { useNavigate, useNavigation, useParams } from 'react-router-dom'
+import Spinner from '../../Spinner/Spinner';
 
 
 type cardInfo = {
@@ -20,15 +21,17 @@ type cardInfo = {
   amount: string
 }
 const MoneyTrans = () => {
+  const navigate = useNavigate();
+  const navigation = useNavigation();
 
   const { id } = useParams();
 
-  const { isLoading, refetch, data: usersInfo = {} } = useQuery({
+  const { isLoading: any, refetch, data: usersInfo = {} } = useQuery({
     queryKey: ['/singleAccDetails', id],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/singleAccDetails/${id}`)
+      const res = await fetch(`https://bravo-bank-server.vercel.app/singleAccDetails/${id}`)
       const data = await res.json()
-      return data
+      return data;
     }
   })
 
@@ -41,33 +44,36 @@ const MoneyTrans = () => {
       user: data.user,
       sendAmount: data.sendAmount,
       accNum: data.accNum,
-      userAmount: usersInfo.amount
-
-  }
-  if(userData.sendAmount < usersInfo.amount){
-    fetch(`http://localhost:5000/userMoneyTrans`, {
-      method: 'PUT',
-      headers: {
+      userAmount: usersInfo.amount,
+    }
+    if (userData.sendAmount < usersInfo.amount) {
+      fetch(`https://bravo-bank-server.vercel.app/userMoneyTrans`, {
+        method: 'PUT',
+        headers: {
           'Content-type': 'application/json'
-      },
-      body: JSON.stringify(userData)
-  })
-      .then(res => res.json())
-      .then(data => {
+        },
+        body: JSON.stringify(userData)
+      })
+        .then(res => res.json())
+        .then(data => {
           if (data.acknowledged) {
-              toast.success('Money Transfer successfully')
-              // refetch()
+            toast.success('Money Transfer successfully')
+            navigate('/myAccounts')
+            refetch()
           }
-      })
-      .catch(error =>{
-        toast.error("Please Provide Valid Information")
-      })
-  }
-  else{
-    toast.error('You Dont have enough money in your account please deposite then transfer');
-  }
+        })
+        .catch(error => {
+          toast.error("Please Provide Valid Information")
+        })
+    }
+    else {
+      toast.error('You Do not have enough money in your account please deposit then transfer');
+    }
   }
 
+  if (navigation.state === "loading") {
+    return <Spinner />
+  }
   return (
     <section
       style={{
@@ -80,7 +86,7 @@ const MoneyTrans = () => {
       className='py-16 min-h-screen lg:py-10'>
       <form onSubmit={handleSubmit(onSubmit)}
         className='container max-w-[450px] mx-auto text-gray-100 border-2 border-gray-100 p-6 rounded-lg shadow-lg shadow-pink-500'>
-        <h1 className='text-4xl text-center font-extrabold text-gray-50 pb-6 underline'>Reciver Money Transfer Information</h1>
+        <h1 className='text-4xl text-center font-extrabold text-gray-50 pb-6 underline'>Receiver Money Transfer Information</h1>
         <div>
           <label>Choose Account type</label>
           <select

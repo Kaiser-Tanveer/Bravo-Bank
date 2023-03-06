@@ -15,7 +15,7 @@ const UserLoanReq = () => {
         queryKey: ["/userLoanReq"],
         queryFn: async () => {
             const res = await fetch(
-                `http://localhost:5000/userLoanReq`
+                `https://bravo-bank-server.vercel.app/userLoanReq`
             );
             const data = await res.json();
             return data;
@@ -30,7 +30,7 @@ const UserLoanReq = () => {
             accNum
         }
 
-        fetch(`http://localhost:5000/userLoanDelete/${id}`, {
+        fetch(`https://bravo-bank-server.vercel.app/userLoanDelete/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
@@ -51,7 +51,7 @@ const UserLoanReq = () => {
             id,
             accNum
         }
-        fetch(`http://localhost:5000/userLoanUpdate`, {
+        fetch(`https://bravo-bank-server.vercel.app/userLoanUpdate`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
