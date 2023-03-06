@@ -318,7 +318,7 @@ const LoanRequest = () => {
                     <input
                         type="file"
                         {...register("img")}
-                        className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                        className="rounded focus:outline-none focus:ring-2 bg-gray-100 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                         placeholder='Your passport pdf link'
                     />
                     {errors.img && (
