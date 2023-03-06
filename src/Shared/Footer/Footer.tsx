@@ -7,6 +7,7 @@ const Footer = () => {
     <footer className="p-6 dark:bg-gray-100 dark:text-gray-800 border border-t-2 border-b-0 border-x-0 border-primary mt-5">
       <div className="container grid grid-cols-2 mx-auto gap-x-3 gap-y-8 sm:grid-cols-3 md:grid-cols-4">
         <div className="flex flex-col space-y-4">
+          <h3 className="text-gray-700 font-semibold">Terms shortcuts</h3>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/terms&Conditions">Terms & Conditions</NavLink>
           </div>
@@ -18,25 +19,28 @@ const Footer = () => {
           </div>
         </div>
         <div className="flex flex-col space-y-4">
+          <h3 className="text-gray-700 font-semibold">Privacy Shortcuts</h3>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/privacy">Privacy & Policy</NavLink>
           </div>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
-            <NavLink to="/legalinformation">Legal Information</NavLink>
+            <NavLink to="/legalInformation">Legal Information</NavLink>
           </div>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
-            <NavLink to="/securityinformation">Security Information</NavLink>
+            <NavLink to="/securityInformation">Security Information</NavLink>
           </div>
         </div>
         <div className="flex flex-col space-y-4">
+          <h3 className="text-gray-700 font-semibold">About All</h3>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/careers">Careers</NavLink>
           </div>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
-            <NavLink to="/customerreviews">Customer Reviews</NavLink>
+            <NavLink to="/customerReviews">Customer Reviews</NavLink>
           </div>
         </div>
         <div className="flex flex-col space-y-4">
+          <h3 className="text-gray-700 font-semibold">Resources</h3>
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink
               to="https://github.com/Kaiser-Tanveer/Bravo-Bank"

@@ -4,6 +4,7 @@ import { toast } from 'react-hot-toast';
 import { FaTrashAlt } from 'react-icons/fa';
 import Spinner from '../../Spinner/Spinner';
 import { useNavigation } from 'react-router-dom';
+import { Table, Tbody, Td, Th, Thead, Tr } from 'react-super-responsive-table';
 
 const AllUsers = () => {
     const navigation = useNavigation();
@@ -42,31 +43,31 @@ const AllUsers = () => {
             <div className='my-16 lg:my-0'>.
                 <h1 className='text-center text-3xl font-bold underline text-gray-700'>All User Account In Your Bank Is Here</h1>
                 <div className="overflow-x-auto mt-8">
-                    <table className="min-w-full text-xs">
-                        <thead>
-                            <tr className="text-left">
-                                <th className="p-3"></th>
-                                <th className="p-3">User Photo</th>
-                                <th className="p-3">User Name</th>
-                                <th className="p-3">User E-mail</th>
-                                <th className="p-3">Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <Table className="min-w-full text-xs">
+                        <Thead>
+                            <Tr className="text-left">
+                                <Th className="p-3"></Th>
+                                <Th className="p-3">User Photo</Th>
+                                <Th className="p-3">User Name</Th>
+                                <Th className="p-3">User E-mail</Th>
+                                <Th className="p-3">Delete</Th>
+                            </Tr>
+                        </Thead>
+                        <Tbody>
 
                             {
-                                users?.map((user: { email: string, img: string, fullName: string, _id: string }, i: number) => <tr className="border-b border-opacity-20">
-                                    <td className="p-3">{i + 1}</td>
-                                    <td className="p-3"><img src={user?.img} alt="me"
+                                users?.map((user: { email: string, img: string, fullName: string, _id: string }, i: number) => <Tr className="border-b border-opacity-20">
+                                    <Td className="p-3">{i + 1}</Td>
+                                    <Td className="p-3"><img src={user?.img} alt="me"
                                         className="w-10 h-10 rounded-full bg-gray-100 hover:scale-150 duration-500"
-                                    /></td>
-                                    <td className="p-3">{user?.fullName}</td>
-                                    <td className="p-3">{user?.email}</td>
-                                    <td><button onClick={() => handleDelete(user?._id)} className="hover:border-[2px] border-gray-700 hover:bg-pink-500 hover:text-gray-700 text-pink-500 py-1 px-2 font-bold rounded-md text-xl hover:scale-110 duration-700"><FaTrashAlt /></button></td>
-                                </tr>)
+                                    /></Td>
+                                    <Td className="p-3">{user?.fullName}</Td>
+                                    <Td className="p-3">{user?.email}</Td>
+                                    <Td><button onClick={() => handleDelete(user?._id)} className="hover:border-[2px] border-gray-700 hover:bg-pink-500 hover:text-gray-700 text-pink-500 py-1 px-2 font-bold rounded-md text-xl hover:scale-110 duration-700"><FaTrashAlt /></button></Td>
+                                </Tr>)
                             }
-                        </tbody>
-                    </table>
+                        </Tbody>
+                    </Table>
                 </div>
             </div>
         </div>
