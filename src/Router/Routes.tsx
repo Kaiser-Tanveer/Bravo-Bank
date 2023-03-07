@@ -15,7 +15,6 @@ import AccountsRequest from "../Pages/AllRequests/AccountsRequest/AccountsReques
 import MyAccounts from "../Pages/UserProfile/MyAccounts/MyAccounts";
 import MyCards from "../Pages/UserProfile/MyCards/MyCards";
 import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
-
 import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import Terms from "../Shared/Footer/Terms/Terms";
@@ -33,7 +32,7 @@ import Careers from "../Shared/Footer/Careers/Careers";
 import LegalInformation from "../Shared/Footer/LegalInformation/LegalInformation";
 import SingleAccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
 import CustomerReviews from "../Shared/Footer/Customerreviews/Customerreviews";
-import Aboutus from "../Shared/Footer/Aboutus/Aboutus";
+import DepRePay from "../Pages/UserProfile/MyLoans/DepRePay";
 
 export const router = createBrowserRouter([
   {
@@ -103,6 +102,10 @@ export const router = createBrowserRouter([
       {
         path: "/singleLoanDetail/:id",
         element: <UserLoanDetail />,
+      },
+      {
+        path: "/debtRepay/:id",
+        element: <DepRePay />,
       },
       {
         path: "/loanReq/:id",
