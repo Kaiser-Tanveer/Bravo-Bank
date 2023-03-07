@@ -156,6 +156,10 @@ export const router = createBrowserRouter([
         path: "/moneyTrans/:id",
         element: <MoneyTrans />,
       },
+      {
+        path: "/aboutus",
+        element: <Aboutus />,
+      },
     ],
   },
   {

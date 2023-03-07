@@ -38,6 +38,9 @@ const Footer = () => {
           <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
             <NavLink to="/customerReviews">Customer Reviews</NavLink>
           </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/aboutus">About Us</NavLink>
+          </div>
         </div>
         <div className="flex flex-col space-y-4">
           <h3 className="text-gray-700 font-semibold">Resources</h3>
@@ -48,6 +51,9 @@ const Footer = () => {
             >
               GitHub
             </NavLink>
+          </div>
+          <div className="flex flex-col space-y-2 text-sm dark:text-gray-700">
+            <NavLink to="/contactus">Contact Us</NavLink>
           </div>
         </div>
       </div>
