@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { AuthContext } from '../context/AuthProvider';
 import logo from '../Assets/logo/favicon.png';
@@ -10,16 +10,23 @@ type userInput = {
     password: string
 }
 const Login = () => {
+    const [err, setErr] = useState<any | null>('');
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const { signIn } = useContext(AuthContext)
+    const { signIn } = useContext(AuthContext);
+
 
     const { register, handleSubmit, formState: { errors } } = useForm<userInput>();
     const onSubmit: SubmitHandler<userInput> = (data) => {
         console.log(data);
         signIn(data.email, data.password)
-        navigate('/');
+            .then((result: any) => {
+                const user = result.user;
+                console.log(user);
+                navigate('/');
+            })
+            .catch((err: any) => setErr(err.message))
     }
 
     return (
@@ -49,6 +56,9 @@ const Login = () => {
                             <p className='text-red-700 text-center' >{errors.password.message}</p>}
                     </div>
                     <input type="submit" value='Login' className='w-full border-2 border-sky-500 bg-gradient-to-r from-sky-500 to-pink-500 rounded-md py-2 text-gray-100' />
+                    <p className='text-pink-500 text-center'>
+                        {err}
+                    </p>
                 </form>
                 <h2 className='text-gray-500 p-2'>New to Bravo Bank Please<Link to='/register' className='hover:underline hover:text-sky-500 ml-1'>Register</Link></h2>
             </section>

@@ -58,7 +58,7 @@ const MyAccounts = () => {
                                     <Tbody>
                                         <Tr>
                                             <Td>{account.user}</Td>
-                                            <Td>{account.amount}</Td>
+                                            <Td>{account.amount} BDT</Td>
                                             <Td>{account.phone}</Td>
 
                                             <Td>
@@ -120,7 +120,9 @@ const MyAccounts = () => {
                                     </Tbody>
                                 </Table>
                                 <div className="grid md:grid-cols-2 gap-6 mt-6 mx-10">
-                                    <button className="text-3xl w-full p-3 flex items-center justify-center mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"> <FaPlusCircle className="mr-2" /><span>Deposit</span></button>
+                                    <NavLink to={`/deposit/${account._id}`}>
+                                        <button className="text-3xl w-full p-3 flex items-center justify-center mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"><FaPlusCircle className="mr-2" /><span>Deposit</span></button>
+                                    </NavLink>
                                     <NavLink to={`/moneyTrans/${account._id}`}>
                                         <button className="text-3xl w-full p-3 flex items-center justify-center mx-auto rounded-lg shadow-lg shadow-gray-700 font-bold text-center text-gray-700 border-2 border-gray-500 hover:text-gray-200 bg-gradient-to-r from-pink-500 to-sky-500 hover:from-primary hover:to-sky-500 duration-500"><HiCurrencyDollar className="mr-2" /><span>Transfer</span></button>
                                     </NavLink>

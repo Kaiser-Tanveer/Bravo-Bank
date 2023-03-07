@@ -30,7 +30,10 @@ const MyLoans = () => {
             <main className='mx-10 pb-16 bg-gray-200 border border-sky-500 rounded-lg shadow-lg relative'>
                 {
                     // eslint-disable-next-line array-callback-return
-                    loans?.map((loan: { status: string, accNum: string, lAmount: string, lDuration: string, loan: string, _id: string }, i: number) =>
+                    loans?.map((loan: {
+                        status: string, tLAmount
+                        : number, interest: string, accNum: string, lAmount: string, lDuration: string, loan: string, _id: string
+                    }, i: number) =>
                         <div
                             key={loan.accNum}
                         >
@@ -44,6 +47,7 @@ const MyLoans = () => {
                                                 <Th>Loan Duration</Th>
                                                 <Th>Loan Amount</Th>
                                                 <Th>Loan Interest</Th>
+                                                <Th>Total Payment</Th>
                                                 <Th>Loan Status</Th>
                                             </Tr>
                                         </Thead>
@@ -52,16 +56,26 @@ const MyLoans = () => {
                                                 <Td>{loan.loan}</Td>
                                                 <Td>{loan.lDuration} Months</Td>
                                                 <Td>{loan.lAmount} BDT</Td>
-                                                <Td>0.03 percent</Td>
+                                                <Td>{loan.interest} %</Td>
+                                                <Td>{loan.tLAmount}</Td>
                                                 <Td className="text-pink-500 font-semibold">{loan.status}</Td>
                                             </Tr>
                                         </Tbody>
                                     </Table>
-                                    <NavLink to={`/debtRepay/${loan?._id}`}>
-                                        <button className="text-sky-500 py-2 w-full border-2 border-sky-500 font-extrabold hover:bg-sky-500 hover:text-gray-100 bg-sky-200 absolute bottom-0 rounded-b-lg px-1 duration-500">
-                                            Debt Repayment
-                                        </button>
-                                    </NavLink>
+                                    {
+                                        loan?.tLAmount <= 0 ?
+                                            <NavLink to={`/debtRepay/${loan?._id}`}>
+                                                <button disabled >
+                                                    Debt Repayment Success
+                                                </button>
+                                            </NavLink>
+                                            :
+                                            <NavLink to={`/debtRepay/${loan?._id}`}>
+                                                <button className="text-sky-500 py-2 w-full border-2 border-sky-500 font-extrabold hover:bg-sky-500 hover:text-gray-100 bg-sky-200 absolute bottom-0 rounded-b-lg px-1 duration-500">
+                                                    Debt Repayment
+                                                </button>
+                                            </NavLink>
+                                    }
                                 </>
                             }
                         </div>

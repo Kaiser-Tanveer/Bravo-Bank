@@ -15,7 +15,6 @@ import AccountsRequest from "../Pages/AllRequests/AccountsRequest/AccountsReques
 import MyAccounts from "../Pages/UserProfile/MyAccounts/MyAccounts";
 import MyCards from "../Pages/UserProfile/MyCards/MyCards";
 import MyLoans from "../Pages/UserProfile/MyLoans/MyLoans";
-import SingleAccountDetails from "../Pages/UserProfile/SingleAccountDetails/SingleAccountDetails";
 import SingleAccDetails from "../Pages/Dashboard/userRoutes/SingleAccDetails";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import Terms from "../Shared/Footer/Terms/Terms";
@@ -31,7 +30,10 @@ import Accessibility from "../Shared/Footer/Accessibility/Accessibility";
 import Privacy from "../Shared/Footer/Privacy/Privacy";
 import Careers from "../Shared/Footer/Careers/Careers";
 import LegalInformation from "../Shared/Footer/LegalInformation/LegalInformation";
+import DepRePay from "../Pages/UserProfile/MyLoans/DepRePay";
 import CustomerReviews from "../Shared/Footer/CustomerReviews/CustomerReviews";
+import SingleAccountDetails from "../Pages/UserProfile/SingleAccountDetails/SingleaccountDetails";
+import Deposit from "../Pages/UserProfile/MyAccounts/Deposit";
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +72,10 @@ export const router = createBrowserRouter([
         element: <SingleAccountDetails />,
       },
       {
+        path: "/deposit/:id",
+        element: <Deposit />,
+      },
+      {
         path: "/cardDetail/:cardType",
         element: <CardsDetails />,
       },
@@ -101,6 +107,10 @@ export const router = createBrowserRouter([
       {
         path: "/singleLoanDetail/:id",
         element: <UserLoanDetail />,
+      },
+      {
+        path: "/debtRepay/:id",
+        element: <DepRePay />,
       },
       {
         path: "/loanReq/:id",
