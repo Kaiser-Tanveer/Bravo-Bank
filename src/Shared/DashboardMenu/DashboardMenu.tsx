@@ -77,6 +77,17 @@ const DashboardMenu = () => {
                                     onClick={() => setOpen(!open)}
                                     className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
                                     <NavLink
+                                        to="/dashboard/DepositRequest"
+                                        className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                                    >
+                                        <HiCreditCard />
+                                        <span>Deposit Request</span>
+                                    </NavLink>
+                                </li>
+                                <li
+                                    onClick={() => setOpen(!open)}
+                                    className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
+                                    <NavLink
                                         to="/dashboard/allUsers"
                                         className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
                                     >

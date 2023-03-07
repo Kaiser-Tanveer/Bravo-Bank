@@ -48,7 +48,7 @@ const MyAccounts = () => {
                                         <Tr>
                                             <Th>Name</Th>
                                             <Th>Amount</Th>
-                                            <Th>Phone</Th>
+                                            {account.depositReq && <Th>Deposit Status</Th>}
 
                                             <Th>Account Status</Th>
                                             {account.status === "success" && <Th>Card Status</Th>}
@@ -59,7 +59,7 @@ const MyAccounts = () => {
                                         <Tr>
                                             <Td>{account.user}</Td>
                                             <Td>{account.amount} BDT</Td>
-                                            <Td>{account.phone}</Td>
+                                            {account.depositReq && <Td>{account.depositReq}</Td>}
 
                                             <Td>
                                                 {account.status === "pending" ? (
