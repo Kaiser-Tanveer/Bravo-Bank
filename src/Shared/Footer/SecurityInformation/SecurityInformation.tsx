@@ -4,7 +4,7 @@ const SecurityInformation = () => {
   return (
     <div className="bg-gray-100 py-4 px-4">
       <h4 className="text-gray-600 text-3xl mb-2">Security Information</h4>
-      <p className="text-gray-500 text-lg mb-4">
+      <p className="text-gray-700 text-lg mb-4">
         At Bravo Bank, we take the security of your personal and financial
         information very seriously. Here are some of the measures we take to
         protect your data:
@@ -32,7 +32,7 @@ const SecurityInformation = () => {
           your data.
         </li>
       </ul>
-      <p className="text-gray-500 text-lg">
+      <p className="text-gray-700 text-lg">
         If you have any concerns about the security of your account or need
         assistance with any security-related issues, please don't hesitate to
         contact our customer support team.
