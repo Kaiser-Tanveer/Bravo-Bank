@@ -34,14 +34,13 @@ const Deposit = () => {
 
     const onSubmit = (data: any) => {
         const userData = {
-            id,
             accNum: userInfo._id,
             depositAmount: data.depositAmount,
             userAmount: userInfo.amount,
-            depStatus: "pending"
+            depStatus: "pending",
+            email: userInfo.email
         }
 
-        console.log(userData);
         fetch(`http://localhost:5000/depositReq`, {
             method: 'PUT',
             headers: {
