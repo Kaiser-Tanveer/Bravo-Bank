@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { useQuery } from '@tanstack/react-query';
+import { userInfo } from 'os';
 
 type cardInfo = {
     user: string,
@@ -80,7 +81,8 @@ const LoanRequest = () => {
                             status: 'pending',
                             lAmount: data.lAmount,
                             lDuration: data.lDuration,
-                            tLAmount: newAmount
+                            tLAmount: newAmount,
+                            interest: 0.03
                         }
 
                         fetch("https://bravo-bank-server.vercel.app/loanReq", {
@@ -119,7 +121,8 @@ const LoanRequest = () => {
                             status: 'pending',
                             lAmount: data.lAmount,
                             lDuration: data.lDuration,
-                            tLAmount: newAmount
+                            tLAmount: newAmount,
+                            interest: 0.05
                         }
 
                         fetch("https://bravo-bank-server.vercel.app/loanReq", {
@@ -158,7 +161,8 @@ const LoanRequest = () => {
                             status: 'pending',
                             lAmount: data.lAmount,
                             lDuration: data.lDuration,
-                            tLAmount: newAmount
+                            tLAmount: newAmount,
+                            interest: 0.07
                         }
 
                         fetch("https://bravo-bank-server.vercel.app/loanReq", {
