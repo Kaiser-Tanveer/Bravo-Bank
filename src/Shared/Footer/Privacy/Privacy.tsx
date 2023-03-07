@@ -4,7 +4,7 @@ const Privacy = () => {
   return (
     <div className="bg-gray-100 py-4 px-4">
       <h4 className="text-3xl text-gray-600 mb-2">Privacy Policy</h4>
-      <p className="text-gray-500 text-lg mb-4">
+      <p className="text-gray-700 text-lg mb-4">
         We take your privacy seriously and are committed to protecting your
         personal information. This policy explains how we collect, use, and
         share your information when you use our banking services.

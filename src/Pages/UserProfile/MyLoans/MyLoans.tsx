@@ -32,7 +32,7 @@ const MyLoans = () => {
                     // eslint-disable-next-line array-callback-return
                     loans?.map((loan: {
                         status: string, tLAmount
-                        : number, interest: string, accNum: string, lAmount: string, lDuration: string, loan: string, _id: string
+                            : number, interest: string, accNum: string, lAmount: string, lDuration: string, loan: string, _id: string
                     }, i: number) =>
                         <div
                             key={loan.accNum}
