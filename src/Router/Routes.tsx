@@ -30,8 +30,9 @@ import Accessibility from "../Shared/Footer/Accessibility/Accessibility";
 import Privacy from "../Shared/Footer/Privacy/Privacy";
 import Careers from "../Shared/Footer/Careers/Careers";
 import LegalInformation from "../Shared/Footer/LegalInformation/LegalInformation";
-import SingleAccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
-import CustomerReviews from "../Shared/Footer/Customerreviews/Customerreviews";
+import CustomerReviews from "../Shared/Footer/CustomerReviews/CustomerReviews";
+import SingleAccountDetails from "../Pages/UserProfile/SingleAccountDetails/SingleaccountDetails";
+import Deposit from "../Pages/UserProfile/MyAccounts/Deposit";
 import DepRePay from "../Pages/UserProfile/MyLoans/DepRePay";
 
 export const router = createBrowserRouter([
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
       {
         path: "/singleDetails/:accountId",
         element: <SingleAccountDetails />,
+      },
+      {
+        path: "/deposit/:id",
+        element: <Deposit />,
       },
       {
         path: "/cardDetail/:cardType",

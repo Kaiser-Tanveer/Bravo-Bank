@@ -27,7 +27,7 @@ const MyLoans = () => {
     return (
         <div className='py-10 lg:py-0'>
             <h1 className='text-4xl text-center font-bold text-transparent bg-gradient-to-r bg-clip-text from-pink-500 bg-gray-100 to-sky-500 pt-10 pb-5'>My Loan</h1>
-            <main className='mx-10 pb-16 bg-gray-200 rounded-lg shadow-lg relative'>
+            <main className='mx-10 pb-16 bg-gray-200 border border-sky-500 rounded-lg shadow-lg relative'>
                 {
                     // eslint-disable-next-line array-callback-return
                     loans?.map((loan: {
