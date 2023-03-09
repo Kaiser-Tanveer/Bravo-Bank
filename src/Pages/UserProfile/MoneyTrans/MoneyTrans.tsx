@@ -121,30 +121,7 @@ const MoneyTrans = () => {
             )}
           </div>
         </div>
-        {/* <div>
-          <label>Phone</label>
-          <input
-            type="text"
-            {...register("phone")}
-            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-            // value={usersInfo?.phone}
-          />
-          {errors.phone && (
-            <p className="text-red-700 text-center">{errors.phone.message}</p>
-          )}
-        </div> */}
-        {/* <div>
-          <label>NID</label>
-          <input
-            type="text"
-            {...register("nid")}
-            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-            value={usersInfo?.nid}
-          />
-          {errors.nid && (
-            <p className="text-red-700 text-center">{errors.nid.message}</p>
-          )}
-        </div> */}
+       
         <div>
           <label>Account Number</label>
           <input
@@ -152,7 +129,7 @@ const MoneyTrans = () => {
             type='text'
             {...register("accNum")}
             className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-          // value={usersInfo?._id}
+          
           />
           {errors.accNum && (
             <p className="text-red-700 text-center">{errors.accNum.message}</p>
@@ -170,69 +147,7 @@ const MoneyTrans = () => {
             <p className="text-red-700 text-center">{errors.sendAmount.message}</p>
           )}
         </div>
-        {/* <div>
-          <label>Company Name</label>
-          <input
-            type='text'
-            {...register("company")}
-            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-            placeholder='ex: XYZ Co. Ltd'
-          />
-          {errors.company && (
-            <p className="text-red-700 text-center">{errors.company.message}</p>
-          )}
-        </div> */}
-        {/* <div>
-          <label>Loan Amount</label>
-          <input
-            type='number'
-            {...register("lAmount")}
-            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-            placeholder='ex: XYZ Co. Ltd'
-          />
-          {errors.lAmount && (
-            <p className="text-red-700 text-center">{errors.lAmount.message}</p>
-          )}
-        </div> */}
-        {/* <div>
-          <label>Choose Loan Duration</label>
-          <select
-            {...register("lDuration", {
-              required: "Please select the Account Type",
-            })}
-            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-          >
-            <option value="12">12 Months (interest 3%)</option>
-            <option value="18">18 Months (interest 5%)</option>
-            <option value="24">24 Months(interest 7%)</option>
-          </select>
-          {errors?.lDuration && (
-            <p className="text-red-700 text-center">{errors.lDuration.message}</p>
-          )}
-        </div> */}
-        {/* <div>
-          <label>Passport Image</label>
-          <input
-            type="file"
-            {...register("img")}
-            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-            placeholder='Your passport pdf link'
-          />
-          {errors.img && (
-            <p className="text-red-700 text-center">{errors.img.message}</p>
-          )}
-        </div> */}
-        {/* <div>
-          <label>Valid Evidence of Company & Residential</label>
-          <textarea
-            {...register("evidence")}
-            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-            placeholder='Attach Your Pdf links here..'
-          />
-          {errors.evidence && (
-            <p className="text-red-700 text-center">{errors.evidence.message}</p>
-          )}
-        </div> */}
+        
         <input
           type="submit"
           value="Request"

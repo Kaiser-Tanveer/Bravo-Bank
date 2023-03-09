@@ -108,7 +108,10 @@ const UserLoanReq = () => {
                                                 </button>
                                             </NavLink>
                                         </Td>
-                                        <Td><button onClick={() => handleDelete(user?._id, user?.accNum)} className="hover:border-[2px] border-gray-700 hover:bg-pink-500 hover:text-gray-700 text-pink-500 py-1 px-2 font-bold rounded-md text-xl hover:scale-110 duration-700"><FaTrashAlt /></button></Td>
+                                        {
+                                            user?.status === 'pending' &&
+                                            <Td><button onClick={() => handleDelete(user?._id, user?.accNum)} className="hover:border-[2px] border-gray-700 hover:bg-pink-500 hover:text-gray-700 text-pink-500 py-1 px-2 font-bold rounded-md text-xl hover:scale-110 duration-700"><FaTrashAlt /></button></Td>
+                                        }
                                     </Tr>)
                             }
                         </Tbody>
