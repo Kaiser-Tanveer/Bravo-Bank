@@ -32,10 +32,10 @@ import Careers from "../Shared/Footer/Careers/Careers";
 import LegalInformation from "../Shared/Footer/LegalInformation/LegalInformation";
 import Deposit from "../Pages/UserProfile/MyAccounts/Deposit";
 import DepRePay from "../Pages/UserProfile/MyLoans/DepRePay";
-import SingleAccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
 import Aboutus from "../Shared/Footer/Aboutus/Aboutus";
-import CustomerReviews from "../Shared/Footer/Customerreviews/Customerreviews";
 import UserDepoReq from "../Pages/Dashboard/UserDepositRequest/UserDepoReq";
+import SingleAccountDetails from "../Pages/UserProfile/SingleAccountDetails/SingleaccountDetails";
+import CustomerReviews from "../Shared/Footer/CustomerReviews/CustomerReviews";
 
 export const router = createBrowserRouter([
   {

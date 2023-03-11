@@ -41,7 +41,7 @@ const Deposit = () => {
             email: userInfo.email
         }
 
-        fetch(`http://localhost:5000/depositReq`, {
+        fetch(`https://bravo-bank-server.vercel.app/depositReq`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'

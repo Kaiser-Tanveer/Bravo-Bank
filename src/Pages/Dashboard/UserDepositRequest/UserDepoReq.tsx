@@ -15,7 +15,7 @@ const UserDepoReq = () => {
         queryKey: ["/userLoanReq"],
         queryFn: async () => {
             const res = await fetch(
-                `http://localhost:5000/dashDepoShow`
+                `https://bravo-bank-server.vercel.app/dashDepoShow`
             );
             const data = await res.json();
             return data;
@@ -30,7 +30,7 @@ const UserDepoReq = () => {
             accNum
         }
 
-        fetch(`http://localhost:5000/userDepositDelete/${id}`, {
+        fetch(`https://bravo-bank-server.vercel.app/userDepositDelete/${id}`, {
             method: 'DELETE',
             headers: {
                 'Content-type': 'application/json'
@@ -52,7 +52,7 @@ const UserDepoReq = () => {
             accNum,
             depositAmount
         }
-        fetch(`http://localhost:5000/userDepositUpdate`, {
+        fetch(`https://bravo-bank-server.vercel.app/userDepositUpdate`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
@@ -79,7 +79,7 @@ const UserDepoReq = () => {
                                 <Th className="p-3">User Email</Th>
                                 <Th className="p-3">Account Number</Th>
                                 <Th className="p-3">Deposit Amount</Th>
-                                <Th className="p-3">Status</Th>
+                                {/* <Th className="p-3">Status</Th> */}
                                 <Th className="p-3">Details</Th>
                                 <Th className="p-3">Delete</Th>
                             </Tr>
