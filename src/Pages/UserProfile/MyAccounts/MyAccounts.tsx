@@ -29,7 +29,7 @@ const MyAccounts = () => {
 
     return (
         <section className="py-10 lg:py-0">
-            {accounts.length >= 0 ? (
+            {accounts.length >= 1 ? (
                 <div>
                     <h1 className="text-4xl text-center font-bold text-transparent bg-gradient-to-r bg-clip-text from-pink-500 bg-gray-100 to-sky-500 py-10">
                         My Accounts
@@ -134,9 +134,9 @@ const MyAccounts = () => {
             )
                 :
                 (
-                    <h1 className="text-4xl text-center font-semibold py-10">
-                        Sorry!! You have no accounts. Please
-                        <Link to="/openAcc" className="hover:text-sky-500 hover:underline">
+                    <h1 className="text-4xl text-center font-semibold text-pink-500 py-10">
+                        Sorry!! You have no account. Please
+                        <Link to="/openAcc" className="text-sky-500 hover:underline ml-1">
                             create one
                         </Link>
                     </h1>

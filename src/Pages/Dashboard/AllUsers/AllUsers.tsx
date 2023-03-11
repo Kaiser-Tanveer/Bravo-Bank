@@ -46,7 +46,6 @@ const AllUsers = () => {
                     <Table className="min-w-full text-xs">
                         <Thead>
                             <Tr className="text-left">
-                                <Th className="p-3"></Th>
                                 <Th className="p-3">User Photo</Th>
                                 <Th className="p-3">User Name</Th>
                                 <Th className="p-3">User E-mail</Th>
@@ -56,9 +55,8 @@ const AllUsers = () => {
                         <Tbody>
 
                             {
-                                users?.map((user: { email: string, img: string, fullName: string, _id: string }, i: number) => <Tr className="border-b border-opacity-20">
-                                    <Td className="p-3">{i + 1}</Td>
-                                    <Td className="p-3"><img src={user?.img} alt="me"
+                                users?.map((user: { email: string, image: string, fullName: string, _id: string }, i: number) => <Tr className="border-b border-opacity-20">
+                                    <Td className="p-3"><img src={user?.image} alt="me"
                                         className="w-10 h-10 rounded-full bg-gray-100 hover:scale-150 duration-500"
                                     /></Td>
                                     <Td className="p-3">{user?.fullName}</Td>

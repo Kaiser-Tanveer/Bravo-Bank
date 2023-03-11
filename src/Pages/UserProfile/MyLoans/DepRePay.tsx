@@ -25,7 +25,7 @@ const DepRePay = () => {
     const { isLoading, refetch, data: usersInfo = {} } = useQuery({
         queryKey: ['/singleLoanDetails', id],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/singleLoanDetails/${id}`)
+            const res = await fetch(`https://bravo-bank-server.vercel.app/singleLoanDetails/${id}`)
             const data = await res.json()
             return data
         }
@@ -37,8 +37,8 @@ const DepRePay = () => {
         formState: { errors },
     } = useForm<cardInfo>();
 
-    const onSubmit = (data: any) =>{
-        if(usersInfo?.tLAmount > data.amount){
+    const onSubmit = (data: any) => {
+        if (usersInfo?.tLAmount > data.amount) {
             const userInfo = {
                 email: usersInfo?.email,
                 lAmount: usersInfo?.lAmount,
@@ -49,24 +49,24 @@ const DepRePay = () => {
                 nid: usersInfo?.nid
             }
 
-            fetch(`http://localhost:5000/lInfoUpdate`, {
-            method: 'PUT',
-            headers: {
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(userInfo)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.acknowledged === true) {
-                    toast.success('Loan Status updated successfully')
-                    refetch()
-                }
+            fetch(`https://bravo-bank-server.vercel.app/lInfoUpdate`, {
+                method: 'PUT',
+                headers: {
+                    'Content-type': 'application/json'
+                },
+                body: JSON.stringify(userInfo)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.acknowledged === true) {
+                        toast.success('Loan Status updated successfully')
+                        refetch()
+                    }
+                })
 
         }
-        else{
+        else {
             console.log("Your Information Is Wrong");
         }
     }
@@ -85,22 +85,22 @@ const DepRePay = () => {
                 className='container max-w-[450px] mx-auto text-gray-100 border-2 border-gray-100 p-6 rounded-lg shadow-lg shadow-pink-500'>
                 <h1 className='text-4xl text-center font-extrabold text-gray-50 pb-6 underline'>Loan Repay</h1>
                 <div>
-                        <label>Your Loan Type</label>
-                        <input
-                            type="text"
-                            {...register("loan")}
-                            className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
-                            placeholder="ex: Kaiser Tanveer"
-                            defaultValue={usersInfo?.loan}
-                            readOnly
-                        />
-                        {errors.loan && (
-                            <p className="text-red-700 text-center">
-                                {errors.loan.message}
-                            </p>
-                        )}
-                    </div>
-                    <div>
+                    <label>Your Loan Type</label>
+                    <input
+                        type="text"
+                        {...register("loan")}
+                        className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
+                        placeholder="ex: Kaiser Tanveer"
+                        defaultValue={usersInfo?.loan}
+                        readOnly
+                    />
+                    {errors.loan && (
+                        <p className="text-red-700 text-center">
+                            {errors.loan.message}
+                        </p>
+                    )}
+                </div>
+                <div>
                     <label>Loan Repay Account Number</label>
                     <input
                         type='text'
