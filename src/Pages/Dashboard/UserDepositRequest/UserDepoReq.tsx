@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query';
-import React, { useState } from 'react'
+import React from 'react'
 import { toast } from 'react-hot-toast';
 import { FaInfoCircle, FaTrashAlt } from 'react-icons/fa';
 import { NavLink } from 'react-router-dom';
@@ -71,7 +71,7 @@ const UserDepoReq = () => {
     return (
         <div>
             <div className='my-16 lg:my-0'>.
-                <h1 className='text-center text-3xl font-bold underline text-gray-700'>All User Loan In Your Bank Is Here</h1>
+                <h1 className='text-center text-3xl font-bold underline text-gray-700'>All Deposit Requests Your Bank Is Here</h1>
                 <div className="overflow-x-auto mt-8">
                     <Table className="min-w-full text-xs">
                         <Thead>
