@@ -17,7 +17,7 @@ const Home = () => {
     return <Spinner />;
   }
   return (
-    <div className="bg-gradient-to-tl from-gray-300 to-gray-100">
+    <div className="bg-gradient-to-tl from-gray-300 to-gray-100 pt-12 lg:pt-0">
       <BannerSlider />
       <CardSlider />
       <TaxCalculation />

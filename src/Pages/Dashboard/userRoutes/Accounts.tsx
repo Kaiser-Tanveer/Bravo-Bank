@@ -57,7 +57,7 @@ const Accounts = () => {
     return (
         <div>
             <div className='my-16 lg:my-0'>.
-                <h1 className='text-center text-3xl font-bold underline text-gray-700'>All User Account In Your Bank Is Here</h1>
+                <h1 className='text-center text-3xl font-bold underline text-gray-700'>All User Accounts of Your Bank is Here</h1>
                 <div className="overflow-x-auto mt-8">
                     <Table className="min-w-full text-xs">
                         <Thead>

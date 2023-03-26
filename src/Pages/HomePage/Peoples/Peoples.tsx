@@ -9,59 +9,49 @@ import {
 const Peoples = () => {
     const employees = [
         {
+            id: 1,
+            name: "Galib Hossain",
+            img: "https://i.ibb.co/3CLgbVc/1670427282163.png",
+            title: "Content Creator || Front End Developer",
+            facebook: "url",
+            linkedin: "url",
+            github: "url",
+            email: ""
+        },
+        {
+            id: 2,
             name: "Nazmul Bhuiya",
             img: "https://i.ibb.co/RSDfJdL/p.jpg",
-            title: "Cash Manager",
+            title: "Full Stack Developer",
             facebook: "https://www.facebook.com/nazmul.nobel.3",
             linkedin: "https://www.linkedin.com/in/nazmul-bhuyian-mern-stack-developer/",
             github: "https://github.com/nazmulbhuyian",
+            email: ""
         },
         {
+            id: 3,
             name: "Kaiser Tanveer",
             img: "https://i.ibb.co/h7FTqyZ/My-PP.jpg",
-            title: "Managing Director",
-            facebook: "url",
-            linkedin: "url",
-            github: "url",
+            title: "Team Leader || GitHub Manager || UI Developer || Front End Developer",
+            facebook: "https://web.facebook.com/Kaiser2581",
+            linkedin: "https://www.linkedin.com/in/kaiser-tanveer/",
+            github: "https://github.com/Kaiser-Tanveer",
+            email: "kaisertanveer0@gmail.com"
         },
-        // {
-        //     name: "Golam Morshed",
-        //     img: "",
-        //     title: "Distributor",
-        //     facebook: "url",
-        //     linkedin: "url",
-        //     github: "url",
-        // },
-        {
-            name: "Galib Hossain",
-            img: "https://i.ibb.co/3CLgbVc/1670427282163.png",
-            title: "Accountant",
-            facebook: "url",
-            linkedin: "url",
-            github: "url",
-        },
-        // {
-        //     name: "Safwan Bin Ridwan",
-        //     img: "",
-        //     title: "Hiring Manager",
-        //     facebook: "url",
-        //     linkedin: "url",
-        //     github: "url",
-        // },
     ];
     return (
         <section className="py-6 bg-gray-100 text-gray-800">
             <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
                 <p className="p-2 text-sm font-medium tracking-wider text-center uppercase">
-                    Bravo Bank Employees
+                    Our Dev Team
                 </p>
                 <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">
-                    Who deserve a Thanks
+                    Bravo Bank Developers
                 </h1>
                 <div className="flex flex-row flex-wrap-reverse justify-center mt-8 group">
-                    {employees.map((employee, i) => (
+                    {employees.map(employee => (
                         <div
-                            key={i}
+                            key={employee.id}
                             className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-primary text-gray-100 shadow-lg shadow-gray-700 group-hover:scale-90 hover:!scale-110 duration-500">
                             <img
                                 alt="employeeImage"
@@ -78,15 +68,15 @@ const Peoples = () => {
                                 <a
                                     rel="noopener noreferrer"
                                     href={employee?.facebook}
-                                    title="Email"
+                                    title="Facebook"
                                     className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500"
                                 >
                                     <FaFacebookF className="text-xl" />
                                 </a>
                                 <a
                                     rel="noopener noreferrer"
-                                    href="#"
-                                    title="Twitter"
+                                    href={`mailto: ${employee?.email}`}
+                                    title="Email"
                                     className="text-gray-50 hover:bg-gray-100 hover:text-primary rounded-full p-2 hover:shadow-md hover:shadow-gray-700 hover:scale-110 duration-500"
                                 >
                                     <FaEnvelopeOpenText className="text-xl" />

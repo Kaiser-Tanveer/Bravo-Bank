@@ -1,47 +1,42 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import bannerImg from '../../../Assets/Banners/BravoBanner2.png';
+import lgBanner from '../../../Assets/Banners/lgBanner.png';
+import smBanner from '../../../Assets/Banners/smBanner.png';
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import { FaArrowRight } from "react-icons/fa";
 
 const BannerSlider = () => {
   return (
-    <div className="mt-2 items-center relative shadow-lg shadow-gray-700 rounded-lg p-0 border border-gray-700">
-      <div className="container">
-        <img src={bannerImg} alt="main-banner" className="absolute right-0 h-96 w-full blur-sm" />
-      </div>
-      <div className='rounded-lg bg-gradient-to-r from-primary to-sky-500 bg-opacity-90 grid grid-cols-1 md:grid-cols-2 h-96 w-full shadow-lg shadow-gray-700 border-2' style={{
-        clipPath: 'polygon(0 0, 100% calc(100% - 100vw), calc(100% - 50vw) 100%, 0 100%)',
-        boxShadow: "2px 20px 8px 12px darkgray"
-      }}>
-        <div className="pt-12 w-[80%] lg:w-[80%] md:w-full  px-6">
-          <p className="text-5xl md:text-6xl font-bold text-gray-100">
-            Welcome!
-          </p>
-          <br />
-          <p className="text-xl text-gray-200 content-center">
-            <Typewriter
-              words={['We are providing a safe, secure, and life time guaranty for our clients. continue with Bravo Bank.']}
-              loop={100}
-              cursor
-              cursorStyle='|'
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-            />
-          </p>
-          <Link
-            to='/openAcc'
-            className="absolute bottom-16 left-6 md:bottom-1/5 md:left-[3%] bg-gradient-to-r from-sky-500 to-gray-100 hover:p-1 rounded-md hover:scale-110 duration-700 group">
-            <button
-              className="flex hover:justify-between items-center uppercase font-bold text-gray-200 bg-gradient-to-l from-sky-500 to-pink-600 px-6 rounded-md py-3 hover:text-gray-50 border-2 group-hover:border-none border-gray-100 duration-500">
-              Continue
-              <FaArrowRight className="group-hover:ml-6 hidden group-hover:inline-flex duration-500 ease-in-out" />
-            </button>
-          </Link>
-        </div>
-      </div>
+    <div className="container min-h-full mx-auto mt-2 items-center relative shadow-lg shadow-gray-700 rounded-b-lg p-0 border bg-gradient-to-r from-pink-500 via-sky-500 to-emerald-500 border-gray-700">
+      <img src={lgBanner} alt="main-banner" className="hidden md:block" />
+      <img src={smBanner} alt="main-banner" className="md:hidden min-h-full" />
+      {/* Contents  */}
+      <p className="absolute top-[40.5%] md:top-[10%] right-[4%] md:right-auto md:left-[62%] text-5xl md:text-6xl font-bold text-gray-100 uppercase">
+        Welcome!
+      </p>
+      <br />
+      <p className="absolute w-[98%] md:w-1/3 top-[58%] md:top-1/3 left-[2%] md:left-[62%] text-xl font-semibold text-gray-700 content-center">
+        <Typewriter
+          words={['We are providing a safe, secure, and life time guaranty for our clients. continue with Bravo Bank.']}
+          loop={100}
+          cursor
+          cursorStyle='|'
+          typeSpeed={70}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        />
+      </p>
+      {/* Button  */}
+      <Link
+        to='/openAcc'
+        className="absolute left-[4%] md:left-auto md:md:left-[62%] bottom-[6%] shadow-inner bg-gray-100 hover:bg-transparent shadow-gray-700 hover:shadow-none md:bottom-1/4 md:bg-gradient-to-r from-primary to-gray-100 hover:p-1 rounded-md hover:scale-110 duration-700 group">
+        <button
+          className="flex hover:justify-between items-center uppercase font-bold text-primary md:text-gray-200 md:bg-gradient-to-l from-sky-500 to-pink-600 px-6 rounded-md py-3 hover:text-gray-50 border-2 group-hover:border-none border-gray-100 duration-500">
+          Continue
+          <FaArrowRight className="group-hover:ml-6 hidden group-hover:inline-flex duration-500 ease-in-out" />
+        </button>
+      </Link>
     </div>
   );
 
