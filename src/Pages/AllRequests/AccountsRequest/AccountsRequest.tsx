@@ -95,7 +95,7 @@ const AccountsRequest = () => {
             }}
             className="container mx-auto py-20"
         >
-            <section className="w-5/6 md:w-[600px] mx-auto relative bg-transparent p-6 rounded-lg shadow-xl shadow-gray-900 bg-gradient-to-r from-gray-200 to-gray-100">
+            <section className="md:w-5/6 md:w-[600px] mx-auto relative bg-transparent p-6 rounded-lg shadow-xl shadow-gray-900 bg-gradient-to-r from-gray-200 to-gray-100">
                 <h2 className="text-4xl font-bold text-center pb-6 text-gray-700 underline">
                     Request Account
                 </h2>
