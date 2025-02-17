@@ -6,7 +6,7 @@ const Education = () => {
       <div className="container flex flex-col items-center justify-center p-4 mx-auto sm:p-10">
         <h2 className="text-3xl font-bold mb-8">Financial Education</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          <div className="bg-gradient-to-r from-pink-500 hover:from-sky-500 hover:to-pink-500 to-sky-500 p-[3px] group-hover:scale-90 rounded-lg duration-700">
+          <div className="bg-gradient-to-r from-pink-500 hover:from-sky-500 hover:to-pink-500 to-sky-500 p-[3px] group-hover:scale-90 rounded-lg ease-linear duration-500">
             <div className="bg-gray-100 rounded-lg shadow-md p-6 text-center border h-full">
               <h3 className="text-lg font-semibold mb-2">Savings Tips</h3>
               <p className="text-gray-600">
@@ -16,7 +16,7 @@ const Education = () => {
             </div>
           </div>
           {/* investment */}
-          <div className="bg-gradient-to-r from-pink-500 hover:from-sky-500 hover:to-pink-500 to-sky-500 p-[3px] group-hover:scale-90 rounded-lg duration-700">
+          <div className="bg-gradient-to-r from-pink-500 hover:from-sky-500 hover:to-pink-500 to-sky-500 p-[3px] group-hover:scale-90 rounded-lg ease-linear duration-500">
             <div className="bg-gray-100 rounded-lg shadow-md p-6 text-center border h-full">
               <h3 className="text-lg font-semibold mb-2">
                 Investment Strategies
@@ -28,7 +28,7 @@ const Education = () => {
             </div>
           </div>
           {/* financial */}
-          <div className="bg-gradient-to-r from-pink-500 hover:from-sky-500 hover:to-pink-500 to-sky-500 p-[3px] group-hover:scale-90 rounded-lg duration-700">
+          <div className="bg-gradient-to-r from-pink-500 hover:from-sky-500 hover:to-pink-500 to-sky-500 p-[3px] group-hover:scale-90 rounded-lg ease-linear duration-500">
             <div className="bg-gray-100 rounded-lg shadow-md p-6 text-center border h-full">
               <h3 className="text-lg font-semibold mb-2">
                 Financial Planning 101

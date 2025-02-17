@@ -52,7 +52,7 @@ const Peoples = () => {
                     {employees.map(employee => (
                         <div
                             key={employee.id}
-                            className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-primary text-gray-100 shadow-lg shadow-gray-700 group-hover:scale-90 hover:!scale-110 duration-500">
+                            className="flex flex-col justify-center w-full px-8 mx-6 my-12 text-center rounded-md md:w-96 lg:w-80 xl:w-64 bg-primary text-gray-100 shadow-lg shadow-gray-700 group-hover:scale-100 hover:!scale-105 duration-500">
                             <img
                                 alt="employeeImage"
                                 className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500"

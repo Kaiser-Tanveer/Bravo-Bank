@@ -34,8 +34,8 @@ import Deposit from "../Pages/UserProfile/MyAccounts/Deposit";
 import DepRePay from "../Pages/UserProfile/MyLoans/DepRePay";
 import Aboutus from "../Shared/Footer/Aboutus/Aboutus";
 import UserDepoReq from "../Pages/Dashboard/UserDepositRequest/UserDepoReq";
-import SingleAccountDetails from "../Pages/UserProfile/SingleAccountDetails/SingleaccountDetails";
-import CustomerReviews from "../Shared/Footer/CustomerReviews/CustomerReviews";
+import SingleAccountDetails from "../Pages/UserProfile/SingleaccountDetails/SingleaccountDetails";
+import CustomerReviews from "../Shared/Footer/Customerreviews/Customerreviews";
 
 export const router = createBrowserRouter([
   {

@@ -99,7 +99,7 @@ const SideMenu = () => {
                 <li onClick={() => setOpen(!open)} className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
                   <NavLink
                     to="/"
-                    className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                    className="flex items-center hover:bg-primary hover:text-white hover:scale-105 duration-500 p-2 space-x-3 rounded-md"
                   >
                     <HiOutlineHome />
                     <span>Home</span>
@@ -110,7 +110,7 @@ const SideMenu = () => {
                 >
                   <button
                     onClick={() => setAccOpen(!accOpen)}
-                    className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 justify-between p-2 space-x-3  w-full rounded-md"
+                    className="flex items-center hover:bg-primary hover:text-white hover:scale-105 duration-500  justify-between p-2 space-x-3  w-full rounded-md"
                   >
                     <div className="flex items-center">
                       <HiOutlineUserAdd className="mr-2" />
@@ -148,7 +148,7 @@ const SideMenu = () => {
                           <li
                             onClick={() => setOpen(!open)}
                             key={type._id}
-                            className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  duration-700"
+                            className="group-hover:scale-100 hover:!scale-105 hover:shadow-sm hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  duration-700"
                           >
                             <NavLink
                               to={`/accountDetail/${type.accountType}`}
@@ -167,7 +167,7 @@ const SideMenu = () => {
                 >
                   <button
                     onClick={() => setCardOpen(!cardOpen)}
-                    className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 justify-between p-2 space-x-3 rounded-md w-full"
+                    className="flex items-center hover:bg-primary hover:text-white hover:scale-105 duration-500  justify-between p-2 space-x-3 rounded-md w-full"
                   >
                     <div className="flex items-center">
                       <HiOutlineCreditCard className="mr-2" />
@@ -193,7 +193,7 @@ const SideMenu = () => {
                           <li
                             onClick={() => setOpen(!open)}
                             key={i}
-                            className="group-hover:scale-90 hover:!scale-110 hover:shadow-lg hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  w-full  duration-700"
+                            className="group-hover:scale-90 hover:!scale-105 hover:shadow-sm hover:shadow-gray-700 hover:text-center hover:duration-500 rounded-lg font-semibold text-primary hover:bg-primary hover:text-white  w-full  duration-700"
                           >
                             <NavLink
                               to={`/cardDetail/${card?.cardType}`}
@@ -212,7 +212,7 @@ const SideMenu = () => {
                 >
                   <button
                     onClick={() => setLoanOpen(!loanOpen)}
-                    className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 justify-between p-2 space-x-3 rounded-md w-full"
+                    className="flex items-center hover:bg-primary hover:text-white hover:scale-105 duration-500  justify-between p-2 space-x-3 rounded-md w-full"
                   >
                     <div className="flex items-center">
                       <FaHandHoldingUsd className="text-xl pr-2" />
@@ -268,7 +268,7 @@ const SideMenu = () => {
                 <li onClick={() => setOpen(!open)} className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
                   <NavLink
                     to="/contactUs"
-                    className="flex items-center hover:bg-primary hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                    className="flex items-center hover:bg-primary hover:text-white hover:scale-105 duration-500  p-2 space-x-3 rounded-md"
                   >
                     <HiChatAlt />
                     <span>Contact Us</span>
@@ -277,7 +277,7 @@ const SideMenu = () => {
                 <li onClick={() => setOpen(!open)} className="rounded-lg font-semibold text-primary px-4 w-full duration-700">
                   <NavLink
                     to="/dashboard"
-                    className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                    className="flex items-center hover:bg-gradient-to-r from-pink-500 to-sky-500 hover:text-white hover:scale-105 duration-500  p-2 space-x-3 rounded-md"
                   >
                     <HiOutlineClipboardList />
                     <span>Dashboard</span>
@@ -290,7 +290,7 @@ const SideMenu = () => {
                       className="rounded-lg font-semibold text-pink-500 px-4 w-full duration-700">
                       <button
                         onClick={handleLogOut}
-                        className="flex w-full items-center hover:bg-pink-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                        className="flex w-full items-center hover:bg-pink-500 hover:text-white hover:scale-105 duration-500  p-2 space-x-3 rounded-md"
                       >
                         <HiLogout />
                         <span>Log Out</span>
@@ -300,7 +300,7 @@ const SideMenu = () => {
                     <li onClick={() => setOpen(!open)} className="rounded-lg font-semibold text-sky-500 px-4 w-full duration-700">
                       <NavLink
                         to="/logIn"
-                        className="flex items-center hover:bg-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                        className="flex items-center hover:bg-sky-500 hover:text-white hover:scale-105 duration-500  p-2 space-x-3 rounded-md"
                       >
                         <HiLogin />
                         <span>Login</span>
@@ -312,7 +312,7 @@ const SideMenu = () => {
                   <li onClick={() => setOpen(!open)} className="sticky bg-gray-200 bottom-0 left-0 font-semibold text-sky-500 px-4 w-full border-t-2 border-sky-500 duration-700">
                     <NavLink
                       to="/userProfile"
-                      className="flex items-center justify-between hover:bg-sky-500 hover:text-white hover:scale-110 duration-500 hover:py-4 p-2 space-x-3 rounded-md"
+                      className="flex items-center justify-between hover:bg-sky-500 hover:text-white hover:scale-105 duration-500  p-2 space-x-3 rounded-md"
                     >
                       {
                         user?.photoURL ?

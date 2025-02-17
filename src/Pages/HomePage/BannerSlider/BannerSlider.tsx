@@ -30,11 +30,11 @@ const BannerSlider = () => {
       {/* Button  */}
       <Link
         to='/openAcc'
-        className="absolute left-[4%] md:left-auto md:md:left-[62%] bottom-[6%] shadow-inner bg-gray-100 hover:bg-transparent shadow-gray-700 hover:shadow-none md:bottom-1/4 md:bg-gradient-to-r from-primary to-gray-100 hover:p-1 rounded-md hover:scale-110 duration-700 group">
+        className="absolute left-[4%] md:left-auto md:md:left-[62%] bottom-[6%] shadow-inner bg-gray-100 shadow-gray-700 hover:shadow-none md:bottom-1/4 rounded-md duration-700 group hover:scale-105">
         <button
-          className="flex hover:justify-between items-center uppercase font-bold text-primary md:text-gray-200 md:bg-gradient-to-l from-sky-500 to-pink-600 px-6 rounded-md py-3 hover:text-gray-50 border-2 group-hover:border-none border-gray-100 duration-500">
+          className="flex justify-between items-center uppercase font-bold text-primary md:text-gray-200 md:bg-gradient-to-l from-sky-500 to-pink-600 px-6 rounded-md py-3 hover:text-gray-50 border-2 border-gray-100 duration-500">
           Continue
-          <FaArrowRight className="group-hover:ml-6 hidden group-hover:inline-flex duration-500 ease-in-out" />
+          <FaArrowRight className="ml-6 inline-flex duration-500 ease-in-out" />
         </button>
       </Link>
     </div>

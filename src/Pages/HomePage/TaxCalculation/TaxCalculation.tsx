@@ -51,7 +51,7 @@ const TaxCalculation = () => {
                         </p>
                     )}
                 </div>
-                <button type='submit' className='rounded-lg w-full btn btn-primary text-xl p-4 focus:ring-pink-500 focus:outline-none focus:border-sky-500 border-2 mx-auto bg-gradient-to-r from-sky-500 to-pink-500 hover:scale-110 duration-500 hover:text-gray-100 font-semibold'>Calculate</button>
+                <button type='submit' className='rounded-lg w-full btn btn-primary text-xl p-4 focus:ring-pink-500 focus:outline-none focus:border-sky-500 border-2 mx-auto bg-gradient-to-r from-sky-500 to-pink-500 hover:scale-105 duration-500 hover:text-gray-100 font-semibold'>Calculate</button>
                 <div>
                     <input value={`${result} BDT`} readOnly placeholder='Your Result' className='rounded-lg w-full text-xl p-4 focus:ring-pink-500 focus:outline-none focus:border-sky-500 border-2 text-sky-500 font-semibold' />
                 </div>
