@@ -20,10 +20,9 @@ const ContactUs = () => {
     if (form.current !== null) {
       emailjs.sendForm('service_g66z9h5', 'template_w4dlvjt', form.current, "WdRjephW6B8q1428b")
         .then((result: any) => {
-          console.log(result.text);
           reset()
         }, (error: any) => {
-          console.log(error.text);
+          console.error(error.text);
         });
     }
 

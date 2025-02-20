@@ -11,7 +11,6 @@ const CardsDetails = () => {
 
   const { cardType } = useParams();
   const [details, setDetails] = useState<detail>();
-  console.log(details);
 
   useEffect(() => {
     fetch(`https://bravo-bank-server.vercel.app/cards/${cardType}`)
