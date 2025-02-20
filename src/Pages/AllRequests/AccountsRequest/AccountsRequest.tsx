@@ -106,7 +106,6 @@ const AccountsRequest = () => {
                             {...register("role", {
                                 required: "Please select the Account Type",
                             })}
-                            onChange={(e) => console.log(e.target.value)}
                             className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                         >
                             <option value="Student">Students Account</option>
@@ -191,7 +190,6 @@ const AccountsRequest = () => {
                             {...register("gender", {
                                 required: "Please select the Gender Type",
                             })}
-                            onChange={(e) => console.log(e.target.value)}
                             className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                         >
                             <option>Male</option>
@@ -309,7 +307,6 @@ const AccountsRequest = () => {
                                 {...register("nomineeRelation", {
                                     required: "Please select the Relation Type",
                                 })}
-                                onChange={(e) => console.log(e.target.value)}
                                 className="rounded focus:outline-none focus:ring-2 text-gray-700 focus:border-error focus:ring-error border-b border-primary p-2 text-xl w-full mb-4 shadow-lg focus:shadow-sky-500"
                             >
                                 <option>Father</option>
