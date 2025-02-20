@@ -47,7 +47,6 @@ const Register = () => {
               };
               updateUser(userData)
                 .then(() => {
-                  console.log(userData);
                   saveUser(data.fullName, data.email, image)
                 })
                 .catch((err: any) => console.error(err))
@@ -72,7 +71,6 @@ const Register = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         if (data.acknowledged) {
           toast.success('User Created Successfully');
           navigate('/')

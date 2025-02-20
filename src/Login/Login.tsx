@@ -19,11 +19,9 @@ const Login = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm<userInput>();
     const onSubmit: SubmitHandler<userInput> = (data) => {
-        console.log(data);
         signIn(data.email, data.password)
             .then((result: any) => {
                 const user = result.user;
-                console.log(user);
                 navigate('/');
             })
             .catch((err: any) => setErr(err.message))
