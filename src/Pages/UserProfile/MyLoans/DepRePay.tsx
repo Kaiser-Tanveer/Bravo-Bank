@@ -58,7 +58,6 @@ const DepRePay = () => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
                     if (data.acknowledged === true) {
                         toast.success('Loan Status updated successfully')
                         refetch()
@@ -67,7 +66,6 @@ const DepRePay = () => {
 
         }
         else {
-            console.log("Your Information Is Wrong");
         }
     }
 

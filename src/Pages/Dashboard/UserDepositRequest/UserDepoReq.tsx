@@ -21,7 +21,6 @@ const UserDepoReq = () => {
             return data;
         },
     });
-    console.log(usersInfo);
 
     const handleDelete = (id: string, accNum: string) => {
 

@@ -28,7 +28,6 @@ const SingleAccountDetails = () => {
       .then((data) => setAccounts(data));
   }, [accountId]);
 
-  console.log(accounts);
 
   return (
     <div className="w-5/6 mx-auto px-4 py-8">

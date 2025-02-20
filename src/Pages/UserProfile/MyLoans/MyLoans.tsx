@@ -22,7 +22,6 @@ const MyLoans = () => {
             return data;
         },
     });
-    console.log(loans);
 
     return (
         <div className='py-10 lg:py-0'>

@@ -21,7 +21,6 @@ const UserLoanReq = () => {
             return data;
         },
     });
-    console.log(usersInfo);
 
     const handleDelete = (id: string, accNum: string) => {
 

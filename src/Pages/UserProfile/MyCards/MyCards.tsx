@@ -20,7 +20,6 @@ const MyCards = () => {
             return data;
         },
     });
-    console.log(cards);
 
     return (
         <div className=''>

@@ -12,7 +12,6 @@ const TaxCalculation = () => {
     const [result, setResult] = useState(0)
 
     const onSubmit: SubmitHandler<taxInput> = (data) => {
-        console.log(data);
         let salary = data.salary;
         if (salary <= 100000) {
             return setResult(salary * result)

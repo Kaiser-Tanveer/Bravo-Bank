@@ -12,7 +12,6 @@ const UserLoanDetail = () => {
             .then((res) => res.json())
             .then((data) => setDetail(data));
     }, [id]);
-    console.log(detail);
 
     if (navigation.state === "loading") {
         return <Spinner />

@@ -24,7 +24,6 @@ const MyAccounts = () => {
             return data;
         },
     });
-    console.log(accounts);
 
 
     return (
